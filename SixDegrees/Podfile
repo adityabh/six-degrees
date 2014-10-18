@@ -1,0 +1,15 @@
+# Podfile
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/jbsf/blindside.git'
+source 'https://github.com/pivotal/cedar.git'
+
+platform :ios, '7.0'
+
+pod 'CocoaLumberjack'
+pod 'AFNetworking'
+pod 'Mantle'
+pod 'Blindside', :git => 'https://github.com/jbsf/blindside.git'
+
+target :SixDegreesTests, :exclusive => true do
+	pod 'Cedar', :git => 'https://github.com/pivotal/cedar.git'
+end
