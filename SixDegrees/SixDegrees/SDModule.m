@@ -10,6 +10,7 @@
 
 #import "SDAPIManager.h"
 #import "UserManager.h"
+#import "FacebookManager.h"
 
 @implementation SDModule
 
@@ -17,6 +18,7 @@
     [binder bind:@"sdApiUrl" toInstance:[NSURL URLWithString:@"http://six-degrees-app.herokuapp.com/"]];
     [binder bind:[SDAPIManager class] withScope:[BSSingleton scope]];
     [binder bind:[UserManager class] withScope:[BSSingleton scope]];
+    [binder bind:[FacebookManager class] withScope:[BSSingleton scope]];
 }
 
 @end

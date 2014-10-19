@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import "SDModule.h"
+#import "BlindsidedStoryboard.h"
+#import "SDNavigationController.h"
+#import "HomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +21,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    UIStoryboard *mainstoryBoard = [BlindsidedStoryboard storyboardWithName:@"Main" bundle:nil injector:self.injector];
+    HomeViewController *homeViewController = [mainstoryBoard instantiateViewControllerWithIdentifier:NSStringFromClass([HomeViewController class])];
+    SDNavigationController *navController = [[SDNavigationController alloc] initWithRootViewController:homeViewController];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = navController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -38,5 +52,27 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
 
 }
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    return wasHandled;
+}
+
+#pragma mark -
+
+- (id<BSModule>)module {
+    if (!_module) {
+        _module = [[SDModule alloc] init];
+    }
+    return _module;
+}
+
+- (id<BSInjector>)injector {
+    if (!_injector) {
+        _injector = [Blindside injectorWithModule:self.module];
+    }
+    return _injector;
+}
+
 
 @end

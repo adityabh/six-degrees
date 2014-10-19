@@ -22,11 +22,12 @@
 		B08F362719F2D6E000FC5A90 /* BlindsidedStoryboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F362619F2D6E000FC5A90 /* BlindsidedStoryboard.m */; };
 		B08F362A19F2DD7C00FC5A90 /* SDModule.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F362919F2DD7C00FC5A90 /* SDModule.m */; };
 		B08F362E19F2DE5C00FC5A90 /* SDAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F362D19F2DE5C00FC5A90 /* SDAPIManager.m */; };
-		B08F363419F2E20900FC5A90 /* SDNavigationControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F363319F2E20900FC5A90 /* SDNavigationControllerViewController.m */; };
+		B08F363419F2E20900FC5A90 /* SDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F363319F2E20900FC5A90 /* SDNavigationController.m */; };
 		B08F363819F2E2E900FC5A90 /* SDSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F363719F2E2E900FC5A90 /* SDSessionManager.m */; };
 		B08F363E19F3367F00FC5A90 /* SDEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F363D19F3367F00FC5A90 /* SDEndpoints.m */; };
 		B08F364519F33BCC00FC5A90 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F364419F33BCC00FC5A90 /* UserManager.m */; };
 		B08F364819F33C8B00FC5A90 /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F364719F33C8B00FC5A90 /* FacebookManager.m */; };
+		B08F364A19F34ED500FC5A90 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08F364919F34ED500FC5A90 /* FacebookSDK.framework */; };
 		F1F336645A361581DDD409F6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE94702CF9A4BA6E336EFDB1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -69,8 +70,8 @@
 		B08F362919F2DD7C00FC5A90 /* SDModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDModule.m; sourceTree = "<group>"; };
 		B08F362C19F2DE5C00FC5A90 /* SDAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDAPIManager.h; path = Managers/SDAPIManager.h; sourceTree = "<group>"; };
 		B08F362D19F2DE5C00FC5A90 /* SDAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDAPIManager.m; path = Managers/SDAPIManager.m; sourceTree = "<group>"; };
-		B08F363219F2E20900FC5A90 /* SDNavigationControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDNavigationControllerViewController.h; path = "View Controllers/SDNavigationControllerViewController.h"; sourceTree = "<group>"; };
-		B08F363319F2E20900FC5A90 /* SDNavigationControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDNavigationControllerViewController.m; path = "View Controllers/SDNavigationControllerViewController.m"; sourceTree = "<group>"; };
+		B08F363219F2E20900FC5A90 /* SDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDNavigationController.h; path = "View Controllers/SDNavigationController.h"; sourceTree = "<group>"; };
+		B08F363319F2E20900FC5A90 /* SDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDNavigationController.m; path = "View Controllers/SDNavigationController.m"; sourceTree = "<group>"; };
 		B08F363619F2E2E900FC5A90 /* SDSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDSessionManager.h; path = Networking/SDSessionManager.h; sourceTree = "<group>"; };
 		B08F363719F2E2E900FC5A90 /* SDSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDSessionManager.m; path = Networking/SDSessionManager.m; sourceTree = "<group>"; };
 		B08F363C19F3367F00FC5A90 /* SDEndpoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDEndpoints.h; path = Networking/SDEndpoints.h; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		B08F364419F33BCC00FC5A90 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserManager.m; path = Managers/UserManager.m; sourceTree = "<group>"; };
 		B08F364619F33C8B00FC5A90 /* FacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookManager.h; path = Managers/FacebookManager.h; sourceTree = "<group>"; };
 		B08F364719F33C8B00FC5A90 /* FacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookManager.m; path = Managers/FacebookManager.m; sourceTree = "<group>"; };
+		B08F364919F34ED500FC5A90 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		C74146666EBDF45F65BC7389 /* Pods-SixDegreesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixDegreesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SixDegreesTests/Pods-SixDegreesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE94702CF9A4BA6E336EFDB1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B7EE94FCD158A1EE106D42 /* Pods-SixDegreesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixDegreesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SixDegreesTests/Pods-SixDegreesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1F336645A361581DDD409F6 /* libPods.a in Frameworks */,
+				B08F364A19F34ED500FC5A90 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +114,7 @@
 		2AC72F9F6588C6B2454841B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B08F364919F34ED500FC5A90 /* FacebookSDK.framework */,
 				DE94702CF9A4BA6E336EFDB1 /* libPods.a */,
 				7E97C896DD508A9CB441403C /* libPods-SixDegreesTests.a */,
 			);
@@ -203,8 +207,8 @@
 			children = (
 				B08F361E19F2D3B200FC5A90 /* HomeViewController.h */,
 				B08F361F19F2D3B200FC5A90 /* HomeViewController.m */,
-				B08F363219F2E20900FC5A90 /* SDNavigationControllerViewController.h */,
-				B08F363319F2E20900FC5A90 /* SDNavigationControllerViewController.m */,
+				B08F363219F2E20900FC5A90 /* SDNavigationController.h */,
+				B08F363319F2E20900FC5A90 /* SDNavigationController.m */,
 				B08F361519F2D35C00FC5A90 /* SDViewController.h */,
 				B08F361619F2D35C00FC5A90 /* SDViewController.m */,
 			);
@@ -452,7 +456,7 @@
 				B055B1E219F20DD300AE17A5 /* SixDegrees.xcdatamodeld in Sources */,
 				B055B1DF19F20DD300AE17A5 /* AppDelegate.m in Sources */,
 				B08F362719F2D6E000FC5A90 /* BlindsidedStoryboard.m in Sources */,
-				B08F363419F2E20900FC5A90 /* SDNavigationControllerViewController.m in Sources */,
+				B08F363419F2E20900FC5A90 /* SDNavigationController.m in Sources */,
 				B08F364819F33C8B00FC5A90 /* FacebookManager.m in Sources */,
 				B08F361D19F2D38600FC5A90 /* MasterViewController.m in Sources */,
 				B08F364519F33BCC00FC5A90 /* UserManager.m in Sources */,
@@ -583,6 +587,10 @@
 			baseConfigurationReference = EBE446E0CB8FEC8B9644D7EA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Steven/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SixDegrees/SixDegrees-Prefix.pch";
 				INFOPLIST_FILE = SixDegrees/Info.plist;
@@ -596,6 +604,10 @@
 			baseConfigurationReference = FEBE669D50CA86159BD9CC06 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Steven/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SixDegrees/SixDegrees-Prefix.pch";
 				INFOPLIST_FILE = SixDegrees/Info.plist;

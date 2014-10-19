@@ -12,6 +12,8 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) id<BSInjector> injector;
+@property (strong, nonatomic) id<BSModule> module;
 
 @end
 

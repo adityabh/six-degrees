@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class FBLoginView;
+
 @interface FacebookManager : NSObject
+
+- (FBLoginView *)fbLoginView;
 
 @end

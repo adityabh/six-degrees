@@ -1,5 +1,5 @@
 //
-//  SDNavigationControllerViewController.h
+//  SDNavigationController.h
 //  SixDegrees
 //
 //  Created by Steven Wu on 2014-10-18.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SDNavigationControllerViewController : UINavigationController
+@interface SDNavigationController : UINavigationController
 
 @end
