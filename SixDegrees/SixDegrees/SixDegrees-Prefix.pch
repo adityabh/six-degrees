@@ -1,0 +1,16 @@
+//
+//  SixDegrees-Prefix.pch
+//  SixDegrees-Prefix
+//
+//  Created by Steven Wu on 2014-10-18.
+//  Copyright (c) 2014 Steven Wu. All rights reserved.
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+    #import "SDConstants.h"
+    #import "SDBlockDefinitions.h"
+    #import <Blindside.h>
+#endif

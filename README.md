@@ -14,5 +14,6 @@
 * [AFNetworking](https://github.com/AFNetworking/AFNetworking)
 * [Mantle](https://github.com/Mantle/Mantle)
 * [Blindside](https://github.com/jbsf/blindside)
+* [BlindsidedStoryboard](https://github.com/pivotal-brian-croom/BlindsidedStoryboard)
 * [Cedar](https://github.com/pivotal/cedar)
 
