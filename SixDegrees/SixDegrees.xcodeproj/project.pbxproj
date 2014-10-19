@@ -591,6 +591,10 @@
 					"$(inherited)",
 					/Users/Steven/Documents/FacebookSDK,
 				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					/Users/Steven/Documents/FacebookSDK,
+					/Users/davidwen/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SixDegrees/SixDegrees-Prefix.pch";
 				INFOPLIST_FILE = SixDegrees/Info.plist;
@@ -607,6 +611,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Steven/Documents/FacebookSDK,
+					/Users/davidwen/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SixDegrees/SixDegrees-Prefix.pch";
