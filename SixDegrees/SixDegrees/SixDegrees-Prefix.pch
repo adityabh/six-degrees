@@ -10,7 +10,8 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
+    #import <Blindside.h>
     #import "SDConstants.h"
     #import "SDBlockDefinitions.h"
-    #import <Blindside.h>
+    #import "SDLocalizableStrings.h"
 #endif

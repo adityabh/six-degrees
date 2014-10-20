@@ -10,8 +10,11 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "SDModule.h"
 #import "BlindsidedStoryboard.h"
+
 #import "SDNavigationController.h"
 #import "HomeViewController.h"
+
+#import "FacebookManager.h"
 
 @interface AppDelegate ()
 
@@ -19,17 +22,10 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    UIStoryboard *mainstoryBoard = [BlindsidedStoryboard storyboardWithName:@"Main" bundle:nil injector:self.injector];
-    HomeViewController *homeViewController = [mainstoryBoard instantiateViewControllerWithIdentifier:NSStringFromClass([HomeViewController class])];
-    SDNavigationController *navController = [[SDNavigationController alloc] initWithRootViewController:homeViewController];
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = navController;
+    self.window.rootViewController = [self defaultNavStack];
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 
@@ -46,7 +42,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-
+    [FBAppCall handleDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -54,11 +50,22 @@
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
-    return wasHandled;
+    FacebookManager *fbManager = (FacebookManager *)[self.injector getInstance:[FacebookManager class]];
+    [FBSession.activeSession setStateChangeHandler:fbManager.stateChangeHandler];
+    BOOL appUrlRequestHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    return appUrlRequestHandled;
 }
 
-#pragma mark -
+#pragma mark - Nav Stack Setup
+
+- (UINavigationController *)defaultNavStack {
+    UIStoryboard *mainstoryBoard = [BlindsidedStoryboard storyboardWithName:@"Main" bundle:nil injector:self.injector];
+    HomeViewController *homeViewController = [mainstoryBoard instantiateViewControllerWithIdentifier:NSStringFromClass([HomeViewController class])];
+    SDNavigationController *navController = [[SDNavigationController alloc] initWithRootViewController:homeViewController];
+    return navController;
+}
+
+#pragma mark - Dependency Injection
 
 - (id<BSModule>)module {
     if (!_module) {

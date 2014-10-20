@@ -1,5 +1,5 @@
 //
-//  SDAPIManager.h
+//  SDApiManager.h
 //  SixDegrees
 //
 //  Created by Steven Wu on 2014-10-18.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SDAPIManager : NSObject
+@interface SDApiManager : NSObject
 
 - (void)authenticateWithFacebookId:(NSString *)facebookId
                      facebookToken:(NSString *)facebookToken
