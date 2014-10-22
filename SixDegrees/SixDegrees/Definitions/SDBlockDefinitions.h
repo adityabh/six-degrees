@@ -6,5 +6,15 @@
 //  Copyright (c) 2014 Steven Wu. All rights reserved.
 //
 
-typedef void(^ErrorBlock)(NSError *);
+#import "ApiError.h"
+#import <FacebookSDK/FacebookSDK.h>
+
+#pragma mark -
+
 typedef void(^VoidBlock)();
+typedef void(^ErrorBlock)(NSError *error);
+typedef void(^ApiErrorBlock)(ApiError *apiError);
+
+#pragma mark - Facebook
+
+typedef void(^FbSessionStateChangeHandler)(FBSession *session, FBSessionState state, NSError *error);

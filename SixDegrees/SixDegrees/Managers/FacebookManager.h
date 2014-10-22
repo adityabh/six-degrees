@@ -8,10 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@class FBLoginView;
+@class FacebookAccount;
 
 @interface FacebookManager : NSObject
 
-- (FBLoginView *)fbLoginView;
+@property (strong, nonatomic, readonly) FacebookAccount *facebookAccount;
+@property (nonatomic, readonly) BOOL hasOpenSession;
+@property (nonatomic, readonly) NSArray *readPermissions;
+@property (nonatomic, readonly) NSString *accessToken;
+@property (nonatomic, readonly) FbSessionStateChangeHandler stateChangeHandler;
+
+- (void)openSession;
+- (void)closeSession;
+- (void)fetchFbUserWithSuccess:(VoidBlock)success failure:(ApiErrorBlock)failure;
 
 @end

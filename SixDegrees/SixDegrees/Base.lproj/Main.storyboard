@@ -40,6 +40,18 @@
                                     <constraint firstAttribute="width" constant="100" id="ZQE-AA-4kP"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eu-AN-B6B">
+                                <rect key="frame" x="31" y="535" width="538" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ZGc-VU-gdV"/>
+                                </constraints>
+                                <state key="normal" title="SIGN IN WITH FACEBOOK">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookSignInTapped:" destination="rbd-w2-mmR" eventType="touchUpInside" id="FXO-Dp-7bI"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35v-vy-j9h">
                                 <rect key="frame" x="31" y="224" width="538" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -56,20 +68,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="35v-vy-j9h" secondAttribute="trailing" constant="15" id="079-79-Vou"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9eu-AN-B6B" secondAttribute="trailing" constant="15" id="ShY-WK-S8c"/>
                             <constraint firstItem="35v-vy-j9h" firstAttribute="top" secondItem="uJb-Si-jSZ" secondAttribute="bottom" constant="10" id="Vyx-X1-rtw"/>
                             <constraint firstItem="35v-vy-j9h" firstAttribute="leading" secondItem="zer-8Z-6eG" secondAttribute="leadingMargin" constant="15" id="d1K-jz-wov"/>
                             <constraint firstAttribute="centerX" secondItem="uJb-Si-jSZ" secondAttribute="centerX" id="hwY-7y-LYb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tuu-zP-rP4" secondAttribute="trailing" constant="15" id="jtv-Iu-6Za"/>
+                            <constraint firstItem="tuT-qV-Jmn" firstAttribute="top" secondItem="9eu-AN-B6B" secondAttribute="bottom" constant="15" id="kIn-F0-fqd"/>
                             <constraint firstItem="tuu-zP-rP4" firstAttribute="leading" secondItem="zer-8Z-6eG" secondAttribute="leadingMargin" constant="15" id="ljv-FS-ADr"/>
                             <constraint firstItem="uJb-Si-jSZ" firstAttribute="top" secondItem="PMH-tC-adQ" secondAttribute="bottom" constant="50" id="lus-ig-N7K"/>
+                            <constraint firstItem="9eu-AN-B6B" firstAttribute="leading" secondItem="zer-8Z-6eG" secondAttribute="leadingMargin" constant="15" id="uqQ-YY-5X8"/>
                             <constraint firstItem="tuu-zP-rP4" firstAttribute="top" secondItem="35v-vy-j9h" secondAttribute="bottom" constant="10" id="y33-10-WIZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4Oi-Vb-1FY"/>
                     <connections>
-                        <outlet property="nameLabel" destination="35v-vy-j9h" id="4Wt-0s-cws"/>
+                        <outlet property="facebookSignInButton" destination="9eu-AN-B6B" id="rgB-ie-U7Z"/>
+                        <outlet property="nameLabel" destination="tuu-zP-rP4" id="NVf-nA-rlw"/>
                         <outlet property="profileImageView" destination="uJb-Si-jSZ" id="U2g-XV-Nn5"/>
-                        <outlet property="statusLabel" destination="tuu-zP-rP4" id="nNA-ba-ucD"/>
+                        <outlet property="statusLabel" destination="35v-vy-j9h" id="xRL-4U-3eF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4MI-6R-wRX" userLabel="First Responder" sceneMemberID="firstResponder"/>

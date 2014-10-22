@@ -1,26 +1,26 @@
 //
-//  SDAPIManager.m
+//  SDApiManager.m
 //  SixDegrees
 //
 //  Created by Steven Wu on 2014-10-18.
 //  Copyright (c) 2014 Steven Wu. All rights reserved.
 //
 
-#import "SDAPIManager.h"
+#import "SDApiManager.h"
 #import "SDSessionManager.h"
 #import "SDEndpoints.h"
 
-@interface SDAPIManager ()
+@interface SDApiManager ()
 
 @property (strong, nonatomic) SDSessionManager *sessionManager;
 
 @end
 
-@implementation SDAPIManager
+@implementation SDApiManager
 
 + (BSInitializer *)bsInitializer {
     return [BSInitializer initializerWithClass:self
-                                      selector:@selector(initWithBaseURL:)
+                                      selector:@selector(initWithBaseUrl:)
                                   argumentKeys:@"sdApiUrl", nil];
 }
 

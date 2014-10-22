@@ -21,13 +21,16 @@
 		B08F362019F2D3B200FC5A90 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F361F19F2D3B200FC5A90 /* HomeViewController.m */; };
 		B08F362719F2D6E000FC5A90 /* BlindsidedStoryboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F362619F2D6E000FC5A90 /* BlindsidedStoryboard.m */; };
 		B08F362A19F2DD7C00FC5A90 /* SDModule.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F362919F2DD7C00FC5A90 /* SDModule.m */; };
-		B08F362E19F2DE5C00FC5A90 /* SDAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F362D19F2DE5C00FC5A90 /* SDAPIManager.m */; };
+		B08F362E19F2DE5C00FC5A90 /* SDApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F362D19F2DE5C00FC5A90 /* SDApiManager.m */; };
 		B08F363419F2E20900FC5A90 /* SDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F363319F2E20900FC5A90 /* SDNavigationController.m */; };
 		B08F363819F2E2E900FC5A90 /* SDSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F363719F2E2E900FC5A90 /* SDSessionManager.m */; };
 		B08F363E19F3367F00FC5A90 /* SDEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F363D19F3367F00FC5A90 /* SDEndpoints.m */; };
 		B08F364519F33BCC00FC5A90 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F364419F33BCC00FC5A90 /* UserManager.m */; };
 		B08F364819F33C8B00FC5A90 /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F364719F33C8B00FC5A90 /* FacebookManager.m */; };
 		B08F364A19F34ED500FC5A90 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08F364919F34ED500FC5A90 /* FacebookSDK.framework */; };
+		B08F365019F4932500FC5A90 /* ApiError.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F364F19F4932500FC5A90 /* ApiError.m */; };
+		B08F365419F4A44700FC5A90 /* SDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F365319F4A44700FC5A90 /* SDModel.m */; };
+		B08F365819F4A4C800FC5A90 /* FacebookAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F365719F4A4C800FC5A90 /* FacebookAccount.m */; };
 		F1F336645A361581DDD409F6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE94702CF9A4BA6E336EFDB1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -68,8 +71,8 @@
 		B08F362619F2D6E000FC5A90 /* BlindsidedStoryboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlindsidedStoryboard.m; path = External/BlindsidedStoryboard/BlindsidedStoryboard.m; sourceTree = "<group>"; };
 		B08F362819F2DD7C00FC5A90 /* SDModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDModule.h; sourceTree = "<group>"; };
 		B08F362919F2DD7C00FC5A90 /* SDModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDModule.m; sourceTree = "<group>"; };
-		B08F362C19F2DE5C00FC5A90 /* SDAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDAPIManager.h; path = Managers/SDAPIManager.h; sourceTree = "<group>"; };
-		B08F362D19F2DE5C00FC5A90 /* SDAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDAPIManager.m; path = Managers/SDAPIManager.m; sourceTree = "<group>"; };
+		B08F362C19F2DE5C00FC5A90 /* SDApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDApiManager.h; path = Managers/SDApiManager.h; sourceTree = "<group>"; };
+		B08F362D19F2DE5C00FC5A90 /* SDApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDApiManager.m; path = Managers/SDApiManager.m; sourceTree = "<group>"; };
 		B08F363219F2E20900FC5A90 /* SDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDNavigationController.h; path = "View Controllers/SDNavigationController.h"; sourceTree = "<group>"; };
 		B08F363319F2E20900FC5A90 /* SDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDNavigationController.m; path = "View Controllers/SDNavigationController.m"; sourceTree = "<group>"; };
 		B08F363619F2E2E900FC5A90 /* SDSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDSessionManager.h; path = Networking/SDSessionManager.h; sourceTree = "<group>"; };
@@ -83,6 +86,13 @@
 		B08F364619F33C8B00FC5A90 /* FacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookManager.h; path = Managers/FacebookManager.h; sourceTree = "<group>"; };
 		B08F364719F33C8B00FC5A90 /* FacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookManager.m; path = Managers/FacebookManager.m; sourceTree = "<group>"; };
 		B08F364919F34ED500FC5A90 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		B08F364E19F4932500FC5A90 /* ApiError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApiError.h; path = Models/ApiError.h; sourceTree = "<group>"; };
+		B08F364F19F4932500FC5A90 /* ApiError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApiError.m; path = Models/ApiError.m; sourceTree = "<group>"; };
+		B08F365219F4A44700FC5A90 /* SDModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDModel.h; path = Models/SDModel.h; sourceTree = "<group>"; };
+		B08F365319F4A44700FC5A90 /* SDModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDModel.m; path = Models/SDModel.m; sourceTree = "<group>"; };
+		B08F365519F4A46500FC5A90 /* SDLocalizableStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLocalizableStrings.h; path = Definitions/SDLocalizableStrings.h; sourceTree = "<group>"; };
+		B08F365619F4A4C800FC5A90 /* FacebookAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookAccount.h; path = Models/FacebookAccount.h; sourceTree = "<group>"; };
+		B08F365719F4A4C800FC5A90 /* FacebookAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookAccount.m; path = Models/FacebookAccount.m; sourceTree = "<group>"; };
 		C74146666EBDF45F65BC7389 /* Pods-SixDegreesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixDegreesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SixDegreesTests/Pods-SixDegreesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE94702CF9A4BA6E336EFDB1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B7EE94FCD158A1EE106D42 /* Pods-SixDegreesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixDegreesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SixDegreesTests/Pods-SixDegreesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,8 +230,8 @@
 			children = (
 				B08F364619F33C8B00FC5A90 /* FacebookManager.h */,
 				B08F364719F33C8B00FC5A90 /* FacebookManager.m */,
-				B08F362C19F2DE5C00FC5A90 /* SDAPIManager.h */,
-				B08F362D19F2DE5C00FC5A90 /* SDAPIManager.m */,
+				B08F362C19F2DE5C00FC5A90 /* SDApiManager.h */,
+				B08F362D19F2DE5C00FC5A90 /* SDApiManager.m */,
 				B08F364319F33BCC00FC5A90 /* UserManager.h */,
 				B08F364419F33BCC00FC5A90 /* UserManager.m */,
 			);
@@ -231,6 +241,12 @@
 		B08F362119F2D3FD00FC5A90 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B08F364E19F4932500FC5A90 /* ApiError.h */,
+				B08F364F19F4932500FC5A90 /* ApiError.m */,
+				B08F365619F4A4C800FC5A90 /* FacebookAccount.h */,
+				B08F365719F4A4C800FC5A90 /* FacebookAccount.m */,
+				B08F365219F4A44700FC5A90 /* SDModel.h */,
+				B08F365319F4A44700FC5A90 /* SDModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -268,6 +284,7 @@
 			children = (
 				B08F364119F33A1900FC5A90 /* SDBlockDefinitions.h */,
 				B08F364219F33A1900FC5A90 /* SDConstants.h */,
+				B08F365519F4A46500FC5A90 /* SDLocalizableStrings.h */,
 			);
 			name = Definitions;
 			sourceTree = "<group>";
@@ -454,14 +471,17 @@
 				B08F361719F2D35C00FC5A90 /* SDViewController.m in Sources */,
 				B08F362A19F2DD7C00FC5A90 /* SDModule.m in Sources */,
 				B055B1E219F20DD300AE17A5 /* SixDegrees.xcdatamodeld in Sources */,
+				B08F365419F4A44700FC5A90 /* SDModel.m in Sources */,
 				B055B1DF19F20DD300AE17A5 /* AppDelegate.m in Sources */,
 				B08F362719F2D6E000FC5A90 /* BlindsidedStoryboard.m in Sources */,
 				B08F363419F2E20900FC5A90 /* SDNavigationController.m in Sources */,
 				B08F364819F33C8B00FC5A90 /* FacebookManager.m in Sources */,
 				B08F361D19F2D38600FC5A90 /* MasterViewController.m in Sources */,
+				B08F365019F4932500FC5A90 /* ApiError.m in Sources */,
+				B08F365819F4A4C800FC5A90 /* FacebookAccount.m in Sources */,
 				B08F364519F33BCC00FC5A90 /* UserManager.m in Sources */,
 				B08F363819F2E2E900FC5A90 /* SDSessionManager.m in Sources */,
-				B08F362E19F2DE5C00FC5A90 /* SDAPIManager.m in Sources */,
+				B08F362E19F2DE5C00FC5A90 /* SDApiManager.m in Sources */,
 				B08F363E19F3367F00FC5A90 /* SDEndpoints.m in Sources */,
 				B08F362019F2D3B200FC5A90 /* HomeViewController.m in Sources */,
 				B055B1DC19F20DD300AE17A5 /* main.m in Sources */,
