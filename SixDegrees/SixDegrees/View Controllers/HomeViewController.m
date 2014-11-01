@@ -59,7 +59,7 @@
                                           userEmail:self.facebookManager.facebookAccount.email
                                             success:^(NSDictionary *responseObject){
                                                 NSDictionary *userInfo = responseObject;
-                                                self.emailLabel.text = userInfo[@"gender"];
+                                                self.genderLabel.text = userInfo[@"gender"];
                                                 self.profileImageView.profileID = userInfo[@"uid"];
                                                 NSLog(@"JSON: %@", userInfo);
                                                 [self showAlertViewWithTitle:@"Success!" message:@"Authenticated against Six-Degrees API"];
