@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet FBProfilePictureView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *genderLabel;
 
 @property (strong, nonatomic) SDApiManager *apiManager;
 @property (strong, nonatomic) FacebookManager *facebookManager;
@@ -40,6 +42,8 @@
 - (void)styleView {
     self.statusLabel.text = @"NOT SIGNED IN";
     self.nameLabel.text = @"";
+    self.emailLabel.text = @"";
+    self.genderLabel.text = @"";
 }
 
 #pragma mark - IBAction
@@ -48,11 +52,16 @@
     [self.facebookManager fetchFbUserWithSuccess:^{
         self.statusLabel.text = @"SIGNED IN AS";
         self.nameLabel.text = self.facebookManager.facebookAccount.name;
+        self.emailLabel.text = self.facebookManager.facebookAccount.email;
 #warning TODO:  Move this to user manager
         [self.apiManager authenticateWithFacebookId:self.facebookManager.facebookAccount.sdFacebookUserId
                                       facebookToken:self.facebookManager.accessToken
                                           userEmail:self.facebookManager.facebookAccount.email
-                                            success:^{
+                                            success:^(NSDictionary *responseObject){
+                                                NSDictionary *userInfo = responseObject;
+                                                self.emailLabel.text = userInfo[@"gender"];
+                                                self.profileImageView.profileID = userInfo[@"uid"];
+                                                NSLog(@"JSON: %@", userInfo);
                                                 [self showAlertViewWithTitle:@"Success!" message:@"Authenticated against Six-Degrees API"];
                                             } failure:^(NSError *error) {
                                                 [self showAlertViewWithTitle:@"Failure!" message:error.description];

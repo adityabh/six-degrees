@@ -48,7 +48,7 @@
     
     [self.sessionManager POST:[SDEndpoints authWithFacebook] parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         if (success) {
-            success();
+            success(responseObject);
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         if (failure) {

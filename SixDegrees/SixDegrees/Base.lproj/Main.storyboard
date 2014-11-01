@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -58,6 +58,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4x-EH-ndO">
+                                <rect key="frame" x="31" y="284" width="538" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhu-60-MbG">
+                                <rect key="frame" x="31" y="313" width="538" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuu-zP-rP4">
                                 <rect key="frame" x="31" y="255" width="538" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -68,6 +80,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="35v-vy-j9h" secondAttribute="trailing" constant="15" id="079-79-Vou"/>
+                            <constraint firstAttribute="centerX" secondItem="Qhu-60-MbG" secondAttribute="centerX" id="1Z7-lf-7nk"/>
+                            <constraint firstAttribute="centerX" secondItem="h4x-EH-ndO" secondAttribute="centerX" id="5Yr-Ev-4jQ"/>
+                            <constraint firstItem="Qhu-60-MbG" firstAttribute="top" secondItem="h4x-EH-ndO" secondAttribute="bottom" constant="8" id="KSx-KQ-Hgw"/>
+                            <constraint firstItem="h4x-EH-ndO" firstAttribute="top" secondItem="tuu-zP-rP4" secondAttribute="bottom" constant="8" id="NP5-WC-Nix"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9eu-AN-B6B" secondAttribute="trailing" constant="15" id="ShY-WK-S8c"/>
                             <constraint firstItem="35v-vy-j9h" firstAttribute="top" secondItem="uJb-Si-jSZ" secondAttribute="bottom" constant="10" id="Vyx-X1-rtw"/>
                             <constraint firstItem="35v-vy-j9h" firstAttribute="leading" secondItem="zer-8Z-6eG" secondAttribute="leadingMargin" constant="15" id="d1K-jz-wov"/>
@@ -82,7 +98,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="4Oi-Vb-1FY"/>
                     <connections>
+                        <outlet property="emailLabel" destination="h4x-EH-ndO" id="Tzf-2s-gL0"/>
                         <outlet property="facebookSignInButton" destination="9eu-AN-B6B" id="rgB-ie-U7Z"/>
+                        <outlet property="genderLabel" destination="Qhu-60-MbG" id="zJa-gk-Yex"/>
                         <outlet property="nameLabel" destination="tuu-zP-rP4" id="NVf-nA-rlw"/>
                         <outlet property="profileImageView" destination="uJb-Si-jSZ" id="U2g-XV-Nn5"/>
                         <outlet property="statusLabel" destination="35v-vy-j9h" id="xRL-4U-3eF"/>
