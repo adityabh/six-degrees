@@ -31,6 +31,8 @@ PODS:
   - CocoaLumberjack/Core (2.0.0-beta2)
   - CocoaLumberjack/Extensions (2.0.0-beta2):
     - CocoaLumberjack/Core
+  - iCarousel (1.8.1)
+  - KSDeferred (0.2.0)
   - Mantle (1.5.1):
     - Mantle/extobjc
   - Mantle/extobjc (1.5.1)
@@ -40,6 +42,8 @@ DEPENDENCIES:
   - Blindside (from `https://github.com/jbsf/blindside.git`)
   - Cedar (from `https://github.com/pivotal/cedar.git`)
   - CocoaLumberjack
+  - iCarousel
+  - KSDeferred
   - Mantle
 
 EXTERNAL SOURCES:
@@ -53,6 +57,8 @@ SPEC CHECKSUMS:
   Blindside: 3aae47c0138e6f1cf29cb4ed742bcee3744fdd2a
   Cedar: ad7dba21c345daaf5714d5ff41febc51b8444a1b
   CocoaLumberjack: 956d3fb98fed498a13d56499f262c975ef431c98
+  iCarousel: 5acab560f10dc13da2440c89f35a0ad278b5147d
+  KSDeferred: 33361e3e63ebe90210ea94d7f6469c1c2b874763
   Mantle: d7c5ac734579ec751c58fecbf56189853056c58c
 
-COCOAPODS: 0.34.2
+COCOAPODS: 0.34.4

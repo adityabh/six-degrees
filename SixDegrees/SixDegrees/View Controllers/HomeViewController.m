@@ -7,67 +7,106 @@
 //
 
 #import "HomeViewController.h"
-#import "SDApiManager.h"
-#import "FacebookManager.h"
-#import "FacebookAccount.h"
+#import "iCarousel.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () <iCarouselDataSource, iCarouselDelegate>
 
-@property (weak, nonatomic) IBOutlet UIButton *facebookSignInButton;
-@property (weak, nonatomic) IBOutlet FBProfilePictureView *profileImageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet iCarousel *carousel;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
-@property (strong, nonatomic) SDApiManager *apiManager;
-@property (strong, nonatomic) FacebookManager *facebookManager;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
+@property (weak, nonatomic) IBOutlet UILabel *bottomLabel;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeightConstraint;
 
 @end
 
 @implementation HomeViewController
 
-+ (BSPropertySet *)bsProperties {
-    BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"apiManager", @"facebookManager", nil];
-    [propertySet bindProperty:@"apiManager" toKey:[SDApiManager class]];
-    [propertySet bindProperty:@"facebookManager" toKey:[FacebookManager class]];
-    return propertySet;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self styleView];
+    [self setupCarousel];
+    [self setupPageControl];
+    [self setupBottomView];
 }
 
-- (void)styleView {
-    self.statusLabel.text = @"NOT SIGNED IN";
-    self.nameLabel.text = @"";
+#pragma mark - Setup
+
+- (void)setupCarousel {
+    self.carousel.dataSource = self;
+    self.carousel.delegate = self;
+    self.carousel.pagingEnabled = YES;
+    self.carousel.bounces = NO;
+    self.carousel.backgroundColor = [UIColor whiteColor];
+}
+
+- (void)setupPageControl {
+    self.pageControl.numberOfPages = [[self carouselItems] count];
+    self.pageControl.currentPage = 0;
+    self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    self.pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    self.pageControl.backgroundColor = [UIColor clearColor];
+}
+
+- (void)setupBottomView {
+    self.bottomLabel.text = @"SWIPE RIGHT TO BEGIN";
+    self.bottomViewHeightConstraint.constant = 75;
+    self.bottomView.backgroundColor = [UIColor lightGrayColor];
+}
+
+#pragma mark - iCarouselDataSource
+
+- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
+    return [[self carouselItems] count];
+}
+
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0,
+                                                                           carousel.frame.size.width * 0.65,
+                                                                           carousel.frame.size.height * 0.85)];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    imageView.image = [self carouselItems][index];
+    return imageView;
+}
+
+#pragma mark - iCarouselDelegate
+
+- (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value {
+    switch (option) {
+        case iCarouselOptionFadeMax:
+            return 0.1;
+        case iCarouselOptionFadeMin:
+            return -0.1;
+        case iCarouselOptionFadeRange:
+            return 1.0;
+        case iCarouselOptionWrap:
+            return YES;
+        default:
+            return value;
+    }
+}
+
+-(void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel {
+    [self.pageControl setCurrentPage:carousel.currentItemIndex];
 }
 
 #pragma mark - IBAction
 
-- (IBAction)facebookSignInTapped:(id)sender {
-    [self.facebookManager fetchFbUserWithSuccess:^{
-        self.statusLabel.text = @"SIGNED IN AS";
-        self.nameLabel.text = self.facebookManager.facebookAccount.name;
-#warning TODO:  Move this to user manager
-        [self.apiManager authenticateWithFacebookId:self.facebookManager.facebookAccount.sdFacebookUserId
-                                      facebookToken:self.facebookManager.accessToken
-                                          userEmail:self.facebookManager.facebookAccount.email
-                                            success:^{
-                                                [self showAlertViewWithTitle:@"Success!" message:@"Authenticated against Six-Degrees API"];
-                                            } failure:^(NSError *error) {
-                                                [self showAlertViewWithTitle:@"Failure!" message:error.description];
-                                            }];
-    } failure:^(ApiError *apiError) {
-        [self showAlertViewWithTitle:@"Oops!" message:apiError.userMessage];
-    }];
+- (IBAction)bottomViewSwiped:(id)sender {
+    
 }
 
-- (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message {
-    [[[UIAlertView alloc] initWithTitle:title
-                                message:message
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+#pragma mark - 
+
+- (NSArray *)carouselItems {
+    return @[
+             [UIImage imageNamed:@"ss1"],
+             [UIImage imageNamed:@"ss2"],
+             [UIImage imageNamed:@"ss3"],
+             [UIImage imageNamed:@"ss4"],
+             [UIImage imageNamed:@"ss5"],
+             [UIImage imageNamed:@"ss6"],
+             ];
 }
 
 @end
