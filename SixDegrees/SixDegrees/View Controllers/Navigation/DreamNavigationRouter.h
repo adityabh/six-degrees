@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class SDNavigationController;
+
 @interface DreamNavigationRouter : NSObject
+
+- (SDNavigationController *)defaultNavStack;
 
 @end

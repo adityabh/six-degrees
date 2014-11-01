@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class HomeViewController;
+@class SignInViewController;
+@class DreamViewController;
+@protocol HomeViewControllerDelegate;
+
 @interface ViewControllerFactory : NSObject
+
+- (HomeViewController *)buildHomeVcWithDelegate:(id <HomeViewControllerDelegate>)delegate
+                                       injector:(id<BSInjector>)injector;
+- (SignInViewController *)buildSignInVcWithInjector:(id<BSInjector>)injector;
+- (DreamViewController *)buildDreamVcWithInjector:(id<BSInjector>)injector;
 
 @end

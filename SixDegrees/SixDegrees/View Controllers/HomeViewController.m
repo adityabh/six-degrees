@@ -93,7 +93,7 @@
 #pragma mark - IBAction
 
 - (IBAction)bottomViewSwiped:(id)sender {
-    
+    [self.delegate didSwipeRightToContinue];
 }
 
 #pragma mark - 

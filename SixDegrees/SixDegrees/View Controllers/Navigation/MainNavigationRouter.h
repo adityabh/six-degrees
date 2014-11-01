@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class SDNavigationController;
+
 @interface MainNavigationRouter : NSObject
+
+- (void)setWindow:(UIWindow *)window;
+- (SDNavigationController *)defaultNavStack;
 
 @end
