@@ -15,8 +15,8 @@
 @implementation SDModule
 
 - (void)configure:(id<BSBinder>)binder {
-//    [binder bind:@"sdApiUrl" toInstance:[NSURL URLWithString:@"http://six-degrees-app.herokuapp.com/"]];
-    [binder bind:@"sdApiUrl" toInstance:[NSURL URLWithString:@"http://localhost:3000/"]];
+    [binder bind:@"sdApiUrl" toInstance:[NSURL URLWithString:@"http://six-degrees-app.herokuapp.com/"]];
+//    [binder bind:@"sdApiUrl" toInstance:[NSURL URLWithString:@"http://localhost:3000/"]];
     [binder bind:[SDApiManager class] withScope:[BSSingleton scope]];
     [binder bind:[UserManager class] withScope:[BSSingleton scope]];
     [binder bind:[FacebookManager class] withScope:[BSSingleton scope]];
