@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dream View Controller-->
+        <scene sceneID="ZUf-QS-18F">
+            <objects>
+                <viewController storyboardIdentifier="DreamViewController" id="vog-tP-scc" customClass="DreamViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vhL-TW-bMf"/>
+                        <viewControllerLayoutGuide type="bottom" id="U9r-sU-WSq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e3W-Am-XAP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfH-gE-R0i">
+                                <rect key="frame" x="31" y="35" width="538" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Dream" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFD-dW-6hS">
+                                <rect key="frame" x="31" y="61" width="538" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Career Dream" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1J-uQ-ayn">
+                                <rect key="frame" x="31" y="87" width="538" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RFD-dW-6hS" firstAttribute="leading" secondItem="e3W-Am-XAP" secondAttribute="leadingMargin" constant="15" id="C5C-S0-rQb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pfH-gE-R0i" secondAttribute="trailing" constant="15" id="CcO-9R-pTc"/>
+                            <constraint firstItem="RFD-dW-6hS" firstAttribute="top" secondItem="pfH-gE-R0i" secondAttribute="bottom" constant="5" id="Fic-Iz-cjz"/>
+                            <constraint firstItem="pfH-gE-R0i" firstAttribute="top" secondItem="vhL-TW-bMf" secondAttribute="bottom" constant="15" id="GP7-zb-uAv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P1J-uQ-ayn" secondAttribute="trailing" constant="15" id="SOm-nI-aGB"/>
+                            <constraint firstItem="pfH-gE-R0i" firstAttribute="leading" secondItem="e3W-Am-XAP" secondAttribute="leadingMargin" constant="15" id="Vqa-Mi-B8Q"/>
+                            <constraint firstItem="P1J-uQ-ayn" firstAttribute="top" secondItem="RFD-dW-6hS" secondAttribute="bottom" constant="5" id="h2B-wA-jZM"/>
+                            <constraint firstItem="P1J-uQ-ayn" firstAttribute="leading" secondItem="e3W-Am-XAP" secondAttribute="leadingMargin" constant="15" id="qcg-GO-n7V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RFD-dW-6hS" secondAttribute="trailing" constant="15" id="v72-38-OmU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="careerDreamLabel" destination="P1J-uQ-ayn" id="zSD-ZI-wEc"/>
+                        <outlet property="nameLabel" destination="pfH-gE-R0i" id="2zD-dN-QXo"/>
+                        <outlet property="personalDreamLabel" destination="RFD-dW-6hS" id="464-81-dh2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFD-GJ-pgq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="383" y="361"/>
+        </scene>
+    </scenes>
+</document>

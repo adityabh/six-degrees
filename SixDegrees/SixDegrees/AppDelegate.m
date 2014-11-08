@@ -9,11 +9,8 @@
 #import "AppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "SDModule.h"
-#import "BlindsidedStoryboard.h"
 
-#import "SDNavigationController.h"
-#import "HomeViewController.h"
-
+#import "MainNavigationRouter.h"
 #import "FacebookManager.h"
 
 @interface AppDelegate ()
@@ -23,9 +20,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [self defaultNavStack];
-    [self.window makeKeyAndVisible];
+    [self setupMainRouter];
     return YES;
 }
 
@@ -56,13 +51,15 @@
     return appUrlRequestHandled;
 }
 
-#pragma mark - Nav Stack Setup
+#pragma mark - Navigation
 
-- (UINavigationController *)defaultNavStack {
-    UIStoryboard *mainstoryBoard = [BlindsidedStoryboard storyboardWithName:@"Main" bundle:nil injector:self.injector];
-    HomeViewController *homeViewController = [mainstoryBoard instantiateViewControllerWithIdentifier:NSStringFromClass([HomeViewController class])];
-    SDNavigationController *navController = [[SDNavigationController alloc] initWithRootViewController:homeViewController];
-    return navController;
+- (void)setupMainRouter {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    MainNavigationRouter *mainRouter = (MainNavigationRouter *)[self.injector getInstance:[MainNavigationRouter class]];
+    [mainRouter setWindow:self.window];
+    self.window.rootViewController = [mainRouter defaultNavStack];
+    [self.window makeKeyAndVisible];
 }
 
 #pragma mark - Dependency Injection

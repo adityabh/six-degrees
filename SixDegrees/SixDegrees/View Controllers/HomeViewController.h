@@ -8,6 +8,12 @@
 
 #import "SDViewController.h"
 
+@protocol HomeViewControllerDelegate <NSObject>
+- (void)didSwipeRightToContinue;
+@end
+
 @interface HomeViewController : SDViewController
+
+@property (weak, nonatomic) id <HomeViewControllerDelegate> delegate;
 
 @end

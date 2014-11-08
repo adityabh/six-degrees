@@ -22,7 +22,6 @@
 		B08F362719F2D6E000FC5A90 /* BlindsidedStoryboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F362619F2D6E000FC5A90 /* BlindsidedStoryboard.m */; };
 		B08F362A19F2DD7C00FC5A90 /* SDModule.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F362919F2DD7C00FC5A90 /* SDModule.m */; };
 		B08F362E19F2DE5C00FC5A90 /* SDApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F362D19F2DE5C00FC5A90 /* SDApiManager.m */; };
-		B08F363419F2E20900FC5A90 /* SDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F363319F2E20900FC5A90 /* SDNavigationController.m */; };
 		B08F363819F2E2E900FC5A90 /* SDSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F363719F2E2E900FC5A90 /* SDSessionManager.m */; };
 		B08F363E19F3367F00FC5A90 /* SDEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F363D19F3367F00FC5A90 /* SDEndpoints.m */; };
 		B08F364519F33BCC00FC5A90 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F364419F33BCC00FC5A90 /* UserManager.m */; };
@@ -31,6 +30,15 @@
 		B08F365019F4932500FC5A90 /* ApiError.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F364F19F4932500FC5A90 /* ApiError.m */; };
 		B08F365419F4A44700FC5A90 /* SDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F365319F4A44700FC5A90 /* SDModel.m */; };
 		B08F365819F4A4C800FC5A90 /* FacebookAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = B08F365719F4A4C800FC5A90 /* FacebookAccount.m */; };
+		B08FA0341A049943005D0CE2 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B08FA0331A049943005D0CE2 /* SignInViewController.m */; };
+		B08FA0391A052B55005D0CE2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08FA0381A052B55005D0CE2 /* SignUpViewController.swift */; };
+		B08FA03D1A052ED0005D0CE2 /* ViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B08FA03C1A052ED0005D0CE2 /* ViewControllerFactory.m */; };
+		B08FA0411A052FF0005D0CE2 /* SDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B08FA0401A052FF0005D0CE2 /* SDNavigationController.m */; };
+		B08FA0441A0530E6005D0CE2 /* DreamNavigationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B08FA0431A0530E6005D0CE2 /* DreamNavigationRouter.m */; };
+		B08FA0471A0530FF005D0CE2 /* MainNavigationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B08FA0461A0530FF005D0CE2 /* MainNavigationRouter.m */; };
+		B08FA04A1A053117005D0CE2 /* AuthNavigationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B08FA0491A053117005D0CE2 /* AuthNavigationRouter.m */; };
+		B08FA0531A053B5E005D0CE2 /* DreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B08FA0521A053B5E005D0CE2 /* DreamViewController.m */; };
+		B08FA0551A053B75005D0CE2 /* Dream.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B08FA0541A053B75005D0CE2 /* Dream.storyboard */; };
 		F1F336645A361581DDD409F6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE94702CF9A4BA6E336EFDB1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -73,8 +81,6 @@
 		B08F362919F2DD7C00FC5A90 /* SDModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDModule.m; sourceTree = "<group>"; };
 		B08F362C19F2DE5C00FC5A90 /* SDApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDApiManager.h; path = Managers/SDApiManager.h; sourceTree = "<group>"; };
 		B08F362D19F2DE5C00FC5A90 /* SDApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDApiManager.m; path = Managers/SDApiManager.m; sourceTree = "<group>"; };
-		B08F363219F2E20900FC5A90 /* SDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDNavigationController.h; path = "View Controllers/SDNavigationController.h"; sourceTree = "<group>"; };
-		B08F363319F2E20900FC5A90 /* SDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDNavigationController.m; path = "View Controllers/SDNavigationController.m"; sourceTree = "<group>"; };
 		B08F363619F2E2E900FC5A90 /* SDSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDSessionManager.h; path = Networking/SDSessionManager.h; sourceTree = "<group>"; };
 		B08F363719F2E2E900FC5A90 /* SDSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDSessionManager.m; path = Networking/SDSessionManager.m; sourceTree = "<group>"; };
 		B08F363C19F3367F00FC5A90 /* SDEndpoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDEndpoints.h; path = Networking/SDEndpoints.h; sourceTree = "<group>"; };
@@ -93,6 +99,23 @@
 		B08F365519F4A46500FC5A90 /* SDLocalizableStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLocalizableStrings.h; path = Definitions/SDLocalizableStrings.h; sourceTree = "<group>"; };
 		B08F365619F4A4C800FC5A90 /* FacebookAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookAccount.h; path = Models/FacebookAccount.h; sourceTree = "<group>"; };
 		B08F365719F4A4C800FC5A90 /* FacebookAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookAccount.m; path = Models/FacebookAccount.m; sourceTree = "<group>"; };
+		B08FA0321A049943005D0CE2 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInViewController.h; path = "View Controllers/SignInViewController.h"; sourceTree = "<group>"; };
+		B08FA0331A049943005D0CE2 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInViewController.m; path = "View Controllers/SignInViewController.m"; sourceTree = "<group>"; };
+		B08FA0351A0527F3005D0CE2 /* SixDegrees-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SixDegrees-Bridging-Header.h"; sourceTree = "<group>"; };
+		B08FA0381A052B55005D0CE2 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = "View Controllers/SignUpViewController.swift"; sourceTree = "<group>"; };
+		B08FA03B1A052ED0005D0CE2 /* ViewControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerFactory.h; path = "View Controllers/Factories/ViewControllerFactory.h"; sourceTree = "<group>"; };
+		B08FA03C1A052ED0005D0CE2 /* ViewControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerFactory.m; path = "View Controllers/Factories/ViewControllerFactory.m"; sourceTree = "<group>"; };
+		B08FA03F1A052FF0005D0CE2 /* SDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDNavigationController.h; path = "View Controllers/Navigation/SDNavigationController.h"; sourceTree = "<group>"; };
+		B08FA0401A052FF0005D0CE2 /* SDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDNavigationController.m; path = "View Controllers/Navigation/SDNavigationController.m"; sourceTree = "<group>"; };
+		B08FA0421A0530E6005D0CE2 /* DreamNavigationRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DreamNavigationRouter.h; path = "View Controllers/Navigation/DreamNavigationRouter.h"; sourceTree = "<group>"; };
+		B08FA0431A0530E6005D0CE2 /* DreamNavigationRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DreamNavigationRouter.m; path = "View Controllers/Navigation/DreamNavigationRouter.m"; sourceTree = "<group>"; };
+		B08FA0451A0530FF005D0CE2 /* MainNavigationRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainNavigationRouter.h; path = "View Controllers/Navigation/MainNavigationRouter.h"; sourceTree = "<group>"; };
+		B08FA0461A0530FF005D0CE2 /* MainNavigationRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainNavigationRouter.m; path = "View Controllers/Navigation/MainNavigationRouter.m"; sourceTree = "<group>"; };
+		B08FA0481A053117005D0CE2 /* AuthNavigationRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthNavigationRouter.h; path = "View Controllers/Navigation/AuthNavigationRouter.h"; sourceTree = "<group>"; };
+		B08FA0491A053117005D0CE2 /* AuthNavigationRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthNavigationRouter.m; path = "View Controllers/Navigation/AuthNavigationRouter.m"; sourceTree = "<group>"; };
+		B08FA0511A053B5E005D0CE2 /* DreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DreamViewController.h; path = "View Controllers/Dream/DreamViewController.h"; sourceTree = "<group>"; };
+		B08FA0521A053B5E005D0CE2 /* DreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DreamViewController.m; path = "View Controllers/Dream/DreamViewController.m"; sourceTree = "<group>"; };
+		B08FA0541A053B75005D0CE2 /* Dream.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dream.storyboard; path = Storyboards/Dream.storyboard; sourceTree = "<group>"; };
 		C74146666EBDF45F65BC7389 /* Pods-SixDegreesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixDegreesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SixDegreesTests/Pods-SixDegreesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE94702CF9A4BA6E336EFDB1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B7EE94FCD158A1EE106D42 /* Pods-SixDegreesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixDegreesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SixDegreesTests/Pods-SixDegreesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +177,7 @@
 		B055B1D819F20DD300AE17A5 /* SixDegrees */ = {
 			isa = PBXGroup;
 			children = (
+				B08FA04E1A053A4A005D0CE2 /* Storyboards */,
 				B055B1DD19F20DD300AE17A5 /* AppDelegate.h */,
 				B055B1DE19F20DD300AE17A5 /* AppDelegate.m */,
 				B08F363F19F339B700FC5A90 /* Definitions */,
@@ -167,6 +191,7 @@
 				B08F363519F2E28200FC5A90 /* Networking */,
 				B08F362819F2DD7C00FC5A90 /* SDModule.h */,
 				B08F362919F2DD7C00FC5A90 /* SDModule.m */,
+				B08FA0351A0527F3005D0CE2 /* SixDegrees-Bridging-Header.h */,
 				B08F362219F2D55E00FC5A90 /* SixDegrees-Prefix.pch */,
 				B055B1E019F20DD300AE17A5 /* SixDegrees.xcdatamodeld */,
 				B055B1D919F20DD300AE17A5 /* Supporting Files */,
@@ -215,12 +240,17 @@
 		B08F361319F2D2BD00FC5A90 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B08FA0501A053B32005D0CE2 /* Authentication */,
+				B08FA04F1A053B2D005D0CE2 /* Dream */,
+				B08FA03E1A052FC1005D0CE2 /* Navigation */,
+				B08FA03A1A052E8D005D0CE2 /* Factories */,
 				B08F361E19F2D3B200FC5A90 /* HomeViewController.h */,
 				B08F361F19F2D3B200FC5A90 /* HomeViewController.m */,
-				B08F363219F2E20900FC5A90 /* SDNavigationController.h */,
-				B08F363319F2E20900FC5A90 /* SDNavigationController.m */,
 				B08F361519F2D35C00FC5A90 /* SDViewController.h */,
 				B08F361619F2D35C00FC5A90 /* SDViewController.m */,
+				B08FA0321A049943005D0CE2 /* SignInViewController.h */,
+				B08FA0331A049943005D0CE2 /* SignInViewController.m */,
+				B08FA0381A052B55005D0CE2 /* SignUpViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -287,6 +317,54 @@
 				B08F365519F4A46500FC5A90 /* SDLocalizableStrings.h */,
 			);
 			name = Definitions;
+			sourceTree = "<group>";
+		};
+		B08FA03A1A052E8D005D0CE2 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				B08FA03B1A052ED0005D0CE2 /* ViewControllerFactory.h */,
+				B08FA03C1A052ED0005D0CE2 /* ViewControllerFactory.m */,
+			);
+			name = Factories;
+			sourceTree = "<group>";
+		};
+		B08FA03E1A052FC1005D0CE2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B08FA0481A053117005D0CE2 /* AuthNavigationRouter.h */,
+				B08FA0491A053117005D0CE2 /* AuthNavigationRouter.m */,
+				B08FA0421A0530E6005D0CE2 /* DreamNavigationRouter.h */,
+				B08FA0431A0530E6005D0CE2 /* DreamNavigationRouter.m */,
+				B08FA0451A0530FF005D0CE2 /* MainNavigationRouter.h */,
+				B08FA0461A0530FF005D0CE2 /* MainNavigationRouter.m */,
+				B08FA03F1A052FF0005D0CE2 /* SDNavigationController.h */,
+				B08FA0401A052FF0005D0CE2 /* SDNavigationController.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		B08FA04E1A053A4A005D0CE2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B08FA0541A053B75005D0CE2 /* Dream.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		B08FA04F1A053B2D005D0CE2 /* Dream */ = {
+			isa = PBXGroup;
+			children = (
+				B08FA0511A053B5E005D0CE2 /* DreamViewController.h */,
+				B08FA0521A053B5E005D0CE2 /* DreamViewController.m */,
+			);
+			name = Dream;
+			sourceTree = "<group>";
+		};
+		B08FA0501A053B32005D0CE2 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 		C5BD120331227A9AFC56B147 /* Pods */ = {
@@ -384,6 +462,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B08FA0551A053B75005D0CE2 /* Dream.storyboard in Resources */,
 				B055B1EB19F20DD300AE17A5 /* Main.storyboard in Resources */,
 				B055B1F019F20DD300AE17A5 /* LaunchScreen.xib in Resources */,
 				B055B1ED19F20DD300AE17A5 /* Images.xcassets in Resources */,
@@ -467,21 +546,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B08FA0411A052FF0005D0CE2 /* SDNavigationController.m in Sources */,
+				B08FA0341A049943005D0CE2 /* SignInViewController.m in Sources */,
+				B08FA0531A053B5E005D0CE2 /* DreamViewController.m in Sources */,
 				B08F361C19F2D38600FC5A90 /* DetailViewController.m in Sources */,
 				B08F361719F2D35C00FC5A90 /* SDViewController.m in Sources */,
+				B08FA04A1A053117005D0CE2 /* AuthNavigationRouter.m in Sources */,
 				B08F362A19F2DD7C00FC5A90 /* SDModule.m in Sources */,
 				B055B1E219F20DD300AE17A5 /* SixDegrees.xcdatamodeld in Sources */,
+				B08FA0471A0530FF005D0CE2 /* MainNavigationRouter.m in Sources */,
 				B08F365419F4A44700FC5A90 /* SDModel.m in Sources */,
 				B055B1DF19F20DD300AE17A5 /* AppDelegate.m in Sources */,
 				B08F362719F2D6E000FC5A90 /* BlindsidedStoryboard.m in Sources */,
-				B08F363419F2E20900FC5A90 /* SDNavigationController.m in Sources */,
 				B08F364819F33C8B00FC5A90 /* FacebookManager.m in Sources */,
+				B08FA0441A0530E6005D0CE2 /* DreamNavigationRouter.m in Sources */,
 				B08F361D19F2D38600FC5A90 /* MasterViewController.m in Sources */,
 				B08F365019F4932500FC5A90 /* ApiError.m in Sources */,
 				B08F365819F4A4C800FC5A90 /* FacebookAccount.m in Sources */,
 				B08F364519F33BCC00FC5A90 /* UserManager.m in Sources */,
+				B08FA0391A052B55005D0CE2 /* SignUpViewController.swift in Sources */,
 				B08F363819F2E2E900FC5A90 /* SDSessionManager.m in Sources */,
 				B08F362E19F2DE5C00FC5A90 /* SDApiManager.m in Sources */,
+				B08FA03D1A052ED0005D0CE2 /* ViewControllerFactory.m in Sources */,
 				B08F363E19F3367F00FC5A90 /* SDEndpoints.m in Sources */,
 				B08F362019F2D3B200FC5A90 /* HomeViewController.m in Sources */,
 				B055B1DC19F20DD300AE17A5 /* main.m in Sources */,
@@ -607,6 +693,7 @@
 			baseConfigurationReference = EBE446E0CB8FEC8B9644D7EA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Steven/Documents/FacebookSDK,
@@ -620,6 +707,8 @@
 				INFOPLIST_FILE = SixDegrees/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SixDegrees/SixDegrees-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -628,6 +717,7 @@
 			baseConfigurationReference = FEBE669D50CA86159BD9CC06 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Steven/Documents/FacebookSDK,
@@ -638,6 +728,7 @@
 				INFOPLIST_FILE = SixDegrees/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SixDegrees/SixDegrees-Bridging-Header.h";
 			};
 			name = Release;
 		};
