@@ -16,4 +16,8 @@
                            success:(VoidBlock)success
                            failure:(ErrorBlock)failure;
 
+- (void)fetchDreams:(NSString *)dreams
+            success:(VoidBlock)success
+            failure:(ErrorBlock)failure;
+
 @end

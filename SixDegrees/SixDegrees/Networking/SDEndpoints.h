@@ -11,5 +11,6 @@
 @interface SDEndpoints : NSObject
 
 + (NSString *)authWithFacebook;
++ (NSString *)fetchDreams;
 
 @end
