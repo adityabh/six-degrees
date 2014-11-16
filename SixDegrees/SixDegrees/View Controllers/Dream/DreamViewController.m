@@ -14,8 +14,9 @@
 @property (weak, nonatomic) IBOutlet FBProfilePictureView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dreamLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *typeIcon;
 @property (strong, nonatomic) NSArray *dreams;
-@property (assign) int currentDream;
+@property (assign) int currentDreamIndex;
 
 @property (strong, nonatomic) SDApiManager *apiManager;
 
@@ -40,32 +41,42 @@
     [self.apiManager fetchDreams:@"Dream"
                         success:^(NSArray *responseObject){
                             self.dreams = responseObject;
-                            self.currentDream = 0;
-                            [self updateDream:self.dreams[self.currentDream]];
-                            NSLog(@"JSON: %@", responseObject);
+                            self.currentDreamIndex = 0;
+                            [self updateDreamLabels:self.dreams[self.currentDreamIndex]];
+                            [self updateTypeIcon:self.dreams[self.currentDreamIndex][@"content"][@"dream_type"]];
+                            NSLog(@"Response: %@", responseObject);
                         } failure:^(NSError *error) {
                             [self showAlertViewWithTitle:@"Failure!" message:error.description];
                         }];
 }
 
-- (void)updateDream:(NSDictionary *)dream {
+- (void)updateDreamLabels:(NSDictionary *)dream {
     self.nameLabel.text = dream[@"user"][@"name"];
     self.dreamLabel.text = dream[@"content"][@"description"];
     self.profileImageView.profileID = dream[@"user"][@"uid"];
-    
 }
 
 - (IBAction)nextDream:(id)sender {
     [self incrementCurrentDream];
-    [self updateDream:self.dreams[self.currentDream]];
+    NSDictionary *currentDream = self.dreams[self.currentDreamIndex];
+    [self updateDreamLabels:currentDream];
+    [self updateTypeIcon:currentDream[@"content"][@"dream_type"]];
 }
 
 - (void)incrementCurrentDream {
     int numDreams = [self.dreams count] - 1;
-    if (self.currentDream == numDreams) {
-        self.currentDream = 0;
+    if (self.currentDreamIndex == numDreams) {
+        self.currentDreamIndex = 0;
     } else {
-        self.currentDream += 1;
+        self.currentDreamIndex += 1;
+    }
+}
+
+- (void)updateTypeIcon:(NSString *)dreamType {
+    if ([dreamType isEqual: @"Professional"]) {
+        self.typeIcon.image = [UIImage imageNamed:@"briefcase"];
+    } else {
+        self.typeIcon.image = [UIImage imageNamed:@"heart"];
     }
 }
 

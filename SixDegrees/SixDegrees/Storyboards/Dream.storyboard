@@ -43,6 +43,9 @@
                                     <action selector="nextDream:" destination="vog-tP-scc" eventType="touchUpInside" id="gbP-WS-Fzj"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UEN-RX-bnh">
+                                <rect key="frame" x="280" y="250" width="40" height="40"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -50,6 +53,7 @@
                             <constraint firstAttribute="centerX" secondItem="bJR-o2-VkA" secondAttribute="centerX" constant="-0.5" id="6H1-2e-t6d"/>
                             <constraint firstItem="RFD-dW-6hS" firstAttribute="leading" secondItem="e3W-Am-XAP" secondAttribute="leadingMargin" constant="15" id="C5C-S0-rQb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pfH-gE-R0i" secondAttribute="trailing" constant="15" id="CcO-9R-pTc"/>
+                            <constraint firstItem="UEN-RX-bnh" firstAttribute="top" secondItem="RFD-dW-6hS" secondAttribute="bottom" constant="25.5" id="EVo-5C-r5x"/>
                             <constraint firstItem="RFD-dW-6hS" firstAttribute="top" secondItem="pfH-gE-R0i" secondAttribute="bottom" constant="5" id="Fic-Iz-cjz"/>
                             <constraint firstAttribute="centerX" secondItem="bJR-o2-VkA" secondAttribute="centerX" constant="181.5" id="G07-fm-VPq"/>
                             <constraint firstItem="pfH-gE-R0i" firstAttribute="top" secondItem="vhL-TW-bMf" secondAttribute="bottom" constant="15" id="GP7-zb-uAv"/>
@@ -61,6 +65,7 @@
                             <constraint firstAttribute="centerX" secondItem="RFD-dW-6hS" secondAttribute="centerX" id="dHH-aJ-gLx"/>
                             <constraint firstAttribute="centerX" secondItem="fP5-w3-2n4" secondAttribute="centerX" constant="7" id="j4Y-xW-9D4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RFD-dW-6hS" secondAttribute="trailing" constant="15" id="v72-38-OmU"/>
+                            <constraint firstAttribute="centerX" secondItem="UEN-RX-bnh" secondAttribute="centerX" id="zdt-ho-AQd"/>
                             <constraint firstItem="RFD-dW-6hS" firstAttribute="top" secondItem="pfH-gE-R0i" secondAttribute="bottom" constant="8.5" id="zs7-k7-1aj"/>
                         </constraints>
                         <variation key="default">
@@ -80,6 +85,7 @@
                         <outlet property="dreamLabel" destination="RFD-dW-6hS" id="S2m-be-8IC"/>
                         <outlet property="nameLabel" destination="pfH-gE-R0i" id="2zD-dN-QXo"/>
                         <outlet property="profileImageView" destination="bJR-o2-VkA" id="HH3-2D-aVk"/>
+                        <outlet property="typeIcon" destination="UEN-RX-bnh" id="TvZ-GV-USM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFD-GJ-pgq" userLabel="First Responder" sceneMemberID="firstResponder"/>
