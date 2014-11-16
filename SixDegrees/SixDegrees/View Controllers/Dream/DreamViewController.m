@@ -11,9 +11,10 @@
 
 @interface DreamViewController ()
 
+@property (weak, nonatomic) IBOutlet FBProfilePictureView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *personalDreamLabel;
-@property (weak, nonatomic) IBOutlet UILabel *careerDreamLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dreamLabel;
+
 @property (strong, nonatomic) SDApiManager *apiManager;
 
 @end
@@ -42,6 +43,14 @@
                             [self showAlertViewWithTitle:@"Failure!" message:error.description];
                         }];
 }
+
+- (void)updateDream:(NSDictionary *)dream {
+    self.nameLabel.text = dream[@"user"][@"name"];
+    self.dreamLabel.text = dream[@"content"][@"description"];
+    self.profileImageView.profileID = dream[@"user"][@"uid"];
+    
+}
+
 - (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message {
     [[[UIAlertView alloc] initWithTitle:title
                                 message:message
