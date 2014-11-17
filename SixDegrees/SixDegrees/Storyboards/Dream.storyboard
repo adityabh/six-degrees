@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,24 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfH-gE-R0i">
-                                <rect key="frame" x="31" y="175" width="538" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dream" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFD-dW-6hS">
+                                <rect key="frame" x="73" y="250" width="455" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Dream" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFD-dW-6hS">
-                                <rect key="frame" x="31" y="204" width="538" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bJR-o2-VkA" customClass="FBProfilePictureView">
-                                <rect key="frame" x="243" y="48" width="115" height="115"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fP5-w3-2n4">
-                                <rect key="frame" x="284" y="509" width="32" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fP5-w3-2n4">
+                                <rect key="frame" x="284" y="361" width="32" height="30"/>
                                 <state key="normal" title="Next">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -43,43 +32,44 @@
                                     <action selector="nextDream:" destination="vog-tP-scc" eventType="touchUpInside" id="gbP-WS-Fzj"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UEN-RX-bnh">
-                                <rect key="frame" x="280" y="250" width="40" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUu-Cm-wSY" userLabel="User Profile Holder">
+                                <rect key="frame" x="16" y="20" width="568" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfH-gE-R0i">
+                                        <rect key="frame" x="120" y="20" width="428" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJR-o2-VkA" customClass="FBProfilePictureView">
+                                        <rect key="frame" x="20" y="20" width="80" height="80"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="CiB-FF-bm8"/>
+                                            <constraint firstAttribute="height" constant="80" id="Tob-QN-PqK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="pfH-gE-R0i" secondAttribute="trailing" constant="20" id="4Ib-45-T1a"/>
+                                    <constraint firstAttribute="height" constant="200" id="HSk-rk-8qm"/>
+                                    <constraint firstItem="pfH-gE-R0i" firstAttribute="top" secondItem="hUu-Cm-wSY" secondAttribute="top" constant="20" id="Uyo-rz-if8"/>
+                                    <constraint firstItem="bJR-o2-VkA" firstAttribute="top" secondItem="hUu-Cm-wSY" secondAttribute="top" constant="20" id="sAw-QM-uZg"/>
+                                    <constraint firstItem="pfH-gE-R0i" firstAttribute="leading" secondItem="bJR-o2-VkA" secondAttribute="trailing" constant="20" id="vQ9-gc-Ydj"/>
+                                    <constraint firstItem="bJR-o2-VkA" firstAttribute="leading" secondItem="hUu-Cm-wSY" secondAttribute="leading" constant="20" id="zvG-WK-mwI"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UEN-RX-bnh" userLabel="Type Icon">
+                                <rect key="frame" x="275" y="298" width="50" height="50"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="U9r-sU-WSq" firstAttribute="centerY" secondItem="fP5-w3-2n4" secondAttribute="bottom" constant="60" id="3fB-gq-N0U"/>
-                            <constraint firstAttribute="centerX" secondItem="bJR-o2-VkA" secondAttribute="centerX" constant="-0.5" id="6H1-2e-t6d"/>
-                            <constraint firstItem="RFD-dW-6hS" firstAttribute="leading" secondItem="e3W-Am-XAP" secondAttribute="leadingMargin" constant="15" id="C5C-S0-rQb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pfH-gE-R0i" secondAttribute="trailing" constant="15" id="CcO-9R-pTc"/>
-                            <constraint firstItem="UEN-RX-bnh" firstAttribute="top" secondItem="RFD-dW-6hS" secondAttribute="bottom" constant="25.5" id="EVo-5C-r5x"/>
-                            <constraint firstItem="RFD-dW-6hS" firstAttribute="top" secondItem="pfH-gE-R0i" secondAttribute="bottom" constant="5" id="Fic-Iz-cjz"/>
-                            <constraint firstAttribute="centerX" secondItem="bJR-o2-VkA" secondAttribute="centerX" constant="181.5" id="G07-fm-VPq"/>
-                            <constraint firstItem="pfH-gE-R0i" firstAttribute="top" secondItem="vhL-TW-bMf" secondAttribute="bottom" constant="15" id="GP7-zb-uAv"/>
-                            <constraint firstItem="bJR-o2-VkA" firstAttribute="top" secondItem="vhL-TW-bMf" secondAttribute="bottom" constant="28" id="HO3-bq-r0e"/>
-                            <constraint firstItem="pfH-gE-R0i" firstAttribute="top" secondItem="bJR-o2-VkA" secondAttribute="bottom" constant="12" id="P3N-hE-XMp"/>
-                            <constraint firstAttribute="centerX" secondItem="pfH-gE-R0i" secondAttribute="centerX" id="VVE-oC-BWS"/>
-                            <constraint firstItem="pfH-gE-R0i" firstAttribute="leading" secondItem="e3W-Am-XAP" secondAttribute="leadingMargin" constant="15" id="Vqa-Mi-B8Q"/>
-                            <constraint firstItem="U9r-sU-WSq" firstAttribute="top" secondItem="fP5-w3-2n4" secondAttribute="bottom" constant="61" id="aL2-pt-RlK"/>
-                            <constraint firstAttribute="centerX" secondItem="RFD-dW-6hS" secondAttribute="centerX" id="dHH-aJ-gLx"/>
-                            <constraint firstAttribute="centerX" secondItem="fP5-w3-2n4" secondAttribute="centerX" constant="7" id="j4Y-xW-9D4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RFD-dW-6hS" secondAttribute="trailing" constant="15" id="v72-38-OmU"/>
-                            <constraint firstAttribute="centerX" secondItem="UEN-RX-bnh" secondAttribute="centerX" id="zdt-ho-AQd"/>
-                            <constraint firstItem="RFD-dW-6hS" firstAttribute="top" secondItem="pfH-gE-R0i" secondAttribute="bottom" constant="8.5" id="zs7-k7-1aj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hUu-Cm-wSY" secondAttribute="trailing" id="4gk-P1-rtk"/>
+                            <constraint firstItem="hUu-Cm-wSY" firstAttribute="top" secondItem="vhL-TW-bMf" secondAttribute="bottom" id="QaD-to-o8J"/>
+                            <constraint firstItem="hUu-Cm-wSY" firstAttribute="leading" secondItem="e3W-Am-XAP" secondAttribute="leadingMargin" id="SVe-nF-jXu"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="CcO-9R-pTc"/>
-                                <exclude reference="GP7-zb-uAv"/>
-                                <exclude reference="Vqa-Mi-B8Q"/>
-                                <exclude reference="C5C-S0-rQb"/>
-                                <exclude reference="Fic-Iz-cjz"/>
-                                <exclude reference="v72-38-OmU"/>
-                                <exclude reference="G07-fm-VPq"/>
-                                <exclude reference="aL2-pt-RlK"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="dreamLabel" destination="RFD-dW-6hS" id="S2m-be-8IC"/>
