@@ -57,12 +57,10 @@
     }];
 }
 
-- (void)fetchDreams:(NSString *)dreams
-            success:(VoidBlock)success
-            failure:(ErrorBlock)failure
+- (void)fetchDreamsWithSuccess:(VoidBlock)success
+                       failure:(ErrorBlock)failure
 {
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [self.sessionManager GET:[SDEndpoints fetchDreams] parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+    [self.sessionManager GET:[SDEndpoints fetchDreams] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         if (success) {
             success(responseObject);
         }

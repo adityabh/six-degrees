@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26D48B2F1A1970D200CBCC67 /* DreamManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D48B2E1A1970D200CBCC67 /* DreamManager.m */; };
 		51199AAE1FA2CF61C0D137D9 /* libPods-SixDegreesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E97C896DD508A9CB441403C /* libPods-SixDegreesTests.a */; };
 		B055B1DC19F20DD300AE17A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B055B1DB19F20DD300AE17A5 /* main.m */; };
 		B055B1DF19F20DD300AE17A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B055B1DE19F20DD300AE17A5 /* AppDelegate.m */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26D48B2D1A1970D200CBCC67 /* DreamManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DreamManager.h; path = Managers/DreamManager.h; sourceTree = "<group>"; };
+		26D48B2E1A1970D200CBCC67 /* DreamManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DreamManager.m; path = Managers/DreamManager.m; sourceTree = "<group>"; };
 		7E97C896DD508A9CB441403C /* libPods-SixDegreesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SixDegreesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B055B1D619F20DD300AE17A5 /* SixDegrees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixDegrees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B055B1DA19F20DD300AE17A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -264,6 +267,8 @@
 				B08F362D19F2DE5C00FC5A90 /* SDApiManager.m */,
 				B08F364319F33BCC00FC5A90 /* UserManager.h */,
 				B08F364419F33BCC00FC5A90 /* UserManager.m */,
+				26D48B2D1A1970D200CBCC67 /* DreamManager.h */,
+				26D48B2E1A1970D200CBCC67 /* DreamManager.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -549,6 +554,7 @@
 				B08FA0411A052FF0005D0CE2 /* SDNavigationController.m in Sources */,
 				B08FA0341A049943005D0CE2 /* SignInViewController.m in Sources */,
 				B08FA0531A053B5E005D0CE2 /* DreamViewController.m in Sources */,
+				26D48B2F1A1970D200CBCC67 /* DreamManager.m in Sources */,
 				B08F361C19F2D38600FC5A90 /* DetailViewController.m in Sources */,
 				B08F361719F2D35C00FC5A90 /* SDViewController.m in Sources */,
 				B08FA04A1A053117005D0CE2 /* AuthNavigationRouter.m in Sources */,

@@ -16,6 +16,7 @@
 #import "SDApiManager.h"
 #import "UserManager.h"
 #import "FacebookManager.h"
+#import "DreamManager.h"
 
 @implementation SDModule
 
@@ -32,6 +33,7 @@
     [binder bind:[SDApiManager class] withScope:[BSSingleton scope]];
     [binder bind:[UserManager class] withScope:[BSSingleton scope]];
     [binder bind:[FacebookManager class] withScope:[BSSingleton scope]];
+    [binder bind:[DreamManager class] withScope:[BSSingleton scope]];
 }
 
 @end

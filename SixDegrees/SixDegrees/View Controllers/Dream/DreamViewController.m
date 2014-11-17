@@ -8,6 +8,7 @@
 
 #import "DreamViewController.h"
 #import "SDApiManager.h"
+#import "DreamManager.h"
 
 @interface DreamViewController ()
 
@@ -19,57 +20,36 @@
 @property (assign) int currentDreamIndex;
 
 @property (strong, nonatomic) SDApiManager *apiManager;
+@property (strong, nonatomic) DreamManager *dreamManager;
 
 @end
 
 @implementation DreamViewController
 
 + (BSPropertySet *)bsProperties {
-    BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"apiManager", nil];
+    BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"apiManager", @"dreamManager", nil];
     [propertySet bindProperty:@"apiManager" toKey:[SDApiManager class]];
+    [propertySet bindProperty:@"dreamManager" toKey:[DreamManager class]];
     return propertySet;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self fetchDreams];
-}
-
-#pragma mark - IBAction
-
-- (void)fetchDreams {
-    [self.apiManager fetchDreams:@"Dream"
-                        success:^(NSArray *responseObject){
-                            self.dreams = responseObject;
-                            self.currentDreamIndex = 0;
-                            [self updateDreamLabels:self.dreams[self.currentDreamIndex]];
-                            [self updateTypeIcon:self.dreams[self.currentDreamIndex][@"content"][@"dream_type"]];
-                            NSLog(@"Response: %@", responseObject);
-                        } failure:^(NSError *error) {
-                            [self showAlertViewWithTitle:@"Failure!" message:error.description];
-                        }];
+    [self.dreamManager fetchDreamsWithSuccess:^{
+        NSDictionary *dream = self.dreamManager.dreams[0];
+        [self updateDream:dream];
+    } failure:^(NSError *error) {
+        [self showAlertViewWithTitle:@"Oops!" message:error.description];
+    }];
+    
+    NSDictionary *dream = self.dreamManager.dreams[0];
+    [self updateDream:dream];
 }
 
 - (void)updateDreamLabels:(NSDictionary *)dream {
     self.nameLabel.text = dream[@"user"][@"name"];
     self.dreamLabel.text = dream[@"content"][@"description"];
     self.profileImageView.profileID = dream[@"user"][@"uid"];
-}
-
-- (IBAction)nextDream:(id)sender {
-    [self incrementCurrentDream];
-    NSDictionary *currentDream = self.dreams[self.currentDreamIndex];
-    [self updateDreamLabels:currentDream];
-    [self updateTypeIcon:currentDream[@"content"][@"dream_type"]];
-}
-
-- (void)incrementCurrentDream {
-    int numDreams = [self.dreams count] - 1;
-    if (self.currentDreamIndex == numDreams) {
-        self.currentDreamIndex = 0;
-    } else {
-        self.currentDreamIndex += 1;
-    }
 }
 
 - (void)updateTypeIcon:(NSString *)dreamType {
@@ -86,6 +66,18 @@
                                delegate:nil
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
+}
+
+- (void)updateDream:(NSDictionary *)dream {
+    [self updateDreamLabels:dream];
+    [self updateTypeIcon:dream[@"content"][@"dream_type"]];
+}
+
+#pragma mark - IBAction
+
+- (IBAction)nextDream:(id)sender {
+    NSDictionary *dream = [self.dreamManager nextDream];
+    [self updateDream:dream];
 }
 
 @end
