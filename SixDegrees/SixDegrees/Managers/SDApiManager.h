@@ -16,4 +16,7 @@
                            success:(VoidBlock)success
                            failure:(ErrorBlock)failure;
 
+- (void)fetchDreamsWithSuccess:(VoidBlock)success
+            failure:(ErrorBlock)failure;
+
 @end

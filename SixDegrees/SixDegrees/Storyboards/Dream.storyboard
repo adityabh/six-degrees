@@ -17,42 +17,99 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfH-gE-R0i">
-                                <rect key="frame" x="31" y="35" width="538" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Dream" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFD-dW-6hS">
-                                <rect key="frame" x="31" y="61" width="538" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Career Dream" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1J-uQ-ayn">
-                                <rect key="frame" x="31" y="87" width="538" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUu-Cm-wSY" userLabel="User Profile Holder">
+                                <rect key="frame" x="16" y="20" width="568" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfH-gE-R0i">
+                                        <rect key="frame" x="120" y="20" width="428" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJR-o2-VkA" customClass="FBProfilePictureView">
+                                        <rect key="frame" x="20" y="20" width="80" height="80"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="CiB-FF-bm8"/>
+                                            <constraint firstAttribute="height" constant="80" id="Tob-QN-PqK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="pfH-gE-R0i" secondAttribute="trailing" constant="20" id="4Ib-45-T1a"/>
+                                    <constraint firstAttribute="height" constant="120" id="HSk-rk-8qm"/>
+                                    <constraint firstItem="pfH-gE-R0i" firstAttribute="top" secondItem="hUu-Cm-wSY" secondAttribute="top" constant="20" id="Uyo-rz-if8"/>
+                                    <constraint firstItem="bJR-o2-VkA" firstAttribute="top" secondItem="hUu-Cm-wSY" secondAttribute="top" constant="20" id="sAw-QM-uZg"/>
+                                    <constraint firstItem="pfH-gE-R0i" firstAttribute="leading" secondItem="bJR-o2-VkA" secondAttribute="trailing" constant="20" id="vQ9-gc-Ydj"/>
+                                    <constraint firstItem="bJR-o2-VkA" firstAttribute="leading" secondItem="hUu-Cm-wSY" secondAttribute="leading" constant="20" id="zvG-WK-mwI"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIK-xS-6k9" userLabel="Dream Holder">
+                                <rect key="frame" x="16" y="140" width="568" height="460"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UEN-RX-bnh" userLabel="Type Icon">
+                                        <rect key="frame" x="264" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Gl6-Ra-7q3"/>
+                                            <constraint firstAttribute="height" constant="40" id="S7E-5J-qJz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dream" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFD-dW-6hS">
+                                        <rect key="frame" x="20" y="60" width="528" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fP5-w3-2n4">
+                                        <rect key="frame" x="498" y="399" width="50" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextDream:" destination="vog-tP-scc" eventType="touchUpInside" id="gbP-WS-Fzj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fP5-w3-2n4" secondAttribute="trailing" constant="20" id="3sh-BN-CfV"/>
+                                    <constraint firstItem="RFD-dW-6hS" firstAttribute="top" secondItem="UEN-RX-bnh" secondAttribute="bottom" constant="20" id="9Sa-qD-rMg"/>
+                                    <constraint firstAttribute="trailing" secondItem="RFD-dW-6hS" secondAttribute="trailing" constant="20" id="BIi-ZS-rDy"/>
+                                    <constraint firstAttribute="bottom" secondItem="fP5-w3-2n4" secondAttribute="bottom" constant="20" id="MzY-gU-OpI"/>
+                                    <constraint firstAttribute="trailing" secondItem="UEN-RX-bnh" secondAttribute="trailing" constant="20" id="Vs9-cY-E6h"/>
+                                    <constraint firstAttribute="centerX" secondItem="UEN-RX-bnh" secondAttribute="centerX" id="ZJA-Uo-9yf"/>
+                                    <constraint firstItem="UEN-RX-bnh" firstAttribute="top" secondItem="aIK-xS-6k9" secondAttribute="top" constant="20" id="dbE-3z-00d"/>
+                                    <constraint firstItem="UEN-RX-bnh" firstAttribute="top" secondItem="aIK-xS-6k9" secondAttribute="top" id="g7P-eE-NxV"/>
+                                    <constraint firstItem="RFD-dW-6hS" firstAttribute="top" secondItem="aIK-xS-6k9" secondAttribute="top" constant="60" id="jz1-4X-vJl"/>
+                                    <constraint firstItem="RFD-dW-6hS" firstAttribute="leading" secondItem="aIK-xS-6k9" secondAttribute="leading" constant="20" id="ya4-dn-CdD"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jz1-4X-vJl"/>
+                                        <exclude reference="Vs9-cY-E6h"/>
+                                        <exclude reference="dbE-3z-00d"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RFD-dW-6hS" firstAttribute="leading" secondItem="e3W-Am-XAP" secondAttribute="leadingMargin" constant="15" id="C5C-S0-rQb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pfH-gE-R0i" secondAttribute="trailing" constant="15" id="CcO-9R-pTc"/>
-                            <constraint firstItem="RFD-dW-6hS" firstAttribute="top" secondItem="pfH-gE-R0i" secondAttribute="bottom" constant="5" id="Fic-Iz-cjz"/>
-                            <constraint firstItem="pfH-gE-R0i" firstAttribute="top" secondItem="vhL-TW-bMf" secondAttribute="bottom" constant="15" id="GP7-zb-uAv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="P1J-uQ-ayn" secondAttribute="trailing" constant="15" id="SOm-nI-aGB"/>
-                            <constraint firstItem="pfH-gE-R0i" firstAttribute="leading" secondItem="e3W-Am-XAP" secondAttribute="leadingMargin" constant="15" id="Vqa-Mi-B8Q"/>
-                            <constraint firstItem="P1J-uQ-ayn" firstAttribute="top" secondItem="RFD-dW-6hS" secondAttribute="bottom" constant="5" id="h2B-wA-jZM"/>
-                            <constraint firstItem="P1J-uQ-ayn" firstAttribute="leading" secondItem="e3W-Am-XAP" secondAttribute="leadingMargin" constant="15" id="qcg-GO-n7V"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RFD-dW-6hS" secondAttribute="trailing" constant="15" id="v72-38-OmU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hUu-Cm-wSY" secondAttribute="trailing" id="4gk-P1-rtk"/>
+                            <constraint firstItem="aIK-xS-6k9" firstAttribute="leading" secondItem="e3W-Am-XAP" secondAttribute="leadingMargin" id="7Sk-sB-1AB"/>
+                            <constraint firstItem="U9r-sU-WSq" firstAttribute="top" secondItem="aIK-xS-6k9" secondAttribute="bottom" id="DR6-A9-cq1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aIK-xS-6k9" secondAttribute="trailing" id="H9L-U0-aM9"/>
+                            <constraint firstItem="hUu-Cm-wSY" firstAttribute="top" secondItem="vhL-TW-bMf" secondAttribute="bottom" id="QaD-to-o8J"/>
+                            <constraint firstItem="hUu-Cm-wSY" firstAttribute="leading" secondItem="e3W-Am-XAP" secondAttribute="leadingMargin" id="SVe-nF-jXu"/>
+                            <constraint firstItem="aIK-xS-6k9" firstAttribute="top" secondItem="hUu-Cm-wSY" secondAttribute="bottom" id="VwS-1f-E10"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="careerDreamLabel" destination="P1J-uQ-ayn" id="zSD-ZI-wEc"/>
+                        <outlet property="dreamLabel" destination="RFD-dW-6hS" id="S2m-be-8IC"/>
                         <outlet property="nameLabel" destination="pfH-gE-R0i" id="2zD-dN-QXo"/>
-                        <outlet property="personalDreamLabel" destination="RFD-dW-6hS" id="464-81-dh2"/>
+                        <outlet property="profileImageView" destination="bJR-o2-VkA" id="HH3-2D-aVk"/>
+                        <outlet property="typeIcon" destination="UEN-RX-bnh" id="TvZ-GV-USM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFD-GJ-pgq" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -14,4 +14,8 @@
     return @"sign_in_via_facebook";
 }
 
++ (NSString *)fetchDreams {
+    return @"dreams";
+}
+
 @end

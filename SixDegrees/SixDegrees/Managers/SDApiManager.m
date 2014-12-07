@@ -57,4 +57,18 @@
     }];
 }
 
+- (void)fetchDreamsWithSuccess:(VoidBlock)success
+                       failure:(ErrorBlock)failure
+{
+    [self.sessionManager GET:[SDEndpoints fetchDreams] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (success) {
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
 @end
