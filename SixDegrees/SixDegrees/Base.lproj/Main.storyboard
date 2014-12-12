@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -181,7 +181,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="FJY-Wn-v3r">
             <objects>
-                <viewController id="kDN-V4-IWd" customClass="SignInViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="kDN-V4-IWd" customClass="SignInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wyT-BN-Pyz"/>
                         <viewControllerLayoutGuide type="bottom" id="Vlq-4f-2VP"/>
@@ -232,7 +232,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="nae-c8-Q84">
             <objects>
-                <viewController id="tA5-i9-nTY" customClass="SignUpViewController" customModule="SixDegrees" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" id="tA5-i9-nTY" customClass="SignUpViewController" customModule="SixDegrees" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3ai-Nh-VUd"/>
                         <viewControllerLayoutGuide type="bottom" id="uJf-9T-27b"/>

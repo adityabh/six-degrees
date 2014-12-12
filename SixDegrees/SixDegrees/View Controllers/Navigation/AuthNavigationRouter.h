@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class SDNavigationController;
+
 @interface AuthNavigationRouter : NSObject
+
+- (SDNavigationController *)defaultAuthNavStack;
 
 @end

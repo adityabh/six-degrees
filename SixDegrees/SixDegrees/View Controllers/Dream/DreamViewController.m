@@ -7,8 +7,10 @@
 //
 
 #import "DreamViewController.h"
+#import "SignInViewController.h"
 #import "SDApiManager.h"
 #import "DreamManager.h"
+#import "AuthNavigationRouter.h"
 
 @interface DreamViewController ()
 
@@ -21,15 +23,18 @@
 
 @property (strong, nonatomic) SDApiManager *apiManager;
 @property (strong, nonatomic) DreamManager *dreamManager;
+@property (strong, nonatomic) AuthNavigationRouter *authNavRouter;
+@property (strong, nonatomic) id<BSInjector> injector;
 
 @end
 
 @implementation DreamViewController
 
 + (BSPropertySet *)bsProperties {
-    BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"apiManager", @"dreamManager", nil];
+    BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"apiManager", @"dreamManager", @"authNavRouter", nil];
     [propertySet bindProperty:@"apiManager" toKey:[SDApiManager class]];
     [propertySet bindProperty:@"dreamManager" toKey:[DreamManager class]];
+    [propertySet bindProperty:@"authNavRouter" toKey:[AuthNavigationRouter class]];
     return propertySet;
 }
 
@@ -78,6 +83,18 @@
 - (IBAction)nextDream:(id)sender {
     NSDictionary *dream = [self.dreamManager nextDream];
     [self updateDream:dream];
+    [self showSignInViewController];
+}
+
+- (void)showSignInViewController {
+//    BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle] injector:self.injector];
+//    SignInViewController *signInVc = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([SignInViewController class])];
+////    [self.navigationController pushViewController:signInVc animated:YES]
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:signInVc];
+//    [self presentViewController:nav animated:YES completion:nil];
+    
+    UINavigationController *nav = [self.authNavRouter defaultAuthNavStack];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 @end

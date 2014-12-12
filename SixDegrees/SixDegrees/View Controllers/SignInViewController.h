@@ -8,6 +8,13 @@
 
 #import "SDViewController.h"
 
+@protocol SignInViewControllerDelegate <NSObject>
+- (void)didCancelSignIn;
+- (void)didSignIn;
+@end
+
 @interface SignInViewController : SDViewController
+
+@property (weak, nonatomic) id<SignInViewControllerDelegate> delegate;
 
 @end

@@ -54,6 +54,7 @@
                                           userEmail:self.facebookManager.facebookAccount.email
                                             success:^{
                                                 [self showAlertViewWithTitle:@"Success!" message:@"Authenticated against Six-Degrees API"];
+                                                [self.delegate didSignIn];
                                             } failure:^(NSError *error) {
                                                 [self showAlertViewWithTitle:@"Failure!" message:error.description];
                                             }];
@@ -61,6 +62,12 @@
         [self showAlertViewWithTitle:@"Oops!" message:apiError.userMessage];
     }];
 }
+
+//- (void)showCreateDreamForm {
+//    UIViewController *vc = [[UIViewController alloc] init];
+//    vc.title = @"create a dream";
+//    [self.navigationController pushViewController:vc animated:YES];
+//}
 
 - (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message {
     [[[UIAlertView alloc] initWithTitle:title

@@ -11,13 +11,15 @@
 @class HomeViewController;
 @class SignInViewController;
 @class DreamViewController;
+@protocol SignInViewControllerDelegate;
 @protocol HomeViewControllerDelegate;
 
 @interface ViewControllerFactory : NSObject
 
 - (HomeViewController *)buildHomeVcWithDelegate:(id <HomeViewControllerDelegate>)delegate
                                        injector:(id<BSInjector>)injector;
-- (SignInViewController *)buildSignInVcWithInjector:(id<BSInjector>)injector;
+- (SignInViewController *)buildSignInVcWithDelegate:(id<SignInViewControllerDelegate>)delegate
+                                           injector:(id<BSInjector>)injector;
 - (DreamViewController *)buildDreamVcWithInjector:(id<BSInjector>)injector;
 
 @end

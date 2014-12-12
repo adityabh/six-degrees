@@ -26,9 +26,11 @@
     return homeViewController;
 }
 
-- (SignInViewController *)buildSignInVcWithInjector:(id<BSInjector>)injector {
+- (SignInViewController *)buildSignInVcWithDelegate:(id<SignInViewControllerDelegate>)delegate
+                                           injector:(id<BSInjector>)injector {
     BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil injector:injector];
     SignInViewController *signInViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([SignInViewController class])];
+    signInViewController.delegate = delegate;
     return signInViewController;
 }
 

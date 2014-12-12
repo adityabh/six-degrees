@@ -5,7 +5,6 @@ source 'https://github.com/pivotal/cedar.git'
 
 platform :ios, '7.0'
 
-pod 'CocoaLumberjack'
 pod 'AFNetworking'
 pod 'Mantle'
 pod 'Blindside', :git => 'https://github.com/jbsf/blindside.git'

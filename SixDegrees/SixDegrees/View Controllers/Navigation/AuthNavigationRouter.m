@@ -12,7 +12,7 @@
 
 #import "SignInViewController.h"
 
-@interface AuthNavigationRouter ()
+@interface AuthNavigationRouter () <SignInViewControllerDelegate>
 
 @property (strong, nonatomic) id<BSInjector> injector;
 @property (strong, nonatomic) ViewControllerFactory *vcFactory;
@@ -40,10 +40,34 @@
 - (SDNavigationController *)defaultAuthNavStack {
 #warning If auth persisted, do something else here
     if (!self.authNavStack) {
-        SignInViewController *signInViewController = [self.vcFactory buildSignInVcWithInjector:self.injector];
+        SignInViewController *signInViewController = [self.vcFactory buildSignInVcWithDelegate:self
+                                                                                      injector:self.injector];
         self.authNavStack = [[SDNavigationController alloc] initWithRootViewController:signInViewController];
     }
     return self.authNavStack;
+}
+
+#pragma mark - SignInViewControllerDelegate
+
+- (void)didSignIn {
+//    BOOL userHasDream = [self.accountManager userHasDream];
+//    if (userHasDream) {
+//        [self.delegate completedAuthenticationFlow];
+//    } else {
+        [self showCreateDreamForm];
+//    }
+}
+
+- (void)didCancelSignIn {
+    
+}
+
+- (void)showCreateDreamForm {
+    // 1. create a create-dream-form vc using the factory
+    // 2. push onto the nav stack
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.title = @"create a dream";
+    [self.authNavStack pushViewController:vc animated:YES];
 }
 
 @end
