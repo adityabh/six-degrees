@@ -62,8 +62,6 @@
 #pragma mark - HomeViewControllerDelegate
 
 - (void)didSwipeRightToContinue {
-#warning Insert auth nav flow here when completed
-#warning Add fade
     self.window.rootViewController = [self.dreamRouter defaultNavStack];
 }
 

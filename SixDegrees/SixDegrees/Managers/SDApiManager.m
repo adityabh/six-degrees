@@ -10,6 +10,8 @@
 #import "SDSessionManager.h"
 #import "SDEndpoints.h"
 
+#import "UserDream.h"
+
 @interface SDApiManager ()
 
 @property (strong, nonatomic) SDSessionManager *sessionManager;
@@ -61,8 +63,13 @@
                        failure:(ErrorBlock)failure
 {
     [self.sessionManager GET:[SDEndpoints fetchDreams] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSMutableArray *dreams = [NSMutableArray array];
+        for (id item in responseObject) {
+            UserDream *userDream = [MTLJSONAdapter modelOfClass:UserDream.class fromJSONDictionary:item error:nil];
+            [dreams addObject:userDream];
+        }
         if (success) {
-            success(responseObject);
+            success(dreams);
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         if (failure) {

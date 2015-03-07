@@ -15,4 +15,5 @@
     #import "SDBlockDefinitions.h"
     #import "SDLocalizableStrings.h"
     #import "BlindsidedStoryboard.h"
+    #import "KSDeferred.h"
 #endif

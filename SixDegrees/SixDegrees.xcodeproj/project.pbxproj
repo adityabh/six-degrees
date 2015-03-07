@@ -40,6 +40,11 @@
 		B08FA04A1A053117005D0CE2 /* AuthNavigationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B08FA0491A053117005D0CE2 /* AuthNavigationRouter.m */; };
 		B08FA0531A053B5E005D0CE2 /* DreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B08FA0521A053B5E005D0CE2 /* DreamViewController.m */; };
 		B08FA0551A053B75005D0CE2 /* Dream.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B08FA0541A053B75005D0CE2 /* Dream.storyboard */; };
+		B09F76EE1A9967A500583077 /* DreamPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B09F76ED1A9967A500583077 /* DreamPanelView.xib */; };
+		B09F76F11A9967BD00583077 /* DreamPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76F01A9967BD00583077 /* DreamPanelView.m */; };
+		B09F76F41A9975E200583077 /* Dream.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76F31A9975E200583077 /* Dream.m */; };
+		B09F76F71A9975FC00583077 /* UserDream.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76F61A9975FC00583077 /* UserDream.m */; };
+		B09F76FA1A99760C00583077 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76F91A99760C00583077 /* User.m */; };
 		F1F336645A361581DDD409F6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE94702CF9A4BA6E336EFDB1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +124,15 @@
 		B08FA0511A053B5E005D0CE2 /* DreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DreamViewController.h; path = "View Controllers/Dream/DreamViewController.h"; sourceTree = "<group>"; };
 		B08FA0521A053B5E005D0CE2 /* DreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DreamViewController.m; path = "View Controllers/Dream/DreamViewController.m"; sourceTree = "<group>"; };
 		B08FA0541A053B75005D0CE2 /* Dream.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dream.storyboard; path = Storyboards/Dream.storyboard; sourceTree = "<group>"; };
+		B09F76ED1A9967A500583077 /* DreamPanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DreamPanelView.xib; path = Views/Dreams/DreamPanelView.xib; sourceTree = "<group>"; };
+		B09F76EF1A9967BD00583077 /* DreamPanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DreamPanelView.h; path = Views/Dreams/DreamPanelView.h; sourceTree = "<group>"; };
+		B09F76F01A9967BD00583077 /* DreamPanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DreamPanelView.m; path = Views/Dreams/DreamPanelView.m; sourceTree = "<group>"; };
+		B09F76F21A9975E200583077 /* Dream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dream.h; path = Models/Dream.h; sourceTree = "<group>"; };
+		B09F76F31A9975E200583077 /* Dream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dream.m; path = Models/Dream.m; sourceTree = "<group>"; };
+		B09F76F51A9975FC00583077 /* UserDream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDream.h; path = Models/UserDream.h; sourceTree = "<group>"; };
+		B09F76F61A9975FC00583077 /* UserDream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDream.m; path = Models/UserDream.m; sourceTree = "<group>"; };
+		B09F76F81A99760C00583077 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
+		B09F76F91A99760C00583077 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
 		C74146666EBDF45F65BC7389 /* Pods-SixDegreesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixDegreesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SixDegreesTests/Pods-SixDegreesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE94702CF9A4BA6E336EFDB1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B7EE94FCD158A1EE106D42 /* Pods-SixDegreesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixDegreesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SixDegreesTests/Pods-SixDegreesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,7 +194,6 @@
 		B055B1D819F20DD300AE17A5 /* SixDegrees */ = {
 			isa = PBXGroup;
 			children = (
-				B08FA04E1A053A4A005D0CE2 /* Storyboards */,
 				B055B1DD19F20DD300AE17A5 /* AppDelegate.h */,
 				B055B1DE19F20DD300AE17A5 /* AppDelegate.m */,
 				B08F363F19F339B700FC5A90 /* Definitions */,
@@ -197,8 +210,10 @@
 				B08FA0351A0527F3005D0CE2 /* SixDegrees-Bridging-Header.h */,
 				B08F362219F2D55E00FC5A90 /* SixDegrees-Prefix.pch */,
 				B055B1E019F20DD300AE17A5 /* SixDegrees.xcdatamodeld */,
+				B08FA04E1A053A4A005D0CE2 /* Storyboards */,
 				B055B1D919F20DD300AE17A5 /* Supporting Files */,
 				B08F361319F2D2BD00FC5A90 /* View Controllers */,
+				B09F76EB1A99671B00583077 /* Views */,
 			);
 			path = SixDegrees;
 			sourceTree = "<group>";
@@ -278,10 +293,16 @@
 			children = (
 				B08F364E19F4932500FC5A90 /* ApiError.h */,
 				B08F364F19F4932500FC5A90 /* ApiError.m */,
+				B09F76F21A9975E200583077 /* Dream.h */,
+				B09F76F31A9975E200583077 /* Dream.m */,
 				B08F365619F4A4C800FC5A90 /* FacebookAccount.h */,
 				B08F365719F4A4C800FC5A90 /* FacebookAccount.m */,
 				B08F365219F4A44700FC5A90 /* SDModel.h */,
 				B08F365319F4A44700FC5A90 /* SDModel.m */,
+				B09F76F81A99760C00583077 /* User.h */,
+				B09F76F91A99760C00583077 /* User.m */,
+				B09F76F51A9975FC00583077 /* UserDream.h */,
+				B09F76F61A9975FC00583077 /* UserDream.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -370,6 +391,24 @@
 			children = (
 			);
 			name = Authentication;
+			sourceTree = "<group>";
+		};
+		B09F76EB1A99671B00583077 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B09F76EC1A99672300583077 /* Dreams */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B09F76EC1A99672300583077 /* Dreams */ = {
+			isa = PBXGroup;
+			children = (
+				B09F76ED1A9967A500583077 /* DreamPanelView.xib */,
+				B09F76EF1A9967BD00583077 /* DreamPanelView.h */,
+				B09F76F01A9967BD00583077 /* DreamPanelView.m */,
+			);
+			name = Dreams;
 			sourceTree = "<group>";
 		};
 		C5BD120331227A9AFC56B147 /* Pods */ = {
@@ -471,6 +510,7 @@
 				B055B1EB19F20DD300AE17A5 /* Main.storyboard in Resources */,
 				B055B1F019F20DD300AE17A5 /* LaunchScreen.xib in Resources */,
 				B055B1ED19F20DD300AE17A5 /* Images.xcassets in Resources */,
+				B09F76EE1A9967A500583077 /* DreamPanelView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,17 +604,21 @@
 				B08F365419F4A44700FC5A90 /* SDModel.m in Sources */,
 				B055B1DF19F20DD300AE17A5 /* AppDelegate.m in Sources */,
 				B08F362719F2D6E000FC5A90 /* BlindsidedStoryboard.m in Sources */,
+				B09F76F11A9967BD00583077 /* DreamPanelView.m in Sources */,
 				B08F364819F33C8B00FC5A90 /* FacebookManager.m in Sources */,
 				B08FA0441A0530E6005D0CE2 /* DreamNavigationRouter.m in Sources */,
 				B08F361D19F2D38600FC5A90 /* MasterViewController.m in Sources */,
 				B08F365019F4932500FC5A90 /* ApiError.m in Sources */,
 				B08F365819F4A4C800FC5A90 /* FacebookAccount.m in Sources */,
 				B08F364519F33BCC00FC5A90 /* UserManager.m in Sources */,
+				B09F76FA1A99760C00583077 /* User.m in Sources */,
 				B08FA0391A052B55005D0CE2 /* SignUpViewController.swift in Sources */,
+				B09F76F71A9975FC00583077 /* UserDream.m in Sources */,
 				B08F363819F2E2E900FC5A90 /* SDSessionManager.m in Sources */,
 				B08F362E19F2DE5C00FC5A90 /* SDApiManager.m in Sources */,
 				B08FA03D1A052ED0005D0CE2 /* ViewControllerFactory.m in Sources */,
 				B08F363E19F3367F00FC5A90 /* SDEndpoints.m in Sources */,
+				B09F76F41A9975E200583077 /* Dream.m in Sources */,
 				B08F362019F2D3B200FC5A90 /* HomeViewController.m in Sources */,
 				B055B1DC19F20DD300AE17A5 /* main.m in Sources */,
 			);

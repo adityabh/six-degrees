@@ -10,8 +10,7 @@
 
 @interface DreamManager : NSObject
 
-- (void)fetchDreamsWithSuccess:(VoidBlock)success
-                       failure:(ErrorBlock)failure;
+- (KSPromise *)fetchDreamsPromise;
 - (NSDictionary *)nextDream;
 
 @property (strong, nonatomic, readonly) NSArray *dreams;
