@@ -21,4 +21,8 @@
              };
 }
 
+- (DreamType)dreamTypeEnum {
+    return [self.dreamType isEqualToString:@"Professional"];
+}
+
 @end

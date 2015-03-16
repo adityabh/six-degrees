@@ -10,7 +10,16 @@
 
 @interface SDEndpoints : NSObject
 
+#pragma mark - Authentication
+
 + (NSString *)authWithFacebook;
+
+#pragma mark - Dreams
+
 + (NSString *)fetchDreams;
++ (NSString *)createDream;
++ (NSString *)fetchDreamWithId:(NSString *)dreamId;
++ (NSString *)updateDreamWithId:(NSString *)dreamId;
++ (NSString *)deleteDreamWithId:(NSString *)dreamId;
 
 @end

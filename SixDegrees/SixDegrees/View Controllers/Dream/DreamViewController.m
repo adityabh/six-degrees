@@ -32,6 +32,8 @@
 
 @implementation DreamViewController
 
+#pragma mark - Blindside
+
 + (BSPropertySet *)bsProperties {
     BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"dreamManager", @"authNavRouter", nil];
     [propertySet bindProperty:@"dreamManager" toKey:[DreamManager class]];
@@ -39,8 +41,12 @@
     return propertySet;
 }
 
+#pragma mark - View Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self styleView];
+    
     [[self.dreamManager fetchDreamsPromise] then:^id(NSArray *dreams) {
         [self updateWithUserDream:dreams[0]];
         return dreams;
@@ -50,6 +56,30 @@
     }];
 }
 
+#pragma mark - Setup
+
+- (void)styleView {
+    self.title = @"Dreams";
+    self.dreamLabel.textAlignment = NSTextAlignmentCenter;
+}
+
+- (void)updateWithUserDream:(UserDream *)userDream {
+    self.nameLabel.text = userDream.user.name;
+    self.dreamLabel.text = userDream.content.dreamDescription;
+    self.profileImageView.profileID = userDream.user.uid;
+    [self updateTypeIcon:[userDream.content dreamTypeEnum]];
+}
+
+- (void)updateTypeIcon:(DreamType)dreamType {
+    if (dreamType == DreamTypePersonal) {
+        self.typeIcon.image = [UIImage imageNamed:@"briefcase"];
+    } else {
+        self.typeIcon.image = [UIImage imageNamed:@"heart"];
+    }
+}
+
+#pragma mark -
+
 - (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message {
     [[[UIAlertView alloc] initWithTitle:title
                                 message:message
@@ -58,38 +88,23 @@
                       otherButtonTitles:nil] show];
 }
 
-- (void)updateWithUserDream:(UserDream *)userDream {
-    self.nameLabel.text = userDream.user.name;
-    self.dreamLabel.text = userDream.content.dreamDescription;
-    self.profileImageView.profileID = userDream.user.uid;
-    [self updateTypeIcon:userDream.content.dreamType];
-}
-
-- (void)updateTypeIcon:(NSString *)dreamType {
-    if ([dreamType isEqual: @"Professional"]) {
-        self.typeIcon.image = [UIImage imageNamed:@"briefcase"];
-    } else {
-        self.typeIcon.image = [UIImage imageNamed:@"heart"];
-    }
-}
-
 #pragma mark - IBAction
 
 - (IBAction)nextDream:(id)sender {
-//    NSDictionary *dream = [self.dreamManager nextDream];
-//    [self updateWithUserDream:dream];
+    NSDictionary *dream = [self.dreamManager nextDream];
+    [self updateWithUserDream:dream];
 //    [self showSignInViewController];
 }
 
 - (void)showSignInViewController {
-//    BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle] injector:self.injector];
-//    SignInViewController *signInVc = [sto ryboard instantiateViewControllerWithIdentifier:NSStringFromClass([SignInViewController class])];
-////    [self.navigationController pushViewController:signInVc animated:YES]
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:signInVc];
-//    [self presentViewController:nav animated:YES completion:nil];
-    
-    UINavigationController *nav = [self.authNavRouter defaultAuthNavStack];
+    BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle] injector:self.injector];
+    SignInViewController *signInVc = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([SignInViewController class])];
+//    [self.navigationController pushViewController:signInVc animated:YES]
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:signInVc];
     [self presentViewController:nav animated:YES completion:nil];
+    
+//    UINavigationController *nav = [self.authNavRouter defaultAuthNavStack];
+//    [self presentViewController:nav animated:YES completion:nil];
 }
 
 @end

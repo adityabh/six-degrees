@@ -45,6 +45,7 @@
 		B09F76F41A9975E200583077 /* Dream.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76F31A9975E200583077 /* Dream.m */; };
 		B09F76F71A9975FC00583077 /* UserDream.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76F61A9975FC00583077 /* UserDream.m */; };
 		B09F76FA1A99760C00583077 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76F91A99760C00583077 /* User.m */; };
+		B09F77001AB64D3900583077 /* DreamResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76FF1AB64D3900583077 /* DreamResponse.m */; };
 		F1F336645A361581DDD409F6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE94702CF9A4BA6E336EFDB1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,8 @@
 		B09F76F61A9975FC00583077 /* UserDream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDream.m; path = Models/UserDream.m; sourceTree = "<group>"; };
 		B09F76F81A99760C00583077 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
 		B09F76F91A99760C00583077 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
+		B09F76FE1AB64D3900583077 /* DreamResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DreamResponse.h; path = Models/DreamResponse.h; sourceTree = "<group>"; };
+		B09F76FF1AB64D3900583077 /* DreamResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DreamResponse.m; path = Models/DreamResponse.m; sourceTree = "<group>"; };
 		C74146666EBDF45F65BC7389 /* Pods-SixDegreesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixDegreesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SixDegreesTests/Pods-SixDegreesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE94702CF9A4BA6E336EFDB1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B7EE94FCD158A1EE106D42 /* Pods-SixDegreesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixDegreesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SixDegreesTests/Pods-SixDegreesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -295,6 +298,8 @@
 				B08F364F19F4932500FC5A90 /* ApiError.m */,
 				B09F76F21A9975E200583077 /* Dream.h */,
 				B09F76F31A9975E200583077 /* Dream.m */,
+				B09F76FE1AB64D3900583077 /* DreamResponse.h */,
+				B09F76FF1AB64D3900583077 /* DreamResponse.m */,
 				B08F365619F4A4C800FC5A90 /* FacebookAccount.h */,
 				B08F365719F4A4C800FC5A90 /* FacebookAccount.m */,
 				B08F365219F4A44700FC5A90 /* SDModel.h */,
@@ -618,6 +623,7 @@
 				B08F362E19F2DE5C00FC5A90 /* SDApiManager.m in Sources */,
 				B08FA03D1A052ED0005D0CE2 /* ViewControllerFactory.m in Sources */,
 				B08F363E19F3367F00FC5A90 /* SDEndpoints.m in Sources */,
+				B09F77001AB64D3900583077 /* DreamResponse.m in Sources */,
 				B09F76F41A9975E200583077 /* Dream.m in Sources */,
 				B08F362019F2D3B200FC5A90 /* HomeViewController.m in Sources */,
 				B055B1DC19F20DD300AE17A5 /* main.m in Sources */,

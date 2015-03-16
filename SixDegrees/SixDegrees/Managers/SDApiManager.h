@@ -10,13 +10,27 @@
 
 @interface SDApiManager : NSObject
 
+#pragma mark - Authentication
+
 - (void)authenticateWithFacebookId:(NSString *)facebookId
                      facebookToken:(NSString *)facebookToken
                          userEmail:(NSString *)userEmail
                            success:(VoidBlock)success
                            failure:(ErrorBlock)failure;
 
+#pragma mark - Dreams
+
 - (void)fetchDreamsWithSuccess:(VoidBlock)success
-            failure:(ErrorBlock)failure;
+                       failure:(ErrorBlock)failure;
+
+- (KSPromise *)createDreamForUser:(NSString *)userId
+                 dreamType:(NSString *)dreamType
+          dreamDescription:(NSString *)dreamDescription;
+- (KSPromise *)fetchDream:(NSString *)dreamId;
+- (KSPromise *)updateDream:(NSString *)dreamId
+               user:(NSString *)userId
+          dreamType:(NSString *)dreamType
+   dreamDescription:(NSString *)dreamDescription;
+- (KSPromise *)deleteDream:(NSString *)dreamId;
 
 @end
