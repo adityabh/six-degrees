@@ -1,32 +1,32 @@
 PODS:
-  - AFNetworking (2.4.1):
-    - AFNetworking/NSURLConnection (= 2.4.1)
-    - AFNetworking/NSURLSession (= 2.4.1)
-    - AFNetworking/Reachability (= 2.4.1)
-    - AFNetworking/Security (= 2.4.1)
-    - AFNetworking/Serialization (= 2.4.1)
-    - AFNetworking/UIKit (= 2.4.1)
-  - AFNetworking/NSURLConnection (2.4.1):
+  - AFNetworking (2.5.3):
+    - AFNetworking/NSURLConnection (= 2.5.3)
+    - AFNetworking/NSURLSession (= 2.5.3)
+    - AFNetworking/Reachability (= 2.5.3)
+    - AFNetworking/Security (= 2.5.3)
+    - AFNetworking/Serialization (= 2.5.3)
+    - AFNetworking/UIKit (= 2.5.3)
+  - AFNetworking/NSURLConnection (2.5.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.4.1):
+  - AFNetworking/NSURLSession (2.5.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.4.1)
-  - AFNetworking/Security (2.4.1)
-  - AFNetworking/Serialization (2.4.1)
-  - AFNetworking/UIKit (2.4.1):
+  - AFNetworking/Reachability (2.5.3)
+  - AFNetworking/Security (2.5.3)
+  - AFNetworking/Serialization (2.5.3)
+  - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Blindside (1.0-alpha)
-  - Cedar (0.10.0)
+  - Cedar (0.11.3)
   - iCarousel (1.8.1)
   - KSDeferred (0.2.0)
-  - Mantle (1.5.1):
-    - Mantle/extobjc (= 1.5.1)
-  - Mantle/extobjc (1.5.1)
+  - Mantle (2.0):
+    - Mantle/extobjc (= 2.0)
+  - Mantle/extobjc (2.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -42,12 +42,20 @@ EXTERNAL SOURCES:
   Cedar:
     :git: https://github.com/pivotal/cedar.git
 
-SPEC CHECKSUMS:
-  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
-  Blindside: 3aae47c0138e6f1cf29cb4ed742bcee3744fdd2a
-  Cedar: ad7dba21c345daaf5714d5ff41febc51b8444a1b
-  iCarousel: 5acab560f10dc13da2440c89f35a0ad278b5147d
-  KSDeferred: 33361e3e63ebe90210ea94d7f6469c1c2b874763
-  Mantle: d7c5ac734579ec751c58fecbf56189853056c58c
+CHECKOUT OPTIONS:
+  Blindside:
+    :commit: f8a75a12015d8550775bebaf12df5e2aecb5c367
+    :git: https://github.com/jbsf/blindside.git
+  Cedar:
+    :commit: a15dde9d028aa015c06c075eb7d2dc8e2f4e539f
+    :git: https://github.com/pivotal/cedar.git
 
-COCOAPODS: 0.35.0
+SPEC CHECKSUMS:
+  AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  Blindside: a73d69506c3f3e078cdf691c162d7e58213d5519
+  Cedar: ab1ea4e5c8af4ee4a8fa0452936679861876dc80
+  iCarousel: dace1cb858e3f4dc2614bee3201041247f82feda
+  KSDeferred: e72d005162986b2978e1e2eee17fbce1c6876cfe
+  Mantle: 17de73ef929db2234d76fde2aacfb89ab11c61e8
+
+COCOAPODS: 0.37.0

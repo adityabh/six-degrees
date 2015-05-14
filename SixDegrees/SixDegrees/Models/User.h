@@ -20,8 +20,16 @@
 @property (strong, nonatomic, readonly) NSString *provider;
 @property (strong, nonatomic, readonly) NSString *timezone;
 @property (strong, nonatomic, readonly) NSString *uid;
+@property (strong, nonatomic, readonly) NSString *authenticationToken;
 @property (strong, nonatomic, readonly) NSDate *createdAt;
 @property (strong, nonatomic, readonly) NSDate *updatedAt;
+
+@property (strong, nonatomic, readonly) NSDate *avatarUpdatedAt;
+@property (strong, nonatomic, readonly) NSNumber *avatarFileSize;
+@property (strong, nonatomic, readonly) NSString *avatarFileName;
+@property (strong, nonatomic, readonly) NSString *avatarContentType;
+
+@property (strong, nonatomic, readonly) NSNumber *admin;
 
 @end
 

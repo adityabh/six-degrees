@@ -13,6 +13,7 @@
 //#import "SignUpViewController.h"
 
 #import "DreamViewController.h"
+#import "AllDreamsViewControllerTableViewController.h"
 
 #import "BlindsidedStoryboard.h"
 
@@ -39,5 +40,12 @@
     DreamViewController *dreamViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([DreamViewController class])];
     return dreamViewController;
 }
+
+- (AllDreamsViewControllerTableViewController *)buildAllDreamVcWithInjector:(id<BSInjector>)injector {
+    BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:DREAM_STORYBOARD bundle:nil injector:injector];
+    AllDreamsViewControllerTableViewController *allDreamsViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([AllDreamsViewControllerTableViewController class])];
+    return allDreamsViewController;
+}
+
 
 @end

@@ -11,6 +11,7 @@
 #import "ViewControllerFactory.h"
 
 #import "DreamViewController.h"
+#import "AllDreamsViewControllerTableViewController.h"
 
 @interface DreamNavigationRouter ()
 
@@ -39,8 +40,13 @@
 
 - (SDNavigationController *)defaultNavStack {
     if (!self.dreamNavStack) {
-        DreamViewController *dreamViewController = [self.vcFactory buildDreamVcWithInjector:self.injector];
-        self.dreamNavStack = [[SDNavigationController alloc] initWithRootViewController:dreamViewController];
+        
+        AllDreamsViewControllerTableViewController *allDreamsViewController = [self.vcFactory buildAllDreamVcWithInjector:self.injector];
+        
+        self.dreamNavStack = [[SDNavigationController alloc] initWithRootViewController:allDreamsViewController];
+        
+        /*DreamViewController *dreamViewController = [self.vcFactory buildDreamVcWithInjector:self.injector];
+        self.dreamNavStack = [[SDNavigationController alloc] initWithRootViewController:dreamViewController];*/
     }
     return self.dreamNavStack;
 }

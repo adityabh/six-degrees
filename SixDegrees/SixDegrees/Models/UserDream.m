@@ -13,6 +13,15 @@
 
 @implementation UserDream
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    // model_property_name : json_field_name
+    return @{
+             @"content" : @"content",
+             @"user" : @"user"
+             };
+}
+
 + (NSValueTransformer *)contentJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:Dream.class];
 }
