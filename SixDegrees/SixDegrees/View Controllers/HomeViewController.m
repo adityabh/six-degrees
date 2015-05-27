@@ -100,12 +100,10 @@
 
 - (NSArray *)carouselItems {
     return @[
-             [UIImage imageNamed:@"ss1"],
-             [UIImage imageNamed:@"ss2"],
-             [UIImage imageNamed:@"ss3"],
-             [UIImage imageNamed:@"ss4"],
-             [UIImage imageNamed:@"ss5"],
-             [UIImage imageNamed:@"ss6"],
+             [UIImage imageNamed:@"SDIntro1"],
+             [UIImage imageNamed:@"SDIntro2"],
+             [UIImage imageNamed:@"SDIntro3"],
+             [UIImage imageNamed:@"SDIntro4"],
              ];
 }
 
