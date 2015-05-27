@@ -82,7 +82,16 @@
                  dreamType:(NSString *)dreamType
           dreamDescription:(NSString *)dreamDescription {
     KSDeferred *createDreamDeferred = [KSDeferred defer];
-    [self.sessionManager POST:[SDEndpoints createDream] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:userId forKey:@"user_id"];
+    [params setValue:dreamType forKey:@"dream_type"];
+    [params setValue:dreamDescription forKey:@"description"];
+    
+    NSMutableDictionary *parameteres = [NSMutableDictionary dictionary];
+    [parameteres setValue:params forKey:@"dream"];
+    
+    [self.sessionManager POST:[SDEndpoints createDream] parameters:parameteres success:^(NSURLSessionDataTask *task, id responseObject) {
         DreamResponse *dreamResponse = [MTLJSONAdapter modelOfClass:DreamResponse.class fromJSONDictionary:responseObject error:nil];
         [createDreamDeferred resolveWithValue:dreamResponse.dream];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {

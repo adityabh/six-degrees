@@ -10,6 +10,7 @@ pod 'Mantle'
 pod 'Blindside', :git => 'https://github.com/jbsf/blindside.git'
 pod 'KSDeferred'
 pod 'iCarousel'
+pod 'RadioButton'
 
 target :SixDegreesTests, :exclusive => true do
 	pod 'Cedar', :git => 'https://github.com/pivotal/cedar.git'
