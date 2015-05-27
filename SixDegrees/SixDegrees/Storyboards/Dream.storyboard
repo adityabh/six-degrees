@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -147,6 +147,9 @@
                                                     <integer key="value" value="10"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <segue destination="ptP-75-vSA" kind="presentation" identifier="showHelpDreamModal" modalPresentationStyle="formSheet" id="87o-aL-aGi"/>
+                                            </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lw6-XM-SLx">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="68"/>
@@ -232,6 +235,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r6b-9x-ZnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2679" y="361"/>
+        </scene>
+        <!--Help Dream-->
+        <scene sceneID="JKL-6l-6aY">
+            <objects>
+                <viewController id="GIE-Y6-Nqp" customClass="HelpDreamViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ss9-Rz-Hoq"/>
+                        <viewControllerLayoutGuide type="bottom" id="5JM-CQ-R64"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="al7-IU-Q0b">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Me2-30-8PX">
+                                <rect key="frame" x="16" y="92" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1d-RZ-Lso">
+                                <rect key="frame" x="16" y="63" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="m3N-8c-UX1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l1d-RZ-Lso" firstAttribute="leading" secondItem="al7-IU-Q0b" secondAttribute="leadingMargin" id="6rf-0S-8qU"/>
+                            <constraint firstItem="l1d-RZ-Lso" firstAttribute="top" secondItem="ss9-Rz-Hoq" secondAttribute="bottom" constant="19" id="Oba-Bk-mCR"/>
+                            <constraint firstItem="l1d-RZ-Lso" firstAttribute="trailing" secondItem="al7-IU-Q0b" secondAttribute="trailingMargin" id="XcN-sy-Lem"/>
+                            <constraint firstItem="Me2-30-8PX" firstAttribute="leading" secondItem="l1d-RZ-Lso" secondAttribute="leading" id="edW-GU-naI"/>
+                            <constraint firstItem="Me2-30-8PX" firstAttribute="top" secondItem="l1d-RZ-Lso" secondAttribute="bottom" constant="8" symbolic="YES" id="gdI-s3-fYR"/>
+                            <constraint firstItem="l1d-RZ-Lso" firstAttribute="trailing" secondItem="Me2-30-8PX" secondAttribute="trailing" id="nYR-zX-3bw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Help Dream" id="Bta-Zc-wXb">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Mex-uB-gw6">
+                            <connections>
+                                <segue destination="o90-VL-J06" kind="unwind" unwindAction="unwindToAllDreams:" id="17m-2H-c4r"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Help" id="BVj-lh-x1A">
+                            <connections>
+                                <segue destination="o90-VL-J06" kind="unwind" unwindAction="unwindToAllDreams:" id="zOw-gw-74I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descLabel" destination="l1d-RZ-Lso" id="mGh-2D-C49"/>
+                        <outlet property="helpButton" destination="BVj-lh-x1A" id="Hbj-4v-HQE"/>
+                        <outlet property="helpDescription" destination="Me2-30-8PX" id="GDp-0i-Y7V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LlC-JK-xpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="o90-VL-J06" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3377" y="1057"/>
         </scene>
         <!--Create dream-->
         <scene sceneID="Anf-3Z-w8p">
@@ -320,7 +383,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHI-0g-q3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ZOq-b5-Uii" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4123" y="361"/>
+            <point key="canvasLocation" x="4107" y="361"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="OhF-ls-CKp">
@@ -375,6 +438,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ZG-a0-6fS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3377" y="361"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i4g-EF-4FA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ptP-75-vSA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0lV-R6-DV0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GIE-Y6-Nqp" kind="relationship" relationship="rootViewController" id="NgW-ev-701"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WVw-GL-4t5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2679" y="1057"/>
         </scene>
     </scenes>
     <resources>

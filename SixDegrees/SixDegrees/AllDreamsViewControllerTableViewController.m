@@ -11,6 +11,7 @@
 #import "DreamManager.h"
 #import "SignInViewController.h"
 #import "AuthNavigationRouter.h"
+#import "HelpDreamViewController.h"
 
 #import "UserDream.h"
 #import "Dream.h"
@@ -158,12 +159,14 @@
     
 }
 
-/*
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showHelpDreamModal"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        HelpDreamViewController *destViewController = segue.destinationViewController;
+        
+        int index = (int)indexPath.section;
+        destViewController.dream = self.dreams[index];
+    }
 }
-*/
 
 @end
