@@ -14,5 +14,6 @@
     @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
     @property (nonatomic, weak) IBOutlet FBProfilePictureView *profileImageView;
     @property (weak, nonatomic) IBOutlet UIImageView *typeIcon;
+    @property (weak, nonatomic) IBOutlet UIButton *helpButton;
 
 @end

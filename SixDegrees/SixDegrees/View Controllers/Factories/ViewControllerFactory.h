@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class HomeViewController;
-@class SignInViewController;
+@class LoginViewController;
 @class DreamViewController;
 @class AllDreamsViewControllerTableViewController;
 @protocol SignInViewControllerDelegate;
@@ -20,7 +20,7 @@
 - (HomeViewController *)buildHomeVcWithDelegate:(id <HomeViewControllerDelegate>)delegate
                                        injector:(id<BSInjector>)injector;
 
-- (SignInViewController *)buildSignInVcWithDelegate:(id<SignInViewControllerDelegate>)delegate
+- (LoginViewController *)buildSignInVcWithDelegate:(id<SignInViewControllerDelegate>)delegate
                                            injector:(id<BSInjector>)injector;
 
 - (DreamViewController *)buildDreamVcWithInjector:(id<BSInjector>)injector;

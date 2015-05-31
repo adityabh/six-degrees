@@ -47,6 +47,8 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if (sender != self.saveButton) return YES;
+    
     if (self.dreamDescription.text.length == 0) {
         return NO;
     }

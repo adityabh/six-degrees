@@ -84,6 +84,9 @@
     cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", dream.user.firstName, dream.user.lastName];
     cell.descriptionLabel.text = dream.content.dreamDescription;
     
+    cell.helpButton.tag = index;
+    [cell.helpButton addTarget:self action:@selector(helpButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
     cell = [self updateTypeIcon:[dream.content dreamTypeEnum] cell:cell];
     
     [cell.contentView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
@@ -159,14 +162,19 @@
     
 }
 
+-(void)helpButtonClicked:(UIButton*)sender
+{
+    UINavigationController *navController = (UINavigationController *) [self.storyboard instantiateViewControllerWithIdentifier:@"HelpDreamViewController"];
+    
+    HelpDreamViewController *destViewController = (HelpDreamViewController *)navController.topViewController;
+    
+    destViewController.dream = self.dreams[sender.tag];
+    
+    [self.navigationController pushViewController:destViewController animated:YES];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showHelpDreamModal"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        HelpDreamViewController *destViewController = segue.destinationViewController;
-        
-        int index = (int)indexPath.section;
-        destViewController.dream = self.dreams[index];
-    }
+
 }
 
 @end

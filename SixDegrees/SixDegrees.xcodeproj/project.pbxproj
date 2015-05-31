@@ -45,11 +45,15 @@
 		B09F76F71A9975FC00583077 /* UserDream.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76F61A9975FC00583077 /* UserDream.m */; };
 		B09F76FA1A99760C00583077 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76F91A99760C00583077 /* User.m */; };
 		B09F77001AB64D3900583077 /* DreamResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76FF1AB64D3900583077 /* DreamResponse.m */; };
-		D417DCCD1AFD862A0067C13A /* Dream.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D417DCCC1AFD862A0067C13A /* Dream.storyboard */; };
 		D417DCD01B02E1E40067C13A /* DreamCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D417DCCF1B02E1E30067C13A /* DreamCellTableViewCell.m */; };
 		D417DCD31B02F3F10067C13A /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D417DCD21B02F3F10067C13A /* RoundedButton.m */; };
 		D417DCDB1B054BDB0067C13A /* CreateDreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D417DCDA1B054BDB0067C13A /* CreateDreamViewController.m */; };
+		D4278AD71B1B7937002FA1F1 /* Dream.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4278AD61B1B7937002FA1F1 /* Dream.storyboard */; };
 		D461E4EC1B1565EB0070C370 /* HelpDreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D461E4EB1B1565EB0070C370 /* HelpDreamViewController.m */; };
+		D461E4EE1B158E400070C370 /* AuthN.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D461E4ED1B158E400070C370 /* AuthN.Storyboard */; };
+		D461E4F11B1591CD0070C370 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D461E4F01B1591CD0070C370 /* LoginViewController.m */; };
+		D461E4F31B159B160070C370 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D461E4F21B159B160070C370 /* FBSDKCoreKit.framework */; };
+		D461E4F51B159EF80070C370 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D461E4F41B159EF80070C370 /* FBSDKLoginKit.framework */; };
 		D48BBD041AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */; };
 		F1F336645A361581DDD409F6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE94702CF9A4BA6E336EFDB1 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -141,15 +145,20 @@
 		B09F76FE1AB64D3900583077 /* DreamResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DreamResponse.h; path = Models/DreamResponse.h; sourceTree = "<group>"; };
 		B09F76FF1AB64D3900583077 /* DreamResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DreamResponse.m; path = Models/DreamResponse.m; sourceTree = "<group>"; };
 		C74146666EBDF45F65BC7389 /* Pods-SixDegreesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixDegreesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SixDegreesTests/Pods-SixDegreesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D417DCCC1AFD862A0067C13A /* Dream.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dream.storyboard; path = Storyboards/Dream.storyboard; sourceTree = "<group>"; };
 		D417DCCE1B02E1E30067C13A /* DreamCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DreamCellTableViewCell.h; sourceTree = "<group>"; };
 		D417DCCF1B02E1E30067C13A /* DreamCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DreamCellTableViewCell.m; sourceTree = "<group>"; };
 		D417DCD11B02F3F10067C13A /* RoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedButton.h; sourceTree = "<group>"; };
 		D417DCD21B02F3F10067C13A /* RoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedButton.m; sourceTree = "<group>"; };
 		D417DCD91B054BDB0067C13A /* CreateDreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateDreamViewController.h; sourceTree = "<group>"; };
 		D417DCDA1B054BDB0067C13A /* CreateDreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateDreamViewController.m; sourceTree = "<group>"; };
+		D4278AD61B1B7937002FA1F1 /* Dream.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dream.storyboard; path = Storyboards/Dream.storyboard; sourceTree = "<group>"; };
 		D461E4EA1B1565EB0070C370 /* HelpDreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpDreamViewController.h; sourceTree = "<group>"; };
 		D461E4EB1B1565EB0070C370 /* HelpDreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpDreamViewController.m; sourceTree = "<group>"; };
+		D461E4ED1B158E400070C370 /* AuthN.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AuthN.Storyboard; path = Storyboards/AuthN.Storyboard; sourceTree = "<group>"; };
+		D461E4EF1B1591CD0070C370 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D461E4F01B1591CD0070C370 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D461E4F21B159B160070C370 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Users/bhallaa/Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		D461E4F41B159EF80070C370 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Users/bhallaa/Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		D48BBD021AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllDreamsViewControllerTableViewController.h; sourceTree = "<group>"; };
 		D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllDreamsViewControllerTableViewController.m; sourceTree = "<group>"; };
 		DE94702CF9A4BA6E336EFDB1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1F336645A361581DDD409F6 /* libPods.a in Frameworks */,
+				D461E4F31B159B160070C370 /* FBSDKCoreKit.framework in Frameworks */,
+				D461E4F51B159EF80070C370 /* FBSDKLoginKit.framework in Frameworks */,
 				B08F364A19F34ED500FC5A90 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,7 +193,9 @@
 		2AC72F9F6588C6B2454841B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D461E4F41B159EF80070C370 /* FBSDKLoginKit.framework */,
 				B08F364919F34ED500FC5A90 /* FacebookSDK.framework */,
+				D461E4F21B159B160070C370 /* FBSDKCoreKit.framework */,
 				DE94702CF9A4BA6E336EFDB1 /* libPods.a */,
 				7E97C896DD508A9CB441403C /* libPods-SixDegreesTests.a */,
 			);
@@ -392,7 +405,8 @@
 		B08FA04E1A053A4A005D0CE2 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				D417DCCC1AFD862A0067C13A /* Dream.storyboard */,
+				D4278AD61B1B7937002FA1F1 /* Dream.storyboard */,
+				D461E4ED1B158E400070C370 /* AuthN.Storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -415,6 +429,8 @@
 		B08FA0501A053B32005D0CE2 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				D461E4EF1B1591CD0070C370 /* LoginViewController.h */,
+				D461E4F01B1591CD0070C370 /* LoginViewController.m */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -545,9 +561,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B055B1EB19F20DD300AE17A5 /* Main.storyboard in Resources */,
+				D461E4EE1B158E400070C370 /* AuthN.Storyboard in Resources */,
 				B055B1F019F20DD300AE17A5 /* LaunchScreen.xib in Resources */,
-				D417DCCD1AFD862A0067C13A /* Dream.storyboard in Resources */,
 				B055B1ED19F20DD300AE17A5 /* Images.xcassets in Resources */,
+				D4278AD71B1B7937002FA1F1 /* Dream.storyboard in Resources */,
 				B09F76EE1A9967A500583077 /* DreamPanelView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,6 +646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D461E4F11B1591CD0070C370 /* LoginViewController.m in Sources */,
 				B08FA0411A052FF0005D0CE2 /* SDNavigationController.m in Sources */,
 				B08FA0341A049943005D0CE2 /* SignInViewController.m in Sources */,
 				D48BBD041AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m in Sources */,
@@ -791,6 +809,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Steven/Documents/FacebookSDK,
+					/Users/bhallaa/Documents/FacebookSDK,
 				);
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
 					/Users/Steven/Documents/FacebookSDK,

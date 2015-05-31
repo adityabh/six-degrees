@@ -10,3 +10,4 @@
 
 #define MAIN_STORYBOARD @"Main"
 #define DREAM_STORYBOARD @"Dream"
+#define AUTHN_STORYBOARD @"AuthN"

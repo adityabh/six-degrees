@@ -9,8 +9,10 @@
 #import "ViewControllerFactory.h"
 #import "HomeViewController.h"
 
-#import "SignInViewController.h"
+//#import "SignInViewController.h"
 //#import "SignUpViewController.h"
+
+#import "LoginViewController.h"
 
 #import "DreamViewController.h"
 #import "AllDreamsViewControllerTableViewController.h"
@@ -27,12 +29,12 @@
     return homeViewController;
 }
 
-- (SignInViewController *)buildSignInVcWithDelegate:(id<SignInViewControllerDelegate>)delegate
+- (LoginViewController *)buildSignInVcWithDelegate:(id<SignInViewControllerDelegate>)delegate
                                            injector:(id<BSInjector>)injector {
-    BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil injector:injector];
-    SignInViewController *signInViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([SignInViewController class])];
-    signInViewController.delegate = delegate;
-    return signInViewController;
+    BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:AUTHN_STORYBOARD bundle:nil injector:injector];
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([LoginViewController class])];
+    loginViewController.delegate = delegate;
+    return loginViewController;
 }
 
 - (DreamViewController *)buildDreamVcWithInjector:(id<BSInjector>)injector {

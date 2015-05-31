@@ -7,7 +7,7 @@
 //
 
 #import "FacebookManager.h"
-#import <FacebookSDK/FacebookSDK.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "FacebookAccount.h"
 #import "ApiError.h"
 

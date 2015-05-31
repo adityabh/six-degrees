@@ -62,6 +62,7 @@
 #pragma mark - HomeViewControllerDelegate
 
 - (void)didSwipeRightToContinue {
+    //self.window.rootViewController = [self.authRouter defaultAuthNavStack];
     self.window.rootViewController = [self.dreamRouter defaultNavStack];
 }
 

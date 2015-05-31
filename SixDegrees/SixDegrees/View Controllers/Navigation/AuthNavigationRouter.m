@@ -9,8 +9,8 @@
 #import "AuthNavigationRouter.h"
 #import "SDNavigationController.h"
 #import "ViewControllerFactory.h"
+#import "LoginViewController.h"
 
-#import "SignInViewController.h"
 
 @interface AuthNavigationRouter () <SignInViewControllerDelegate>
 
@@ -38,11 +38,11 @@
 }
 
 - (SDNavigationController *)defaultAuthNavStack {
-#warning If auth persisted, do something else here
     if (!self.authNavStack) {
-        SignInViewController *signInViewController = [self.vcFactory buildSignInVcWithDelegate:self
-                                                                                      injector:self.injector];
-        self.authNavStack = [[SDNavigationController alloc] initWithRootViewController:signInViewController];
+        LoginViewController *loginViewController = [self.vcFactory buildSignInVcWithDelegate:self
+                                                                   injector:self.injector];
+        
+        self.authNavStack = [[SDNavigationController alloc] initWithRootViewController:loginViewController];
     }
     return self.authNavStack;
 }

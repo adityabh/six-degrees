@@ -24,9 +24,11 @@ PODS:
   - Cedar (0.11.3)
   - iCarousel (1.8.1)
   - KSDeferred (0.2.0)
+  - Lockbox (2.1.0)
   - Mantle (2.0):
     - Mantle/extobjc (= 2.0)
   - Mantle/extobjc (2.0)
+  - RadioButton (1.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -34,7 +36,9 @@ DEPENDENCIES:
   - Cedar (from `https://github.com/pivotal/cedar.git`)
   - iCarousel
   - KSDeferred
+  - Lockbox
   - Mantle
+  - RadioButton
 
 EXTERNAL SOURCES:
   Blindside:
@@ -56,6 +60,8 @@ SPEC CHECKSUMS:
   Cedar: ab1ea4e5c8af4ee4a8fa0452936679861876dc80
   iCarousel: dace1cb858e3f4dc2614bee3201041247f82feda
   KSDeferred: e72d005162986b2978e1e2eee17fbce1c6876cfe
-  Mantle: 17de73ef929db2234d76fde2aacfb89ab11c61e8
+  Lockbox: 16442da35d9d4286966936763be728a931d589c3
+  Mantle: d7c75b6fb789b20f7ae30cd0d09435fe545896ff
+  RadioButton: 7ef053baf6ff0e7f9e777016c28e9ba4e330edba
 
-COCOAPODS: 0.37.0
+COCOAPODS: 0.37.1
