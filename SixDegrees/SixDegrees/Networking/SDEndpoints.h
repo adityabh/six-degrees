@@ -13,6 +13,9 @@
 #pragma mark - Authentication
 
 + (NSString *)authWithFacebook;
++ (NSString *)loginUser;
++ (NSString *)createUser;
++ (NSString *)logoutUser;
 
 #pragma mark - Dreams
 

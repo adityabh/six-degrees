@@ -18,6 +18,18 @@
                            success:(VoidBlock)success
                            failure:(ErrorBlock)failure;
 
+- (void) loginUser: (NSString *) email
+          password: (NSString *) password
+           success:(VoidBlock)success
+           failure:(VoidBlock)failure;
+
+- (void) signupUser: (NSString *) firstName
+           lastName: (NSString *) lastName
+              email: (NSString *) email
+           password: (NSString *) password
+            success:(VoidBlock)success
+            failure:(ErrorBlock)failure;
+
 #pragma mark - Dreams
 
 - (void)fetchDreamsWithSuccess:(VoidBlock)success

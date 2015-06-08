@@ -12,6 +12,9 @@
 
 @interface DreamNavigationRouter : NSObject
 
+@property (strong, nonatomic) id<BSModule> module;
+
+- (void)setWindow:(UIWindow *)window;
 - (SDNavigationController *)defaultNavStack;
 
 @end

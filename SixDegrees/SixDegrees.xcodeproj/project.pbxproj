@@ -45,10 +45,12 @@
 		B09F76F71A9975FC00583077 /* UserDream.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76F61A9975FC00583077 /* UserDream.m */; };
 		B09F76FA1A99760C00583077 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76F91A99760C00583077 /* User.m */; };
 		B09F77001AB64D3900583077 /* DreamResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76FF1AB64D3900583077 /* DreamResponse.m */; };
+		D40B4D361B1FE06400913FA1 /* SettingsPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40B4D351B1FE06400913FA1 /* SettingsPanelViewController.m */; };
 		D417DCD01B02E1E40067C13A /* DreamCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D417DCCF1B02E1E30067C13A /* DreamCellTableViewCell.m */; };
 		D417DCD31B02F3F10067C13A /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D417DCD21B02F3F10067C13A /* RoundedButton.m */; };
 		D417DCDB1B054BDB0067C13A /* CreateDreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D417DCDA1B054BDB0067C13A /* CreateDreamViewController.m */; };
 		D4278AD71B1B7937002FA1F1 /* Dream.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4278AD61B1B7937002FA1F1 /* Dream.storyboard */; };
+		D4278ADA1B1BFEF7002FA1F1 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4278AD91B1BFEF7002FA1F1 /* SignupViewController.m */; };
 		D461E4EC1B1565EB0070C370 /* HelpDreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D461E4EB1B1565EB0070C370 /* HelpDreamViewController.m */; };
 		D461E4EE1B158E400070C370 /* AuthN.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D461E4ED1B158E400070C370 /* AuthN.Storyboard */; };
 		D461E4F11B1591CD0070C370 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D461E4F01B1591CD0070C370 /* LoginViewController.m */; };
@@ -145,6 +147,8 @@
 		B09F76FE1AB64D3900583077 /* DreamResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DreamResponse.h; path = Models/DreamResponse.h; sourceTree = "<group>"; };
 		B09F76FF1AB64D3900583077 /* DreamResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DreamResponse.m; path = Models/DreamResponse.m; sourceTree = "<group>"; };
 		C74146666EBDF45F65BC7389 /* Pods-SixDegreesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixDegreesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SixDegreesTests/Pods-SixDegreesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D40B4D341B1FE06400913FA1 /* SettingsPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsPanelViewController.h; path = "View Controllers/Dream/SettingsPanelViewController.h"; sourceTree = "<group>"; };
+		D40B4D351B1FE06400913FA1 /* SettingsPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsPanelViewController.m; path = "View Controllers/Dream/SettingsPanelViewController.m"; sourceTree = "<group>"; };
 		D417DCCE1B02E1E30067C13A /* DreamCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DreamCellTableViewCell.h; sourceTree = "<group>"; };
 		D417DCCF1B02E1E30067C13A /* DreamCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DreamCellTableViewCell.m; sourceTree = "<group>"; };
 		D417DCD11B02F3F10067C13A /* RoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedButton.h; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 		D417DCD91B054BDB0067C13A /* CreateDreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateDreamViewController.h; sourceTree = "<group>"; };
 		D417DCDA1B054BDB0067C13A /* CreateDreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateDreamViewController.m; sourceTree = "<group>"; };
 		D4278AD61B1B7937002FA1F1 /* Dream.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dream.storyboard; path = Storyboards/Dream.storyboard; sourceTree = "<group>"; };
+		D4278AD81B1BFEF7002FA1F1 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		D4278AD91B1BFEF7002FA1F1 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		D461E4EA1B1565EB0070C370 /* HelpDreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpDreamViewController.h; sourceTree = "<group>"; };
 		D461E4EB1B1565EB0070C370 /* HelpDreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpDreamViewController.m; sourceTree = "<group>"; };
 		D461E4ED1B158E400070C370 /* AuthN.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AuthN.Storyboard; path = Storyboards/AuthN.Storyboard; sourceTree = "<group>"; };
@@ -422,6 +428,8 @@
 				B08FA0521A053B5E005D0CE2 /* DreamViewController.m */,
 				D48BBD021AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.h */,
 				D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */,
+				D40B4D341B1FE06400913FA1 /* SettingsPanelViewController.h */,
+				D40B4D351B1FE06400913FA1 /* SettingsPanelViewController.m */,
 			);
 			name = Dream;
 			sourceTree = "<group>";
@@ -431,6 +439,8 @@
 			children = (
 				D461E4EF1B1591CD0070C370 /* LoginViewController.h */,
 				D461E4F01B1591CD0070C370 /* LoginViewController.m */,
+				D4278AD81B1BFEF7002FA1F1 /* SignupViewController.h */,
+				D4278AD91B1BFEF7002FA1F1 /* SignupViewController.m */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -669,6 +679,7 @@
 				B08F361D19F2D38600FC5A90 /* MasterViewController.m in Sources */,
 				B08F365019F4932500FC5A90 /* ApiError.m in Sources */,
 				D461E4EC1B1565EB0070C370 /* HelpDreamViewController.m in Sources */,
+				D40B4D361B1FE06400913FA1 /* SettingsPanelViewController.m in Sources */,
 				B08F365819F4A4C800FC5A90 /* FacebookAccount.m in Sources */,
 				B08F364519F33BCC00FC5A90 /* UserManager.m in Sources */,
 				B09F76FA1A99760C00583077 /* User.m in Sources */,
@@ -678,6 +689,7 @@
 				B08F362E19F2DE5C00FC5A90 /* SDApiManager.m in Sources */,
 				B08FA03D1A052ED0005D0CE2 /* ViewControllerFactory.m in Sources */,
 				B08F363E19F3367F00FC5A90 /* SDEndpoints.m in Sources */,
+				D4278ADA1B1BFEF7002FA1F1 /* SignupViewController.m in Sources */,
 				B09F77001AB64D3900583077 /* DreamResponse.m in Sources */,
 				D417DCDB1B054BDB0067C13A /* CreateDreamViewController.m in Sources */,
 				B09F76F41A9975E200583077 /* Dream.m in Sources */,

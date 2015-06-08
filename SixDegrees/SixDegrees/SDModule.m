@@ -22,7 +22,7 @@
 
 - (void)configure:(id<BSBinder>)binder {
     
-    [binder bind:@"sdApiUrl" toInstance:[NSURL URLWithString:@"http://six-degrees-app.herokuapp.com/"]];
+    [binder bind:@"sdApiUrl" toInstance:[NSURL URLWithString:@"https://six-degrees-app.herokuapp.com/"]];
 //    [binder bind:@"sdApiUrl" toInstance:[NSURL URLWithString:@"http://localhost:3000/"]];
     
     [binder bind:[ViewControllerFactory class] withScope:[BSSingleton scope]];

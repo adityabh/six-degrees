@@ -11,6 +11,7 @@
 #import "SDEndpoints.h"
 
 #import "UserDream.h"
+#import "User.h"
 #import "DreamResponse.h"
 
 @interface SDApiManager ()
@@ -48,6 +49,54 @@
     [params setValue:userEmail forKey:@"user_email"];
     
     [self.sessionManager POST:[SDEndpoints authWithFacebook] parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (success) {
+            success();
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+- (void) loginUser: (NSString *) email
+          password: (NSString *) password
+           success:(VoidBlock)success
+           failure:(VoidBlock)failure {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:email forKey:@"email"];
+    [params setValue:password forKey:@"password"];
+    
+    [self.sessionManager POST:[SDEndpoints loginUser] parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        long status = [responseObject[@"status"] longValue];
+        if (success) {
+            if (status == 200l) {
+                User *user = [MTLJSONAdapter modelOfClass:User.class fromJSONDictionary:responseObject[@"user"] error:nil];
+                success(user);
+            } else {
+                failure(responseObject[@"message"]);
+            }
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failure) {
+            failure(error.description);
+        }
+    }];
+}
+
+- (void) signupUser: (NSString *) firstName
+          lastName: (NSString *) lastName
+             email: (NSString *) email
+          password: (NSString *) password
+           success:(VoidBlock)success
+           failure:(ErrorBlock)failure {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:email forKey:@"email"];
+    [params setValue:password forKey:@"password"];
+    [params setValue:firstName forKey:@"first_name"];
+    [params setValue:lastName forKey:@"last_name"];
+    
+    [self.sessionManager POST:[SDEndpoints createUser] parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         if (success) {
             success();
         }

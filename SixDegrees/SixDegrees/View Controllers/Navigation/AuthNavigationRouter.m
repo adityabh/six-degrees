@@ -7,17 +7,20 @@
 //
 
 #import "AuthNavigationRouter.h"
+#import "DreamNavigationRouter.h"
 #import "SDNavigationController.h"
 #import "ViewControllerFactory.h"
 #import "LoginViewController.h"
 
 
-@interface AuthNavigationRouter () <SignInViewControllerDelegate>
+@interface AuthNavigationRouter () <LoginViewControllerDelegate>
 
-@property (strong, nonatomic) id<BSInjector> injector;
-@property (strong, nonatomic) ViewControllerFactory *vcFactory;
+    @property (strong, nonatomic) id<BSInjector> injector;
+    @property (strong, nonatomic) ViewControllerFactory *vcFactory;
+    @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) SDNavigationController *authNavStack;
+    @property (strong, nonatomic) SDNavigationController *authNavStack;
+    @property (strong, nonatomic) DreamNavigationRouter *dreamRouter;
 
 @end
 
@@ -25,16 +28,22 @@
 
 + (BSInitializer *)bsInitializer {
     return [BSInitializer initializerWithClass:self
-                                      selector:@selector(initWithViewControllerFactory:)
-                                  argumentKeys:[ViewControllerFactory class], nil];
+                                      selector:@selector(initWithViewControllerFactory:dreamNavigationRouter:)
+                                  argumentKeys:[ViewControllerFactory class], [DreamNavigationRouter class], nil];
 }
 
-- (instancetype)initWithViewControllerFactory:(ViewControllerFactory *)viewControllerFactory {
+- (instancetype)initWithViewControllerFactory:(ViewControllerFactory *)viewControllerFactory
+                        dreamNavigationRouter:(DreamNavigationRouter *)dreamNavigationRouter{
     self = [super init];
     if (self) {
         _vcFactory = viewControllerFactory;
+        _dreamRouter = dreamNavigationRouter;
     }
     return self;
+}
+
+- (void)setWindow:(UIWindow *)window {
+    _window = window;
 }
 
 - (SDNavigationController *)defaultAuthNavStack {
@@ -47,27 +56,15 @@
     return self.authNavStack;
 }
 
-#pragma mark - SignInViewControllerDelegate
+#pragma mark - LogViewControllerDelegate
 
-- (void)didSignIn {
-//    BOOL userHasDream = [self.accountManager userHasDream];
-//    if (userHasDream) {
-//        [self.delegate completedAuthenticationFlow];
-//    } else {
-        [self showCreateDreamForm];
-//    }
+- (void)didLogin {
+    [self.dreamRouter setWindow:self.window];
+    self.window.rootViewController = [self.dreamRouter defaultNavStack];
 }
 
 - (void)didCancelSignIn {
     
-}
-
-- (void)showCreateDreamForm {
-    // 1. create a create-dream-form vc using the factory
-    // 2. push onto the nav stack
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.title = @"create a dream";
-    [self.authNavStack pushViewController:vc animated:YES];
 }
 
 @end

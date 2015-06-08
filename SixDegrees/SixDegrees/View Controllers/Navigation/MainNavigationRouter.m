@@ -7,23 +7,24 @@
 //
 
 #import "MainNavigationRouter.h"
-#import "SDNavigationController.h"
-#import "ViewControllerFactory.h"
-
 #import "AuthNavigationRouter.h"
 #import "DreamNavigationRouter.h"
 
+#import "SDNavigationController.h"
+#import "ViewControllerFactory.h"
 #import "HomeViewController.h"
+
+#import "Lockbox.h"
 
 @interface MainNavigationRouter () <HomeViewControllerDelegate>
 
-@property (strong, nonatomic) id<BSInjector> injector;
-@property (strong, nonatomic) ViewControllerFactory *vcFactory;
-@property (strong, nonatomic) UIWindow *window;
+    @property (strong, nonatomic) id<BSInjector> injector;
+    @property (strong, nonatomic) ViewControllerFactory *vcFactory;
+    @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) SDNavigationController *mainNavStack;
-@property (strong, nonatomic) AuthNavigationRouter *authRouter;
-@property (strong, nonatomic) DreamNavigationRouter *dreamRouter;
+    @property (strong, nonatomic) SDNavigationController *mainNavStack;
+    @property (strong, nonatomic) AuthNavigationRouter *authRouter;
+    @property (strong, nonatomic) DreamNavigationRouter *dreamRouter;
 
 @end
 
@@ -62,8 +63,14 @@
 #pragma mark - HomeViewControllerDelegate
 
 - (void)didSwipeRightToContinue {
-    //self.window.rootViewController = [self.authRouter defaultAuthNavStack];
-    self.window.rootViewController = [self.dreamRouter defaultNavStack];
+    NSString *authNToken = [Lockbox stringForKey:AUTHN_TOKEN_KEY];
+    if ([authNToken length] == 0) {
+        [self.authRouter setWindow:self.window];
+        self.window.rootViewController = [self.authRouter defaultAuthNavStack];
+    } else {
+        [self.dreamRouter setWindow:self.window];
+        self.window.rootViewController = [self.dreamRouter defaultNavStack];
+    }
 }
 
 @end

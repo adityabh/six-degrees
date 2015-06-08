@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol DreamViewControllerDelegate <NSObject>
+- (void)didLogout;
+@end
+
 @interface AllDreamsViewControllerTableViewController : UITableViewController
+
+    @property (weak, nonatomic) id<DreamViewControllerDelegate> delegate;
+    @property (strong, nonatomic) NSString *segueReason;
 
 @end

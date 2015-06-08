@@ -16,6 +16,18 @@
     return @"sign_in_via_facebook";
 }
 
++ (NSString *)loginUser {
+    return @"api/login_user";
+}
+
++ (NSString *)createUser {
+    return @"api/create_user";
+}
+
++ (NSString *)logoutUser {
+    return @"api/logout_user";
+}
+
 #pragma mark - Dreams
 
 + (NSString *)fetchDreams {

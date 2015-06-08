@@ -11,13 +11,12 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-@protocol SignInViewControllerDelegate <NSObject>
-- (void)didCancelSignIn;
-- (void)didSignIn;
+@protocol LoginViewControllerDelegate <NSObject>
+- (void)didLogin;
 @end
 
 @interface LoginViewController : SDViewController
 
-    @property (weak, nonatomic) id<SignInViewControllerDelegate> delegate;
+    @property (weak, nonatomic) id<LoginViewControllerDelegate> delegate;
 
 @end

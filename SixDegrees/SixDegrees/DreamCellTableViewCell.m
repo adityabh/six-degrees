@@ -26,4 +26,20 @@
     [super setFrame:frame];
 }
 
+- (void)setBounds:(CGRect)bounds
+{
+    [super setBounds:bounds];
+    self.contentView.frame = self.bounds;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+
+    [self.contentView updateConstraintsIfNeeded];
+    [self.contentView layoutIfNeeded];
+    
+    self.descriptionLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.descriptionLabel.frame);
+}
+
 @end

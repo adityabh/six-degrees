@@ -12,6 +12,7 @@
 
 @interface AuthNavigationRouter : NSObject
 
+- (void)setWindow:(UIWindow *)window;
 - (SDNavigationController *)defaultAuthNavStack;
 
 @end

@@ -7,18 +7,24 @@
 //
 
 #import "DreamNavigationRouter.h"
+
+#import "AuthNavigationRouter.h"
 #import "SDNavigationController.h"
 #import "ViewControllerFactory.h"
+#import "SettingsPanelViewController.h"
 
-#import "DreamViewController.h"
 #import "AllDreamsViewControllerTableViewController.h"
 
-@interface DreamNavigationRouter ()
+#import "Lockbox.h"
+#import "SDModule.h"
 
-@property (strong, nonatomic) id<BSInjector> injector;
-@property (strong, nonatomic) ViewControllerFactory *vcFactory;
+@interface DreamNavigationRouter () <DreamViewControllerDelegate>
 
-@property (strong, nonatomic) SDNavigationController *dreamNavStack;
+    @property (strong, nonatomic) id<BSInjector> injector;
+    @property (strong, nonatomic) ViewControllerFactory *vcFactory;
+    @property (strong, nonatomic) UIWindow *window;
+
+    @property (strong, nonatomic) SDNavigationController *dreamNavStack;
 
 @end
 
@@ -41,14 +47,40 @@
 - (SDNavigationController *)defaultNavStack {
     if (!self.dreamNavStack) {
         
-        AllDreamsViewControllerTableViewController *allDreamsViewController = [self.vcFactory buildAllDreamVcWithInjector:self.injector];
+        AllDreamsViewControllerTableViewController *allDreamsViewController = [self.vcFactory buildAllDreamVcWithInjector:self injector:self.injector];
         
         self.dreamNavStack = [[SDNavigationController alloc] initWithRootViewController:allDreamsViewController];
-        
-        /*DreamViewController *dreamViewController = [self.vcFactory buildDreamVcWithInjector:self.injector];
-        self.dreamNavStack = [[SDNavigationController alloc] initWithRootViewController:dreamViewController];*/
     }
     return self.dreamNavStack;
+}
+
+- (void)setWindow:(UIWindow *)window {
+    _window = window;
+}
+
+#pragma mark - DreamViewControllerDelegate
+
+- (void)didLogout {
+    [Lockbox setString:@"" forKey:AUTHN_TOKEN_KEY];
+    AuthNavigationRouter *authRouter = (AuthNavigationRouter *)[self.injector getInstance:[AuthNavigationRouter class]];
+    [authRouter setWindow:self.window];
+    self.window.rootViewController = [authRouter defaultAuthNavStack];
+}
+
+#pragma mark - Dependency Injection
+
+- (id<BSModule>)module {
+    if (!_module) {
+        _module = [[SDModule alloc] init];
+    }
+    return _module;
+}
+
+- (id<BSInjector>)injector {
+    if (!_injector) {
+        _injector = [Blindside injectorWithModule:self.module];
+    }
+    return _injector;
 }
 
 @end
