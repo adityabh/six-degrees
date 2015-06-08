@@ -56,6 +56,7 @@
 		D461E4F11B1591CD0070C370 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D461E4F01B1591CD0070C370 /* LoginViewController.m */; };
 		D461E4F31B159B160070C370 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D461E4F21B159B160070C370 /* FBSDKCoreKit.framework */; };
 		D461E4F51B159EF80070C370 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D461E4F41B159EF80070C370 /* FBSDKLoginKit.framework */; };
+		D46D044C1B25306000D8B182 /* DreamsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D46D044B1B25306000D8B182 /* DreamsMainViewController.m */; };
 		D48BBD041AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */; };
 		F1F336645A361581DDD409F6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE94702CF9A4BA6E336EFDB1 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -165,6 +166,8 @@
 		D461E4F01B1591CD0070C370 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D461E4F21B159B160070C370 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Users/bhallaa/Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		D461E4F41B159EF80070C370 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Users/bhallaa/Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		D46D044A1B25306000D8B182 /* DreamsMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DreamsMainViewController.h; sourceTree = "<group>"; };
+		D46D044B1B25306000D8B182 /* DreamsMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DreamsMainViewController.m; sourceTree = "<group>"; };
 		D48BBD021AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllDreamsViewControllerTableViewController.h; sourceTree = "<group>"; };
 		D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllDreamsViewControllerTableViewController.m; sourceTree = "<group>"; };
 		DE94702CF9A4BA6E336EFDB1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -430,6 +433,8 @@
 				D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */,
 				D40B4D341B1FE06400913FA1 /* SettingsPanelViewController.h */,
 				D40B4D351B1FE06400913FA1 /* SettingsPanelViewController.m */,
+				D46D044A1B25306000D8B182 /* DreamsMainViewController.h */,
+				D46D044B1B25306000D8B182 /* DreamsMainViewController.m */,
 			);
 			name = Dream;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				B08F364819F33C8B00FC5A90 /* FacebookManager.m in Sources */,
 				B08FA0441A0530E6005D0CE2 /* DreamNavigationRouter.m in Sources */,
 				B08F361D19F2D38600FC5A90 /* MasterViewController.m in Sources */,
+				D46D044C1B25306000D8B182 /* DreamsMainViewController.m in Sources */,
 				B08F365019F4932500FC5A90 /* ApiError.m in Sources */,
 				D461E4EC1B1565EB0070C370 /* HelpDreamViewController.m in Sources */,
 				D40B4D361B1FE06400913FA1 /* SettingsPanelViewController.m in Sources */,

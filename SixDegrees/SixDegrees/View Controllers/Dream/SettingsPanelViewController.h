@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SettingsPanelViewControllerDelegate <NSObject>
+
+@required
+- (void)optionSelected:(NSString *)option;
+
+@end
 
 @interface SettingsPanelViewController : UITableViewController
+
+@property (nonatomic, assign) id<SettingsPanelViewControllerDelegate> delegate;
 
 @end

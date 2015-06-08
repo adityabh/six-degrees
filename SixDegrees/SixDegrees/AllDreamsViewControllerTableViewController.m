@@ -210,13 +210,6 @@
 
 #pragma mark - Navigation
 
-- (IBAction)unwindToAllDreams:(UIStoryboardSegue *)segue {
-    if ([self.segueReason isEqualToString:@"Logout"]) {
-        [self.delegate didLogout];
-    }
-    
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
 }
@@ -229,6 +222,17 @@
     destViewController.dream = self.dreams[sender.tag];
     
     [self.navigationController pushViewController:destViewController animated:YES];
+}
+
+#pragma mark -
+#pragma mark Button Actions
+
+- (IBAction)btnMovePanelRight:(id)sender
+{
+}
+
+- (IBAction)btnMovePanelLeft:(id)sender
+{
 }
 
 @end

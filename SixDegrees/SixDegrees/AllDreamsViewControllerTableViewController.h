@@ -7,14 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsPanelViewController.h"
 
-@protocol DreamViewControllerDelegate <NSObject>
+@protocol AllDreamsViewControllerTableViewControllerDelegate <NSObject>
+
+@optional
+- (void)movePanelLeft;
+- (void)movePanelRight;
+
+@required
+- (void)movePanelToOriginalPosition;
 - (void)didLogout;
+
 @end
 
-@interface AllDreamsViewControllerTableViewController : UITableViewController
+@interface AllDreamsViewControllerTableViewController : UITableViewController <SettingsPanelViewControllerDelegate>
 
-    @property (weak, nonatomic) id<DreamViewControllerDelegate> delegate;
-    @property (strong, nonatomic) NSString *segueReason;
+@property (nonatomic, assign) id<AllDreamsViewControllerTableViewControllerDelegate> delegate;
+
+@property (nonatomic, weak) IBOutlet UIButton *leftButton;
+@property (strong, nonatomic) NSString *segueReason;
 
 @end

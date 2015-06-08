@@ -11,12 +11,14 @@
 @class HomeViewController;
 @class LoginViewController;
 @class DreamViewController;
+@class DreamsMainViewController;
 @class SettingsPanelViewController;
 @class AllDreamsViewControllerTableViewController;
 
 @protocol SignInViewControllerDelegate;
 @protocol DreamViewControllerDelegate;
 @protocol HomeViewControllerDelegate;
+@protocol AllDreamsViewControllerTableViewControllerDelegate;
 
 @interface ViewControllerFactory : NSObject
 
@@ -28,7 +30,10 @@
 
 - (DreamViewController *)buildDreamVcWithInjector:(id<BSInjector>)injector;
 
-- (AllDreamsViewControllerTableViewController *)buildAllDreamVcWithInjector:(id <DreamViewControllerDelegate>)delegate
+- (DreamsMainViewController *)buildMainDreamVcWithInjector:(id <DreamViewControllerDelegate>)delegate
                                                                    injector:(id<BSInjector>)injector;
+
+- (AllDreamsViewControllerTableViewController *) buildAllDreamVcWithInjector :(id<AllDreamsViewControllerTableViewControllerDelegate>)delegate
+                                                                     injector:(id<BSInjector>)injector;
 
 @end

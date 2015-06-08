@@ -13,7 +13,7 @@
 #import "ViewControllerFactory.h"
 #import "SettingsPanelViewController.h"
 
-#import "AllDreamsViewControllerTableViewController.h"
+#import "DreamsMainViewController.h"
 
 #import "Lockbox.h"
 #import "SDModule.h"
@@ -47,9 +47,13 @@
 - (SDNavigationController *)defaultNavStack {
     if (!self.dreamNavStack) {
         
-        AllDreamsViewControllerTableViewController *allDreamsViewController = [self.vcFactory buildAllDreamVcWithInjector:self injector:self.injector];
+        DreamsMainViewController *dreamsMainViewController = [self.vcFactory buildMainDreamVcWithInjector:self injector:self.injector];
         
-        self.dreamNavStack = [[SDNavigationController alloc] initWithRootViewController:allDreamsViewController];
+        AllDreamsViewControllerTableViewController *allDreamsVc = [self.vcFactory buildAllDreamVcWithInjector:dreamsMainViewController injector:self.injector];
+        
+        dreamsMainViewController.centerViewController = allDreamsVc;
+        
+        self.dreamNavStack = [[SDNavigationController alloc] initWithRootViewController:dreamsMainViewController];
     }
     return self.dreamNavStack;
 }

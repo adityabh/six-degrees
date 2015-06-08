@@ -7,13 +7,13 @@
 //
 
 #import "ViewControllerFactory.h"
+
 #import "HomeViewController.h"
-
 #import "LoginViewController.h"
-
 #import "DreamViewController.h"
-#import "AllDreamsViewControllerTableViewController.h"
+#import "DreamsMainViewController.h"
 #import "SettingsPanelViewController.h"
+#import "AllDreamsViewControllerTableViewController.h"
 
 #import "BlindsidedStoryboard.h"
 
@@ -41,13 +41,22 @@
     return dreamViewController;
 }
 
-- (AllDreamsViewControllerTableViewController *)buildAllDreamVcWithInjector:(id <DreamViewControllerDelegate>)delegate
+- (DreamsMainViewController *)buildMainDreamVcWithInjector:(id <DreamViewControllerDelegate>)delegate
                                                                    injector:(id<BSInjector>)injector {
     BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:DREAM_STORYBOARD bundle:nil injector:injector];
-    AllDreamsViewControllerTableViewController *allDreamsViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([AllDreamsViewControllerTableViewController class])];
-    allDreamsViewController.delegate = delegate;
-    return allDreamsViewController;
+    DreamsMainViewController *dreamMainViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([DreamsMainViewController class])];
+    dreamMainViewController.delegate = delegate;
+    return dreamMainViewController;
 }
+
+- (AllDreamsViewControllerTableViewController *) buildAllDreamVcWithInjector :(id<AllDreamsViewControllerTableViewControllerDelegate>)delegate
+                                                                     injector:(id<BSInjector>)injector {
+    BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:DREAM_STORYBOARD bundle:nil injector:injector];
+    AllDreamsViewControllerTableViewController *allDreamVc = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([AllDreamsViewControllerTableViewController class])];
+    allDreamVc.delegate = delegate;
+    return allDreamVc;
+}
+
 
 
 @end
