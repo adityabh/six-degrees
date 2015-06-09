@@ -58,6 +58,9 @@
 		D461E4F51B159EF80070C370 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D461E4F41B159EF80070C370 /* FBSDKLoginKit.framework */; };
 		D46D044C1B25306000D8B182 /* DreamsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D46D044B1B25306000D8B182 /* DreamsMainViewController.m */; };
 		D48BBD041AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */; };
+		D4DC557C1B2665D300819CEE /* LeftPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC557A1B2665D300819CEE /* LeftPanelViewController.m */; };
+		D4DC557D1B2665D300819CEE /* LeftPanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DC557B1B2665D300819CEE /* LeftPanelViewController.xib */; };
+		D4DC557F1B2665E000819CEE /* MainCellLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DC557E1B2665E000819CEE /* MainCellLeft.xib */; };
 		F1F336645A361581DDD409F6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE94702CF9A4BA6E336EFDB1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -170,6 +173,10 @@
 		D46D044B1B25306000D8B182 /* DreamsMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DreamsMainViewController.m; sourceTree = "<group>"; };
 		D48BBD021AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllDreamsViewControllerTableViewController.h; sourceTree = "<group>"; };
 		D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllDreamsViewControllerTableViewController.m; sourceTree = "<group>"; };
+		D4DC55791B2665D300819CEE /* LeftPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftPanelViewController.h; path = ../../../../../Users/bhallaa/Desktop/SlideOutNavigation/Navigation/Classes/LeftPanelViewController.h; sourceTree = "<group>"; };
+		D4DC557A1B2665D300819CEE /* LeftPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftPanelViewController.m; path = ../../../../../Users/bhallaa/Desktop/SlideOutNavigation/Navigation/Classes/LeftPanelViewController.m; sourceTree = "<group>"; };
+		D4DC557B1B2665D300819CEE /* LeftPanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LeftPanelViewController.xib; path = ../../../../../Users/bhallaa/Desktop/SlideOutNavigation/Navigation/Classes/LeftPanelViewController.xib; sourceTree = "<group>"; };
+		D4DC557E1B2665E000819CEE /* MainCellLeft.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainCellLeft.xib; path = ../../../../../Users/bhallaa/Desktop/SlideOutNavigation/Navigation/Classes/MainCellLeft.xib; sourceTree = "<group>"; };
 		DE94702CF9A4BA6E336EFDB1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B7EE94FCD158A1EE106D42 /* Pods-SixDegreesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixDegreesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SixDegreesTests/Pods-SixDegreesTests.release.xcconfig"; sourceTree = "<group>"; };
 		EBE446E0CB8FEC8B9644D7EA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -462,6 +469,10 @@
 		B09F76EC1A99672300583077 /* Dreams */ = {
 			isa = PBXGroup;
 			children = (
+				D4DC557E1B2665E000819CEE /* MainCellLeft.xib */,
+				D4DC55791B2665D300819CEE /* LeftPanelViewController.h */,
+				D4DC557A1B2665D300819CEE /* LeftPanelViewController.m */,
+				D4DC557B1B2665D300819CEE /* LeftPanelViewController.xib */,
 				B09F76ED1A9967A500583077 /* DreamPanelView.xib */,
 				B09F76EF1A9967BD00583077 /* DreamPanelView.h */,
 				B09F76F01A9967BD00583077 /* DreamPanelView.m */,
@@ -576,6 +587,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B055B1EB19F20DD300AE17A5 /* Main.storyboard in Resources */,
+				D4DC557F1B2665E000819CEE /* MainCellLeft.xib in Resources */,
+				D4DC557D1B2665D300819CEE /* LeftPanelViewController.xib in Resources */,
 				D461E4EE1B158E400070C370 /* AuthN.Storyboard in Resources */,
 				B055B1F019F20DD300AE17A5 /* LaunchScreen.xib in Resources */,
 				B055B1ED19F20DD300AE17A5 /* Images.xcassets in Resources */,
@@ -684,6 +697,7 @@
 				B08F361D19F2D38600FC5A90 /* MasterViewController.m in Sources */,
 				D46D044C1B25306000D8B182 /* DreamsMainViewController.m in Sources */,
 				B08F365019F4932500FC5A90 /* ApiError.m in Sources */,
+				D4DC557C1B2665D300819CEE /* LeftPanelViewController.m in Sources */,
 				D461E4EC1B1565EB0070C370 /* HelpDreamViewController.m in Sources */,
 				D40B4D361B1FE06400913FA1 /* SettingsPanelViewController.m in Sources */,
 				B08F365819F4A4C800FC5A90 /* FacebookAccount.m in Sources */,

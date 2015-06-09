@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 Steven Wu. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+#define CORNER_RADIUS 4
+
 #import "DreamsMainViewController.h"
 #import "AllDreamsViewControllerTableViewController.h"
 #define CENTER_TAG 1
@@ -14,6 +17,9 @@
 #define LEFT_PANEL_TAG 2
 
 #import "ViewControllerFactory.h"
+
+#define SLIDE_TIMING .25
+#define PANEL_WIDTH 60
 
 @interface DreamsMainViewController () <AllDreamsViewControllerTableViewControllerDelegate>
 
@@ -45,55 +51,49 @@
 #pragma mark -
 #pragma mark View Did Load/Unload
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setupView];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
 }
 
 #pragma mark -
 #pragma mark View Will/Did Appear
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
 
 #pragma mark -
 #pragma mark View Will/Did Disappear
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
+- (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
 }
 
 #pragma mark -
 #pragma mark Setup View
 
-- (void)setupView
-{
+- (void)setupView {
     self.navigationItem.leftBarButtonItem =
         [[UIBarButtonItem alloc] initWithImage:
             [[UIImage imageNamed:@"bars"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                                          style:UIBarButtonItemStylePlain
                                         target:self
-                                        action:@selector(Add:)];
+                                        action:@selector(btnMovePanelRight:)];
+    self.navigationItem.leftBarButtonItem.tag = 1;
     
     self.centerViewController.view.tag = CENTER_TAG;
     
@@ -103,16 +103,38 @@
     [_centerViewController didMoveToParentViewController:self];
 }
 
-- (void)showCenterViewWithShadow:(BOOL)value withOffset:(double)offset
-{
+- (void)showCenterViewWithShadow:(BOOL)value withOffset:(double)offset {
+    if (value)
+    {
+        [_centerViewController.view.layer setCornerRadius:CORNER_RADIUS];
+        [_centerViewController.view.layer setShadowColor:[UIColor blackColor].CGColor];
+        [_centerViewController.view.layer setShadowOpacity:0.8];
+        [_centerViewController.view.layer setShadowOffset:CGSizeMake(offset, offset)];
+        
+    }
+    else
+    {
+        [_centerViewController.view.layer setCornerRadius:0.0f];
+        [_centerViewController.view.layer setShadowOffset:CGSizeMake(offset, offset)];
+    }
 }
 
-- (void)resetMainView
-{
+- (void)resetMainView {
+    // remove left view and reset variables, if needed
+    if (_leftPanelViewController != nil)
+    {
+        [self.leftPanelViewController.view removeFromSuperview];
+        self.leftPanelViewController = nil;
+        
+        self.navigationItem.leftBarButtonItem.tag = 1;
+        self.showingLeftPanel = NO;
+    }
+    
+    // remove view shadows
+    [self showCenterViewWithShadow:NO withOffset:0];
 }
 
-- (UIView *)getLeftView
-{
+- (UIView *)getLeftView {
     // init view if it doesn't already exist
     if (_leftPanelViewController == nil)
     {
@@ -138,45 +160,53 @@
     return view;
 }
 
-- (UIView *)getRightView
-{
-    UIView *view = nil;
-    return view;
-}
-
 #pragma mark -
 #pragma mark Swipe Gesture Setup/Actions
 
 #pragma mark - setup
 
-- (void)setupGestures
-{
+- (void)setupGestures {
 }
 
--(void)movePanel:(id)sender
-{
+-(void)movePanel:(id)sender {
 }
 
 #pragma mark -
 #pragma mark Delegate Actions
 
-- (void)movePanelLeft // to show right panel
-{
+- (void)movePanelRight { // to show left panel
+    UIView *childView = [self getLeftView];
+    [self.view sendSubviewToBack:childView];
+    
+    [UIView animateWithDuration:SLIDE_TIMING delay:0 options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         _centerViewController.view.frame = CGRectMake(self.view.frame.size.width - PANEL_WIDTH, 0, self.view.frame.size.width, self.view.frame.size.height);
+                     }
+                     completion:^(BOOL finished) {
+                         if (finished) {
+                             
+                             self.navigationItem.leftBarButtonItem.tag = 0;
+                         }
+                     }];
 }
 
-- (void)movePanelRight // to show left panel
-{
-}
-
-- (void)movePanelToOriginalPosition
-{
+- (void)movePanelToOriginalPosition {
+    [UIView animateWithDuration:SLIDE_TIMING delay:0 options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         _centerViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+                     }
+                     completion:^(BOOL finished) {
+                         if (finished) {
+                             
+                             [self resetMainView];
+                         }
+                     }];
 }
 
 #pragma mark -
 #pragma mark Default System Code
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
@@ -184,8 +214,7 @@
     return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
@@ -200,6 +229,27 @@
         [self.delegate didLogout];
     }
     
+}
+
+#pragma mark -
+#pragma mark Button Actions
+
+- (IBAction)btnMovePanelRight:(id)sender {
+    UIButton *button = sender;
+    switch (button.tag) {
+        case 0: {
+            [self movePanelToOriginalPosition];
+            break;
+        }
+            
+        case 1: {
+            [self movePanelRight];
+            break;
+        }
+            
+        default:
+            break;
+    }
 }
 
 @end

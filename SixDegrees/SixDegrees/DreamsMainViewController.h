@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AllDreamsViewControllerTableViewController.h"
-#import "SettingsPanelViewController.h"
+#import "LeftPanelViewController.h"
 
 @protocol DreamViewControllerDelegate <NSObject>
 - (void)didLogout;
@@ -19,7 +19,7 @@
     @property (weak, nonatomic) id<DreamViewControllerDelegate> delegate;
 
     @property (nonatomic, strong) AllDreamsViewControllerTableViewController *centerViewController;
-    @property (nonatomic, strong) SettingsPanelViewController *leftPanelViewController;
+    @property (nonatomic, strong) LeftPanelViewController *leftPanelViewController;
 
     @property (strong, nonatomic) NSString *segueReason;
 

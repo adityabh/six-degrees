@@ -224,15 +224,4 @@
     [self.navigationController pushViewController:destViewController animated:YES];
 }
 
-#pragma mark -
-#pragma mark Button Actions
-
-- (IBAction)btnMovePanelRight:(id)sender
-{
-}
-
-- (IBAction)btnMovePanelLeft:(id)sender
-{
-}
-
 @end

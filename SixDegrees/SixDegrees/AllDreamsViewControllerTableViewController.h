@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SettingsPanelViewController.h"
+#import "LeftPanelViewController.h"
 
 @protocol AllDreamsViewControllerTableViewControllerDelegate <NSObject>
 
 @optional
-- (void)movePanelLeft;
 - (void)movePanelRight;
 
 @required
@@ -21,7 +20,7 @@
 
 @end
 
-@interface AllDreamsViewControllerTableViewController : UITableViewController <SettingsPanelViewControllerDelegate>
+@interface AllDreamsViewControllerTableViewController : UITableViewController  <LeftPanelViewControllerDelegate>
 
 @property (nonatomic, assign) id<AllDreamsViewControllerTableViewControllerDelegate> delegate;
 
