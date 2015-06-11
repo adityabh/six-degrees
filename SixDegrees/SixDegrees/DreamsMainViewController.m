@@ -13,7 +13,7 @@
 #import "AllDreamsViewControllerTableViewController.h"
 #define CENTER_TAG 1
 
-#import "SettingsPanelViewController.h"
+#import "LeftPanelViewController.h"
 #define LEFT_PANEL_TAG 2
 
 #import "ViewControllerFactory.h"
@@ -66,6 +66,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -77,6 +78,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -87,20 +89,18 @@
 #pragma mark Setup View
 
 - (void)setupView {
-    self.navigationItem.leftBarButtonItem =
-        [[UIBarButtonItem alloc] initWithImage:
-            [[UIImage imageNamed:@"bars"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                                         style:UIBarButtonItemStylePlain
-                                        target:self
-                                        action:@selector(btnMovePanelRight:)];
-    self.navigationItem.leftBarButtonItem.tag = 1;
     
     self.centerViewController.view.tag = CENTER_TAG;
     
     [self.view addSubview:self.centerViewController.view];
+    
+    UINavigationController *childNavController = [[UINavigationController alloc] initWithRootViewController:_centerViewController];
+    childNavController.view.frame = _centerViewController.view.frame;
+    
     [self addChildViewController:_centerViewController];
     
     [_centerViewController didMoveToParentViewController:self];
+    [childNavController didMoveToParentViewController:self];
 }
 
 - (void)showCenterViewWithShadow:(BOOL)value withOffset:(double)offset {
@@ -126,7 +126,7 @@
         [self.leftPanelViewController.view removeFromSuperview];
         self.leftPanelViewController = nil;
         
-        self.navigationItem.leftBarButtonItem.tag = 1;
+        self.centerViewController.leftBarButton.tag = 1;
         self.showingLeftPanel = NO;
     }
     
@@ -185,7 +185,7 @@
                      completion:^(BOOL finished) {
                          if (finished) {
                              
-                             self.navigationItem.leftBarButtonItem.tag = 0;
+                             self.centerViewController.leftBarButton.tag = 0;
                          }
                      }];
 }
@@ -225,31 +225,17 @@
 #pragma mark - Navigation
 
 - (IBAction)unwindToAllDreams:(UIStoryboardSegue *)segue {
-    if ([self.segueReason isEqualToString:@"Logout"]) {
-        [self.delegate didLogout];
-    }
     
 }
 
-#pragma mark -
-#pragma mark Button Actions
-
-- (IBAction)btnMovePanelRight:(id)sender {
-    UIButton *button = sender;
-    switch (button.tag) {
-        case 0: {
-            [self movePanelToOriginalPosition];
-            break;
-        }
-            
-        case 1: {
-            [self movePanelRight];
-            break;
-        }
-            
-        default:
-            break;
-    }
+- (void)optionSelected:(NSString *)option {
+    if ([option isEqualToString:@"Logout"]) {
+        [self.delegate didLogout];
+    };
+    
+    if ([option isEqualToString:@"How it works"]) {
+        [self.delegate showHowItWorks];
+    };
 }
 
 @end

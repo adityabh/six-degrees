@@ -9,9 +9,9 @@
 #import "DreamNavigationRouter.h"
 
 #import "AuthNavigationRouter.h"
+#import "MainNavigationRouter.h"
 #import "SDNavigationController.h"
 #import "ViewControllerFactory.h"
-#import "SettingsPanelViewController.h"
 
 #import "DreamsMainViewController.h"
 
@@ -69,6 +69,12 @@
     AuthNavigationRouter *authRouter = (AuthNavigationRouter *)[self.injector getInstance:[AuthNavigationRouter class]];
     [authRouter setWindow:self.window];
     self.window.rootViewController = [authRouter defaultAuthNavStack];
+}
+
+- (void)showHowItWorks {
+    MainNavigationRouter *mainRouter = (MainNavigationRouter *)[self.injector getInstance:[MainNavigationRouter class]];
+    [mainRouter setWindow:self.window];
+    self.window.rootViewController = [mainRouter defaultNavStack];
 }
 
 #pragma mark - Dependency Injection

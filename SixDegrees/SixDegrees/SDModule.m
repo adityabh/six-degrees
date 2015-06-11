@@ -11,7 +11,6 @@
 #import "ViewControllerFactory.h"
 #import "MainNavigationRouter.h"
 #import "AuthNavigationRouter.h"
-#import "DreamViewController.h"
 
 #import "SDApiManager.h"
 #import "UserManager.h"
@@ -23,12 +22,11 @@
 - (void)configure:(id<BSBinder>)binder {
     
     [binder bind:@"sdApiUrl" toInstance:[NSURL URLWithString:@"https://six-degrees-app.herokuapp.com/"]];
-//    [binder bind:@"sdApiUrl" toInstance:[NSURL URLWithString:@"http://localhost:3000/"]];
+//  [binder bind:@"sdApiUrl" toInstance:[NSURL URLWithString:@"http://localhost:3000/"]];
     
     [binder bind:[ViewControllerFactory class] withScope:[BSSingleton scope]];
     [binder bind:[MainNavigationRouter class] withScope:[BSSingleton scope]];
     [binder bind:[AuthNavigationRouter class] withScope:[BSSingleton scope]];
-    [binder bind:[DreamViewController class] withScope:[BSSingleton scope]];
     
     [binder bind:[SDApiManager class] withScope:[BSSingleton scope]];
     [binder bind:[UserManager class] withScope:[BSSingleton scope]];

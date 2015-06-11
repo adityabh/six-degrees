@@ -16,7 +16,7 @@
 
 @required
 - (void)movePanelToOriginalPosition;
-- (void)didLogout;
+- (void)optionSelected:(NSString *)option;
 
 @end
 
@@ -24,7 +24,8 @@
 
 @property (nonatomic, assign) id<AllDreamsViewControllerTableViewControllerDelegate> delegate;
 
-@property (nonatomic, weak) IBOutlet UIButton *leftButton;
+@property (nonatomic, weak) IBOutlet UIButton *leftBarButton;
+@property (nonatomic, weak) IBOutlet UIButton *rightBarButton;
 @property (strong, nonatomic) NSString *segueReason;
 
 @end

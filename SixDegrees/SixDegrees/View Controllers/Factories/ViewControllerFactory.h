@@ -10,7 +10,6 @@
 
 @class HomeViewController;
 @class LoginViewController;
-@class DreamViewController;
 @class DreamsMainViewController;
 @class SettingsPanelViewController;
 @class AllDreamsViewControllerTableViewController;
@@ -27,8 +26,6 @@
 
 - (LoginViewController *)buildSignInVcWithDelegate:(id<SignInViewControllerDelegate>)delegate
                                            injector:(id<BSInjector>)injector;
-
-- (DreamViewController *)buildDreamVcWithInjector:(id<BSInjector>)injector;
 
 - (DreamsMainViewController *)buildMainDreamVcWithInjector:(id <DreamViewControllerDelegate>)delegate
                                                                    injector:(id<BSInjector>)injector;

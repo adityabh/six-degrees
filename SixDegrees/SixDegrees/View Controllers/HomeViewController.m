@@ -14,10 +14,6 @@
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
-@property (weak, nonatomic) IBOutlet UIView *bottomView;
-@property (weak, nonatomic) IBOutlet UILabel *bottomLabel;
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeightConstraint;
 
 @end
 
@@ -27,7 +23,6 @@
     [super viewDidLoad];
     [self setupCarousel];
     [self setupPageControl];
-    [self setupBottomView];
 }
 
 #pragma mark - Setup
@@ -46,12 +41,6 @@
     self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     self.pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     self.pageControl.backgroundColor = [UIColor clearColor];
-}
-
-- (void)setupBottomView {
-    self.bottomLabel.text = @"SWIPE RIGHT TO BEGIN";
-    self.bottomViewHeightConstraint.constant = 75;
-    self.bottomView.backgroundColor = [UIColor lightGrayColor];
 }
 
 #pragma mark - iCarouselDataSource
@@ -96,7 +85,7 @@
     [self.delegate didSwipeRightToContinue];
 }
 
-#pragma mark - 
+#pragma mark -
 
 - (NSArray *)carouselItems {
     return @[

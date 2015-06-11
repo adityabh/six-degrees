@@ -12,6 +12,7 @@
 
 @protocol DreamViewControllerDelegate <NSObject>
 - (void)didLogout;
+- (void)showHowItWorks;
 @end
 
 @interface DreamsMainViewController : UIViewController

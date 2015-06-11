@@ -8,6 +8,9 @@
 
 #import "AllDreamsViewControllerTableViewController.h"
 
+#import "NSString+FontAwesome.h"
+#import "UIImage+FontAwesome.h"
+
 #import "ViewControllerFactory.h"
 #import "DreamManager.h"
 #import "SignInViewController.h"
@@ -52,6 +55,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIImage *leftIcon = [UIImage imageWithIcon:@"fa-bars" backgroundColor:[UIColor clearColor] iconColor:[UIColor whiteColor] andSize:CGSizeMake(25, 25)];
+    [_leftBarButton setImage:leftIcon forState:UIControlStateNormal];
+    [_leftBarButton addTarget:self action:@selector(btnMovePanelRight:) forControlEvents:UIControlEventTouchUpInside];
+    _leftBarButton.tag = 1;
+    
+    UIImage *rightIcon = [UIImage imageWithIcon:@"fa-pencil-square-o" backgroundColor:[UIColor clearColor] iconColor:[UIColor whiteColor] andSize:CGSizeMake(25, 25)];
+    [_rightBarButton setImage:rightIcon forState:UIControlStateNormal];
     
     [[self.dreamManager fetchDreamsPromise] then:^id(NSArray *dreams) {
         self.dreams = dreams;
@@ -222,6 +233,31 @@
     destViewController.dream = self.dreams[sender.tag];
     
     [self.navigationController pushViewController:destViewController animated:YES];
+}
+
+- (void)optionSelected:(NSString *)option {
+    [_delegate optionSelected:option];
+}
+
+#pragma mark -
+#pragma mark Button Actions
+
+- (IBAction)btnMovePanelRight:(id)sender {
+    UIButton *button = sender;
+    switch (button.tag) {
+        case 0: {
+            [self.delegate movePanelToOriginalPosition];
+            break;
+        }
+            
+        case 1: {
+            [self.delegate movePanelRight];
+            break;
+        }
+            
+        default:
+            break;
+    }
 }
 
 @end

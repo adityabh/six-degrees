@@ -10,9 +10,7 @@
 
 #import "HomeViewController.h"
 #import "LoginViewController.h"
-#import "DreamViewController.h"
 #import "DreamsMainViewController.h"
-#import "SettingsPanelViewController.h"
 #import "AllDreamsViewControllerTableViewController.h"
 
 #import "BlindsidedStoryboard.h"
@@ -33,12 +31,6 @@
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([LoginViewController class])];
     loginViewController.delegate = delegate;
     return loginViewController;
-}
-
-- (DreamViewController *)buildDreamVcWithInjector:(id<BSInjector>)injector {
-    BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:DREAM_STORYBOARD bundle:nil injector:injector];
-    DreamViewController *dreamViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([DreamViewController class])];
-    return dreamViewController;
 }
 
 - (DreamsMainViewController *)buildMainDreamVcWithInjector:(id <DreamViewControllerDelegate>)delegate
