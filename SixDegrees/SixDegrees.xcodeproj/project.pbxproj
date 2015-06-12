@@ -63,7 +63,6 @@
 		D4DC57111B27C70400819CEE /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC570C1B27C70400819CEE /* UIFont+FontAwesome.m */; };
 		D4DC57121B27C70400819CEE /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC570E1B27C70400819CEE /* NSString+FontAwesome.m */; };
 		D4DC57131B27C70400819CEE /* UIImage+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC57101B27C70400819CEE /* UIImage+FontAwesome.m */; };
-		D4DC57171B27C71900819CEE /* fontawesome-github.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DC57151B27C71900819CEE /* fontawesome-github.png */; };
 		D4DC57181B27C71900819CEE /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4DC57161B27C71900819CEE /* FontAwesome.ttf */; };
 		D4DC571A1B27C86500819CEE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DC57191B27C86500819CEE /* UIKit.framework */; };
 		D4DC571C1B27C86E00819CEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DC571B1B27C86E00819CEE /* Foundation.framework */; };
@@ -532,7 +531,6 @@
 		D4DC570E1B27C70400819CEE /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+FontAwesome.m"; path = "../../../font-awesome/ios-fontawesome/NSString+FontAwesome.m"; sourceTree = "<group>"; };
 		D4DC570F1B27C70400819CEE /* UIImage+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+FontAwesome.h"; path = "../../../font-awesome/ios-fontawesome/UIImage+FontAwesome.h"; sourceTree = "<group>"; };
 		D4DC57101B27C70400819CEE /* UIImage+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FontAwesome.m"; path = "../../../font-awesome/ios-fontawesome/UIImage+FontAwesome.m"; sourceTree = "<group>"; };
-		D4DC57151B27C71900819CEE /* fontawesome-github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fontawesome-github.png"; path = "../../../font-awesome/ios-fontawesome/Resources/fontawesome-github.png"; sourceTree = "<group>"; };
 		D4DC57161B27C71900819CEE /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../../../font-awesome/ios-fontawesome/Resources/FontAwesome.ttf"; sourceTree = "<group>"; };
 		D4DC57191B27C86500819CEE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D4DC571B1B27C86E00819CEE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -672,8 +670,8 @@
 		B08F361319F2D2BD00FC5A90 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B08FA0501A053B32005D0CE2 /* Authentication */,
 				B08FA04F1A053B2D005D0CE2 /* Dream */,
+				B08FA0501A053B32005D0CE2 /* Authentication */,
 				B08FA03E1A052FC1005D0CE2 /* Navigation */,
 				B08FA03A1A052E8D005D0CE2 /* Factories */,
 				B08F361E19F2D3B200FC5A90 /* HomeViewController.h */,
@@ -1430,7 +1428,6 @@
 		D4DC57141B27C70800819CEE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D4DC57151B27C71900819CEE /* fontawesome-github.png */,
 				D4DC57161B27C71900819CEE /* FontAwesome.ttf */,
 			);
 			name = Resources;
@@ -1645,7 +1642,6 @@
 				B055B1F019F20DD300AE17A5 /* LaunchScreen.xib in Resources */,
 				B055B1ED19F20DD300AE17A5 /* Images.xcassets in Resources */,
 				D4278AD71B1B7937002FA1F1 /* Dream.storyboard in Resources */,
-				D4DC57171B27C71900819CEE /* fontawesome-github.png in Resources */,
 				B09F76EE1A9967A500583077 /* DreamPanelView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2062,7 +2058,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Steven/Documents/FacebookSDK,
@@ -2089,7 +2085,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Steven/Documents/FacebookSDK,
