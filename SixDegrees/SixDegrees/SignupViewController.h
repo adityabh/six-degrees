@@ -7,10 +7,10 @@
 //
 
 #import "SDViewController.h"
+#import "User.h"
 
 @protocol SignupViewControllerDelegate <NSObject>
-- (void)didCancelSignup;
-- (void)didSignup;
+- (void)didSignup:(User *)user;
 @end
 
 @interface SignupViewController : SDViewController

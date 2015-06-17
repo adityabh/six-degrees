@@ -38,27 +38,6 @@
 
 #pragma mark - Authentication
 
-- (void)authenticateWithFacebookId:(NSString *)facebookId
-                     facebookToken:(NSString *)facebookToken
-                         userEmail:(NSString *)userEmail
-                           success:(VoidBlock)success
-                           failure:(ErrorBlock)failure {
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setValue:facebookId forKey:@"facebook_id"];
-    [params setValue:facebookToken forKey:@"facebook_token"];
-    [params setValue:userEmail forKey:@"user_email"];
-    
-    [self.sessionManager POST:[SDEndpoints authWithFacebook] parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
-        if (success) {
-            success();
-        }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        if (failure) {
-            failure(error);
-        }
-    }];
-}
-
 - (void) loginUser: (NSString *) email
           password: (NSString *) password
            success:(VoidBlock)success
@@ -84,12 +63,35 @@
     }];
 }
 
+- (void) loginFacebookUser: (NSString *) uid
+                   success:(VoidBlock)success
+                   failure:(VoidBlock)failure {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:uid forKey:@"uid"];
+    
+    [self.sessionManager POST:[SDEndpoints loginUser] parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        long status = [responseObject[@"status"] longValue];
+        if (success) {
+            if (status == 200l) {
+                User *user = [MTLJSONAdapter modelOfClass:User.class fromJSONDictionary:responseObject[@"user"] error:nil];
+                success(user);
+            } else {
+                failure(responseObject[@"message"]);
+            }
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failure) {
+            failure(error.description);
+        }
+    }];
+}
+
 - (void) signupUser: (NSString *) firstName
           lastName: (NSString *) lastName
              email: (NSString *) email
           password: (NSString *) password
            success:(VoidBlock)success
-           failure:(ErrorBlock)failure {
+           failure:(VoidBlock)failure {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:email forKey:@"email"];
     [params setValue:password forKey:@"password"];
@@ -97,15 +99,85 @@
     [params setValue:lastName forKey:@"last_name"];
     
     [self.sessionManager POST:[SDEndpoints createUser] parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        long status = [responseObject[@"status"] longValue];
         if (success) {
-            success();
+            if (status == 200l) {
+                User *user = [MTLJSONAdapter modelOfClass:User.class fromJSONDictionary:responseObject[@"user"] error:nil];
+                success(user);
+            } else {
+                failure(responseObject[@"message"]);
+            }
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         if (failure) {
-            failure(error);
+            failure(error.description);
+        }
+    }];
+
+}
+
+- (void) signupFacebookUser: (NSString *) uid
+                  firstName: (NSString *) firstName
+                   lastName: (NSString *) lastName
+                      email: (NSString *) email
+                       name: (NSString *) name
+                     gender: (NSString *) gender
+                   timezone: (NSString *) timezone
+                    success:(VoidBlock)success
+                    failure:(VoidBlock)failure {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:uid forKey:@"uid"];
+    [params setValue:email forKey:@"email"];
+    [params setValue:name forKey:@"name"];
+    [params setValue:firstName forKey:@"first_name"];
+    [params setValue:lastName forKey:@"last_name"];
+    [params setValue:gender forKey:@"gender"];
+    [params setValue:timezone forKey:@"timezone"];
+    
+    [self.sessionManager POST:[SDEndpoints createUser] parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        long status = [responseObject[@"status"] longValue];
+        if (success) {
+            if (status == 200l) {
+                User *user = [MTLJSONAdapter modelOfClass:User.class fromJSONDictionary:responseObject[@"user"] error:nil];
+                success(user);
+            } else {
+                failure(responseObject[@"message"]);
+            }
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failure) {
+            failure(error.description);
         }
     }];
 }
+
+
+- (void) getUser: (NSString *) authenticationToken
+         success:(VoidBlock)success
+         failure:(VoidBlock)failure {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:authenticationToken forKey:@"authentication_token"];
+    
+    [self.sessionManager GET:[SDEndpoints getUser] parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        long status = [responseObject[@"status"] longValue];
+        if (success) {
+            if (status == 200l) {
+                User *user = [MTLJSONAdapter modelOfClass:User.class fromJSONDictionary:responseObject[@"user"] error:nil];
+                user.smallAvatar = responseObject[@"small_avatar"];
+                user.largeAvatar = responseObject[@"large_avatar"];
+                success(user);
+            } else {
+                failure(responseObject[@"message"]);
+            }
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failure) {
+            failure(error.description);
+        }
+    }];
+    
+}
+
 
 #pragma mark - Dreams
 

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AllDreamsViewControllerTableViewController.h"
 #import "LeftPanelViewController.h"
+#import "User.h"
 
 @protocol DreamViewControllerDelegate <NSObject>
 - (void)didLogout;
@@ -23,6 +24,7 @@
     @property (nonatomic, strong) LeftPanelViewController *leftPanelViewController;
 
     @property (strong, nonatomic) NSString *segueReason;
+    @property (nonatomic, strong) User *user;
 
 @end
 

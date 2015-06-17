@@ -7,12 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import <FacebookSDK/FacebookSDK.h>
+
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "SDModule.h"
 
 #import "MainNavigationRouter.h"
 #import "SDNavigationController.h"
-#import "FacebookManager.h"
 
 @interface AppDelegate ()
 
@@ -20,9 +20,24 @@
 
 @implementation AppDelegate
 
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBSDKAppEvents activateApp];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupMainRouter];
-    return YES;
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                    didFinishLaunchingWithOptions:launchOptions];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -37,19 +52,8 @@
 
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    [FBAppCall handleDidBecomeActive];
-}
-
 - (void)applicationWillTerminate:(UIApplication *)application {
 
-}
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    FacebookManager *fbManager = (FacebookManager *)[self.injector getInstance:[FacebookManager class]];
-    [FBSession.activeSession setStateChangeHandler:fbManager.stateChangeHandler];
-    BOOL appUrlRequestHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
-    return appUrlRequestHandled;
 }
 
 #pragma mark - Navigation

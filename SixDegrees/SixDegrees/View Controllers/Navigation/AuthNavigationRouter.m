@@ -11,9 +11,10 @@
 #import "SDNavigationController.h"
 #import "ViewControllerFactory.h"
 #import "LoginViewController.h"
+#import "SignupViewController.h"
 
 
-@interface AuthNavigationRouter () <LoginViewControllerDelegate>
+@interface AuthNavigationRouter () <LoginViewControllerDelegate, SignupViewControllerDelegate>
 
     @property (strong, nonatomic) id<BSInjector> injector;
     @property (strong, nonatomic) ViewControllerFactory *vcFactory;
@@ -58,9 +59,14 @@
 
 #pragma mark - LogViewControllerDelegate
 
-- (void)didLogin {
+- (void)didLogin:(User *)user {
     [self.dreamRouter setWindow:self.window];
-    self.window.rootViewController = [self.dreamRouter defaultNavStack];
+    self.window.rootViewController = [self.dreamRouter defaultNavStack:user];
+}
+
+- (void)didSignup:(User *)user {
+    [self.dreamRouter setWindow:self.window];
+    self.window.rootViewController = [self.dreamRouter defaultNavStack:user];
 }
 
 - (void)didCancelSignIn {

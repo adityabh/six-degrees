@@ -31,6 +31,9 @@
 
 @property (strong, nonatomic, readonly) NSNumber *admin;
 
+@property (strong, nonatomic) NSString *smallAvatar;
+@property (strong, nonatomic) NSString *largeAvatar;
+
 @end
 
 //"created_at" = "2014-10-18T21:12:54.874Z";

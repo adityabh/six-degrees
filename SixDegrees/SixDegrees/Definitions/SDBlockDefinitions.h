@@ -7,7 +7,8 @@
 //
 
 #import "ApiError.h"
-#import <FacebookSDK/FacebookSDK.h>
+//#import <FBSDKCoreKit/FBSDKCoreKit.h>
+//#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 #pragma mark -
 
@@ -17,4 +18,4 @@ typedef void(^ApiErrorBlock)(ApiError *apiError);
 
 #pragma mark - Facebook
 
-typedef void(^FbSessionStateChangeHandler)(FBSession *session, FBSessionState state, NSError *error);
+//typedef void(^FbSessionStateChangeHandler)(FBSession *session, FBSessionState state, NSError *error);

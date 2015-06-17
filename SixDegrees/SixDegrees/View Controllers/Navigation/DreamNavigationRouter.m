@@ -44,7 +44,7 @@
     return self;
 }
 
-- (SDNavigationController *)defaultNavStack {
+- (SDNavigationController *)defaultNavStack:(User *)user {
     if (!self.dreamNavStack) {
         
         DreamsMainViewController *dreamsMainViewController = [self.vcFactory buildMainDreamVcWithInjector:self injector:self.injector];
@@ -52,6 +52,7 @@
         AllDreamsViewControllerTableViewController *allDreamsVc = [self.vcFactory buildAllDreamVcWithInjector:dreamsMainViewController injector:self.injector];
         
         dreamsMainViewController.centerViewController = allDreamsVc;
+        dreamsMainViewController.user = user;
         
         self.dreamNavStack = [[SDNavigationController alloc] initWithRootViewController:dreamsMainViewController];
     }

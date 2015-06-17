@@ -26,6 +26,8 @@
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([SYSTEM_VERSION compare:v options:NSNumericSearch] != NSOrderedAscending)
 #define IS_IOS8_OR_ABOVE                            (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
 
+#define PROVIDER_FB @"facebook"
+
 
 @interface AllDreamsViewControllerTableViewController ()
 
@@ -104,8 +106,20 @@
 {
     int index = (int)indexPath.section;
     UserDream *dream = self.dreams[index];
-
-    cell.profileImageView.profileID = dream.user.uid;
+    
+    if (dream.user.smallAvatar != nil) {
+        NSURL *url = [NSURL URLWithString:dream.user.smallAvatar];
+        NSData  *data = [NSData dataWithContentsOfURL:url];
+       cell.profileImageView.image = [UIImage imageWithData:data];
+    } else if ([PROVIDER_FB isEqualToString:dream.user.provider]) {
+        // TODO : remove hardcoded url here
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=square",dream.user.uid]];
+        NSData  *data = [NSData dataWithContentsOfURL:url];
+        cell.profileImageView.image = [UIImage imageWithData:data];
+    } else {
+        cell.profileImageView.image = [UIImage imageNamed:@"no_profile"];
+    }
+    
     cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", dream.user.firstName, dream.user.lastName];
     cell.descriptionLabel.text = dream.content.dreamDescription;
     [cell.descriptionLabel sizeToFit];

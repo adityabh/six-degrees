@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface DreamCellTableViewCell : UITableViewCell
 
     @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
     @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
-    @property (nonatomic, weak) IBOutlet FBProfilePictureView *profileImageView;
+    @property (nonatomic, weak) IBOutlet UIImageView *profileImageView;
     @property (weak, nonatomic) IBOutlet UIImageView *typeIcon;
     @property (weak, nonatomic) IBOutlet UIButton *helpButton;
 

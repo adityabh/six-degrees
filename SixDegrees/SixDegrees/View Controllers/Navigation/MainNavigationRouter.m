@@ -13,6 +13,8 @@
 #import "SDNavigationController.h"
 #import "ViewControllerFactory.h"
 #import "HomeViewController.h"
+#import "SDApiManager.h"
+#import "User.h"
 
 #import "Lockbox.h"
 
@@ -25,6 +27,7 @@
     @property (strong, nonatomic) SDNavigationController *mainNavStack;
     @property (strong, nonatomic) AuthNavigationRouter *authRouter;
     @property (strong, nonatomic) DreamNavigationRouter *dreamRouter;
+     @property (strong, nonatomic) SDApiManager *apiManager;
 
 @end
 
@@ -32,18 +35,20 @@
 
 + (BSInitializer *)bsInitializer {
     return [BSInitializer initializerWithClass:self
-                                      selector:@selector(initWithViewControllerFactory:authNavigationRouter:dreamNavigationRouter:)
-                                  argumentKeys:[ViewControllerFactory class], [AuthNavigationRouter class], [DreamNavigationRouter class],nil];
+                                      selector:@selector(initWithViewControllerFactory:authNavigationRouter:dreamNavigationRouter:apiManager:)
+                                  argumentKeys:[ViewControllerFactory class], [AuthNavigationRouter class], [DreamNavigationRouter class],[SDApiManager class], nil];
 }
 
 - (instancetype)initWithViewControllerFactory:(ViewControllerFactory *)viewControllerFactory
                          authNavigationRouter:(AuthNavigationRouter *)authNavigationRouter
-                        dreamNavigationRouter:(DreamNavigationRouter *)dreamNavigationRouter {
+                        dreamNavigationRouter:(DreamNavigationRouter *)dreamNavigationRouter
+                                   apiManager:(SDApiManager *)apiManager {
     self = [super init];
     if (self) {
         _vcFactory = viewControllerFactory;
         _authRouter = authNavigationRouter;
         _dreamRouter = dreamNavigationRouter;
+        _apiManager = apiManager;
     }
     return self;
 }
@@ -64,13 +69,19 @@
 
 - (void)didSwipeRightToContinue {
     NSString *authNToken = [Lockbox stringForKey:AUTHN_TOKEN_KEY];
-    if ([authNToken length] == 0) {
-        [self.authRouter setWindow:self.window];
-        self.window.rootViewController = [self.authRouter defaultAuthNavStack];
-    } else {
-        [self.dreamRouter setWindow:self.window];
-        self.window.rootViewController = [self.dreamRouter defaultNavStack];
-    }
+    [self.apiManager getUser:authNToken
+                       success:^(User *user) {
+                           if (user != nil) {
+                               [self.dreamRouter setWindow:self.window];
+                               self.window.rootViewController = [self.dreamRouter defaultNavStack:user];
+                           } else {
+                               [self.authRouter setWindow:self.window];
+                               self.window.rootViewController = [self.authRouter defaultAuthNavStack];
+                           }
+                       } failure:^(NSString *error) {
+                           [self.authRouter setWindow:self.window];
+                           self.window.rootViewController = [self.authRouter defaultAuthNavStack];
+                       }];
 }
 
 @end

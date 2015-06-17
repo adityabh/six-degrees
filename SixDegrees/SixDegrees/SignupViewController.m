@@ -6,8 +6,12 @@
 //  Copyright (c) 2015 Steven Wu. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "SignupViewController.h"
 #import "SDApiManager.h"
+#import "User.h"
+#import "Lockbox.h"
 
 @interface SignupViewController ()
 
@@ -15,6 +19,8 @@
     @property (weak, nonatomic) IBOutlet UITextField *lastName;
     @property (weak, nonatomic) IBOutlet UITextField *email;
     @property (weak, nonatomic) IBOutlet UITextField *password;
+
+    @property (weak, nonatomic) IBOutlet UILabel *errorMessage;
 
     @property (strong, nonatomic) SDApiManager *apiManager;
 
@@ -39,7 +45,14 @@
 }
 
 - (IBAction)signupTapped:(id)sender {
-    //TODO: add input validation
+    [self resetInputs];
+    
+    if (![self validateInput]) {
+        self.errorMessage.textColor = [UIColor redColor];
+        self.errorMessage.hidden = NO;
+        return;
+    }
+    
     NSString *firstName = self.firstName.text;
     NSString *lastName = self.lastName.text;
     NSString * email = self.email.text;
@@ -49,12 +62,51 @@
                        lastName:lastName
                           email:email
                       password:password
-                       success:^{
+                       success:^(User *user) {
+                           // store user authentication token securely in keychain
+                           [Lockbox setString:user.authenticationToken forKey:AUTHN_TOKEN_KEY];
+                           
                            [self showAlertViewWithTitle:@"Success!" message:@"Authenticated against Six-Degrees API"];
-                           [self.delegate didSignup];
+                           [self.delegate didSignup:user];
                        } failure:^(NSError *error) {
                            [self showAlertViewWithTitle:@"Failure!" message:error.description];
                        }];
+}
+
+- (BOOL)validateInput {
+    BOOL returnValue = YES;
+    if ([self.firstName.text length] == 0) {
+        [self showMissingTextInput:self.firstName];
+        returnValue = NO;
+    }
+    if ([self.lastName.text length] == 0) {
+        [self showMissingTextInput:self.lastName];
+        returnValue = NO;
+    }
+    if ([self.email.text length] == 0) {
+        [self showMissingTextInput:self.email];
+        returnValue = NO;
+    }
+    if ([self.password.text length] == 0) {
+        [self showMissingTextInput:self.password];
+        returnValue = NO;
+    }
+    return returnValue;
+}
+
+-(void)showMissingTextInput:(UITextField *) field {
+    field.layer.cornerRadius=8.0f;
+    field.layer.masksToBounds=YES;
+    field.layer.borderColor=[[UIColor redColor]CGColor];
+    field.layer.borderWidth= 1.0f;
+}
+
+-(void)resetInputs {
+    self.errorMessage.hidden = YES;
+    self.firstName.layer.borderColor=[[UIColor lightGrayColor]CGColor];
+    self.lastName.layer.borderColor=[[UIColor lightGrayColor]CGColor];
+    self.email.layer.borderColor=[[UIColor lightGrayColor]CGColor];
+    self.password.layer.borderColor=[[UIColor lightGrayColor]CGColor];
 }
 
 - (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message {

@@ -15,3 +15,9 @@
 #pragma mark - Constants
 
 #define AUTHN_TOKEN_KEY @"SixDegreesAuthNTokenKey"
+#define SD_PROVIDER_KEY @"SixDegreesProviderKey"
+# define DUPLICATE_EMAIL_ERROR @"Email has already been taken."
+
+# pragma mark - Providers
+
+#define SD_PROVIDER_FACEBOOK @"facebook"

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 
 @class SDNavigationController;
 
@@ -15,6 +16,6 @@
 @property (strong, nonatomic) id<BSModule> module;
 
 - (void)setWindow:(UIWindow *)window;
-- (SDNavigationController *)defaultNavStack;
+- (SDNavigationController *)defaultNavStack:(User *)user;
 
 @end

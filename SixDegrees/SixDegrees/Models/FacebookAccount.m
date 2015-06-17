@@ -12,9 +12,13 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"sdFacebookUserId" : @"id",
+             @"uid" : @"id",
+             @"name" : @"name",
              @"firstName" : @"first_name",
              @"lastName" : @"last_name",
+             @"gender" : @"last_name",
+             @"timezone" : @"timezone",
+             @"email" : @"email",
              };
 }
 

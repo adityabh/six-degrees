@@ -24,6 +24,10 @@
     return @"api/create_user";
 }
 
++ (NSString *)getUser {
+    return @"api/user";
+}
+
 + (NSString *)logoutUser {
     return @"api/logout_user";
 }

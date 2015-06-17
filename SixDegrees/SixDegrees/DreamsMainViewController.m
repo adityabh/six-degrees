@@ -21,6 +21,7 @@
 #define SLIDE_TIMING .25
 #define PANEL_WIDTH 60
 
+
 @interface DreamsMainViewController () <AllDreamsViewControllerTableViewControllerDelegate>
 
     @property (strong, nonatomic) id<BSInjector> injector;
@@ -149,6 +150,9 @@
         [_leftPanelViewController didMoveToParentViewController:self];
         
         _leftPanelViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        
+        _leftPanelViewController.nameLabel.text = [NSString stringWithFormat:@"%@ %@", self.user.firstName, self.user.lastName];
+        _leftPanelViewController.profileImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.user.largeAvatar]]];;
     }
     
     self.showingLeftPanel = YES;

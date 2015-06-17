@@ -8,39 +8,36 @@
 
 #import "LoginViewController.h"
 
-#import "SDApiManager.h"
-#import "FacebookManager.h"
+#import "SignupViewController.h"
 #import "FacebookAccount.h"
+#import "SDApiManager.h"
 #import "Lockbox.h"
-
 #import "User.h"
 
-@interface LoginViewController ()
-
-    @property (weak, nonatomic) IBOutlet FBProfilePictureView *profileImageView;
-    @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
-    @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-    @property (weak, nonatomic) IBOutlet FBSDKLoginButton *facebookSignInButton;
+@interface LoginViewController () <FBSDKLoginButtonDelegate>
 
     @property (weak, nonatomic) IBOutlet UITextField *email;
     @property (weak, nonatomic) IBOutlet UITextField *password;
+    @property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
 
     @property (strong, nonatomic) SDApiManager *apiManager;
-    @property (strong, nonatomic) FacebookManager *facebookManager;
 
 @end
 
 @implementation LoginViewController
 
 + (BSPropertySet *)bsProperties {
-    BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"apiManager", @"facebookManager", nil];
+    BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"apiManager", nil];
     [propertySet bindProperty:@"apiManager" toKey:[SDApiManager class]];
-    [propertySet bindProperty:@"facebookManager" toKey:[FacebookManager class]];
     return propertySet;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
+    _loginButton.readPermissions = @[@"public_profile", @"email"];
+    _loginButton.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,25 +46,6 @@
 }
 
 #pragma mark - IBAction
-
-- (IBAction)facebookSignInTapped:(id)sender {
-    [self.facebookManager fetchFbUserWithSuccess:^{
-        //self.statusLabel.text = @"SIGNED IN AS";
-        //self.nameLabel.text = self.facebookManager.facebookAccount.name;
-
-        [self.apiManager authenticateWithFacebookId:self.facebookManager.facebookAccount.sdFacebookUserId
-                                      facebookToken:self.facebookManager.accessToken
-                                          userEmail:self.facebookManager.facebookAccount.email
-                                            success:^{
-                                                [self showAlertViewWithTitle:@"Success!" message:@"Authenticated against Six-Degrees API"];
-                                                [self.delegate didLogin];
-                                            } failure:^(NSError *error) {
-                                                [self showAlertViewWithTitle:@"Failure!" message:error.description];
-                                            }];
-    } failure:^(ApiError *apiError) {
-        [self showAlertViewWithTitle:@"Oops!" message:apiError.userMessage];
-    }];
-}
 
 - (IBAction)loginTapped:(id)sender {
     //TODO: Add check for not null and red border
@@ -82,7 +60,7 @@
                            
                            if (result) {
                                [self showAlertViewWithTitle:@"Success!" message:@"Authenticated against Six-Degrees API"];
-                               [self.delegate didLogin];
+                               [self.delegate didLogin:user];
                            } else {
                                [self showAlertViewWithTitle:@"Failure!" message:@"Oops! Something went wrong, please try again"];
                            }
@@ -100,6 +78,79 @@
                       otherButtonTitles:nil] show];
 }
 
+#pragma mark - Facebook login buttons
+
+- (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+             if (!error) {
+                 FacebookAccount *facebookAccount = [MTLJSONAdapter modelOfClass:FacebookAccount.class fromJSONDictionary:result error:nil];
+                 NSString *provider = [Lockbox stringForKey:SD_PROVIDER_KEY];
+                 if ([provider isEqualToString:SD_PROVIDER_FACEBOOK]) {
+                     [self loginFacebookUser:facebookAccount.uid];
+                 } else {
+                     [self signupFacebookUser:facebookAccount];
+                 }
+             }
+         }];
+    }
+}
+
+- (void) signupFacebookUser:(FacebookAccount *) facebookAccount {
+    [self.apiManager signupFacebookUser: facebookAccount.uid
+                              firstName: facebookAccount.firstName
+                               lastName: facebookAccount.lastName
+                                  email: facebookAccount.email
+                                   name: facebookAccount.name
+                                 gender: facebookAccount.gender
+                               timezone: facebookAccount.timezone
+                                success:^(User *user) {
+                                    // store user authentication token securely in keychain
+                                    BOOL result = [Lockbox setString:user.authenticationToken forKey:AUTHN_TOKEN_KEY];
+                                    [Lockbox setString:SD_PROVIDER_FACEBOOK forKey:SD_PROVIDER_KEY];
+                                    
+                                    if (result) {
+                                        [self showAlertViewWithTitle:@"Success!" message:@"Authenticated against Six-Degrees API"];
+                                        [self.delegate didLogin:user];
+                                    } else {
+                                        [self showAlertViewWithTitle:@"Failure!" message:@"Oops! Something went wrong, please try again"];
+                                    }
+                                } failure:^(NSString *error) {
+                                    if ([error isEqualToString:DUPLICATE_EMAIL_ERROR]) {
+                                        [self loginFacebookUser:facebookAccount.uid];
+                                    } else {
+                                        [self showAlertViewWithTitle:@"Failure!" message:error];
+                                    }
+                                }];
+    
+}
+
+- (void) loginFacebookUser: (NSString *) uid {
+    [self.apiManager loginFacebookUser: uid
+                                success:^(User *user) {
+                                    // store user authentication token securely in keychain
+                                    BOOL result = [Lockbox setString:user.authenticationToken forKey:AUTHN_TOKEN_KEY];
+                                    [Lockbox setString:SD_PROVIDER_FACEBOOK forKey:SD_PROVIDER_KEY];
+                                    
+                                    if (result) {
+                                        [self showAlertViewWithTitle:@"Success!" message:@"Authenticated against Six-Degrees API"];
+                                        [self.delegate didLogin:user];
+                                    } else {
+                                        [self showAlertViewWithTitle:@"Failure!" message:@"Oops! Something went wrong, please try again"];
+                                    }
+                                } failure:^(NSString *error) {
+                                    if ([error isEqualToString:DUPLICATE_EMAIL_ERROR]) {
+                                        
+                                    } else {
+                                        [self showAlertViewWithTitle:@"Failure!" message:error];
+                                    }
+                                }];
+}
+
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
+    
+}
 
 #pragma mark - Navigation
 
@@ -109,8 +160,11 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showSignupView"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        SignupViewController *destViewController = (SignupViewController *)navController.topViewController;
+        destViewController.delegate = (id<SignupViewControllerDelegate>)self.delegate;
+    }
 }
 
 @end

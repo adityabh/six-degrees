@@ -12,23 +12,35 @@
 
 #pragma mark - Authentication
 
-- (void)authenticateWithFacebookId:(NSString *)facebookId
-                     facebookToken:(NSString *)facebookToken
-                         userEmail:(NSString *)userEmail
-                           success:(VoidBlock)success
-                           failure:(ErrorBlock)failure;
-
 - (void) loginUser: (NSString *) email
           password: (NSString *) password
            success:(VoidBlock)success
            failure:(VoidBlock)failure;
+
+- (void) loginFacebookUser: (NSString *) uid
+                   success:(VoidBlock)success
+                   failure:(VoidBlock)failure;
 
 - (void) signupUser: (NSString *) firstName
            lastName: (NSString *) lastName
               email: (NSString *) email
            password: (NSString *) password
             success:(VoidBlock)success
-            failure:(ErrorBlock)failure;
+            failure:(VoidBlock)failure;
+
+- (void) signupFacebookUser: (NSString *) uid
+                  firstName: (NSString *) firstName
+                   lastName: (NSString *) lastName
+                      email: (NSString *) email
+                       name: (NSString *) name
+                     gender: (NSString *) gender
+                   timezone: (NSString *) timezone
+                    success:(VoidBlock)success
+                    failure:(VoidBlock)failure;
+
+- (void) getUser: (NSString *) authenticationToken
+         success:(VoidBlock)success
+         failure:(VoidBlock)failure;
 
 #pragma mark - Dreams
 

@@ -7,12 +7,13 @@
 //
 
 #import "SDViewController.h"
+#import "User.h"
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @protocol LoginViewControllerDelegate <NSObject>
-- (void)didLogin;
+- (void)didLogin:(User *)user;
 @end
 
 @interface LoginViewController : SDViewController

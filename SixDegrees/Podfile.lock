@@ -21,7 +21,24 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Blindside (1.0-alpha)
+  - Bolts (1.2.0):
+    - Bolts/AppLinks (= 1.2.0)
+    - Bolts/Tasks (= 1.2.0)
+  - Bolts/AppLinks (1.2.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.2.0)
   - Cedar (0.11.3)
+  - FBSDKCoreKit (4.2.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc (= 4.2.0)
+    - FBSDKCoreKit/no-arc (= 4.2.0)
+  - FBSDKCoreKit/arc (4.2.0):
+    - Bolts (~> 1.1)
+  - FBSDKCoreKit/no-arc (4.2.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc
+  - FBSDKLoginKit (4.2.0):
+    - FBSDKCoreKit
   - iCarousel (1.8.1)
   - KSDeferred (0.2.0)
   - Lockbox (2.1.0)
@@ -34,6 +51,8 @@ DEPENDENCIES:
   - AFNetworking
   - Blindside (from `https://github.com/jbsf/blindside.git`)
   - Cedar (from `https://github.com/pivotal/cedar.git`)
+  - FBSDKCoreKit
+  - FBSDKLoginKit
   - iCarousel
   - KSDeferred
   - Lockbox
@@ -57,7 +76,10 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
   Blindside: a73d69506c3f3e078cdf691c162d7e58213d5519
+  Bolts: d176cb1e0012175589e389a9db49b85e27787576
   Cedar: ab1ea4e5c8af4ee4a8fa0452936679861876dc80
+  FBSDKCoreKit: 84b3616a361801f190e43a9909caead7bb6087c7
+  FBSDKLoginKit: 57e37106af12c9e264e473dcb75d7decdbb07fe4
   iCarousel: dace1cb858e3f4dc2614bee3201041247f82feda
   KSDeferred: e72d005162986b2978e1e2eee17fbce1c6876cfe
   Lockbox: 16442da35d9d4286966936763be728a931d589c3
