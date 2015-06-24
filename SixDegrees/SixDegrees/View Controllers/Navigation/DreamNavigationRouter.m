@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Steven Wu. All rights reserved.
 //
 
-#import "DreamsMainViewController.h"
 #import "SWRevealViewController.h"
 #import "SDNavigationController.h"
 #import "DreamNavigationRouter.h"
@@ -44,14 +43,6 @@
 
 - (SWRevealViewController *)defaultNavStack {
     if (!self.dreamNavStack) {
-        
-        /*
-        DreamsMainViewController *dreamsMainViewController = [self.vcFactory buildMainDreamVcWithInjector:self injector:self.injector];
-        
-        AllDreamsViewControllerTableViewController *allDreamsVc = [self.vcFactory buildAllDreamVcWithInjector:self injector:self.injector];*/
-        /*
-        dreamsMainViewController.centerViewController = allDreamsVc;
-        dreamsMainViewController.user = user;*/
         
         SWRevealViewController *revealViewController = [self.vcFactory buildDreamVcWithInjector:self.injector];
         revealViewController.delegate = self;

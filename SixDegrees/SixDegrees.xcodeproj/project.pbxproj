@@ -36,7 +36,6 @@
 		B08FA0441A0530E6005D0CE2 /* DreamNavigationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B08FA0431A0530E6005D0CE2 /* DreamNavigationRouter.m */; };
 		B08FA0471A0530FF005D0CE2 /* MainNavigationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B08FA0461A0530FF005D0CE2 /* MainNavigationRouter.m */; };
 		B08FA04A1A053117005D0CE2 /* AuthNavigationRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B08FA0491A053117005D0CE2 /* AuthNavigationRouter.m */; };
-		B09F76EE1A9967A500583077 /* DreamPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B09F76ED1A9967A500583077 /* DreamPanelView.xib */; };
 		B09F76F11A9967BD00583077 /* DreamPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76F01A9967BD00583077 /* DreamPanelView.m */; };
 		B09F76F41A9975E200583077 /* Dream.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76F31A9975E200583077 /* Dream.m */; };
 		B09F76F71A9975FC00583077 /* UserDream.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F76F61A9975FC00583077 /* UserDream.m */; };
@@ -50,12 +49,9 @@
 		D461E4EC1B1565EB0070C370 /* HelpDreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D461E4EB1B1565EB0070C370 /* HelpDreamViewController.m */; };
 		D461E4EE1B158E400070C370 /* AuthN.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D461E4ED1B158E400070C370 /* AuthN.Storyboard */; };
 		D461E4F11B1591CD0070C370 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D461E4F01B1591CD0070C370 /* LoginViewController.m */; };
-		D46D044C1B25306000D8B182 /* DreamsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D46D044B1B25306000D8B182 /* DreamsMainViewController.m */; };
 		D48BBD041AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */; };
 		D4CB78C21B3273A0003A10A7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CB78C11B3273A0003A10A7 /* SWRevealViewController.m */; };
 		D4DC557C1B2665D300819CEE /* LeftPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC557A1B2665D300819CEE /* LeftPanelViewController.m */; };
-		D4DC557D1B2665D300819CEE /* LeftPanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DC557B1B2665D300819CEE /* LeftPanelViewController.xib */; };
-		D4DC557F1B2665E000819CEE /* MainCellLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DC557E1B2665E000819CEE /* MainCellLeft.xib */; };
 		D4DC570A1B27C6FA00819CEE /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC57091B27C6FA00819CEE /* FAImageView.m */; };
 		D4DC57111B27C70400819CEE /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC570C1B27C70400819CEE /* UIFont+FontAwesome.m */; };
 		D4DC57121B27C70400819CEE /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC570E1B27C70400819CEE /* NSString+FontAwesome.m */; };
@@ -137,8 +133,6 @@
 		B08FA0461A0530FF005D0CE2 /* MainNavigationRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainNavigationRouter.m; path = "View Controllers/Navigation/MainNavigationRouter.m"; sourceTree = "<group>"; };
 		B08FA0481A053117005D0CE2 /* AuthNavigationRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthNavigationRouter.h; path = "View Controllers/Navigation/AuthNavigationRouter.h"; sourceTree = "<group>"; };
 		B08FA0491A053117005D0CE2 /* AuthNavigationRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthNavigationRouter.m; path = "View Controllers/Navigation/AuthNavigationRouter.m"; sourceTree = "<group>"; };
-		B09F76ED1A9967A500583077 /* DreamPanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DreamPanelView.xib; path = Views/Dreams/DreamPanelView.xib; sourceTree = "<group>"; };
-		B09F76EF1A9967BD00583077 /* DreamPanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DreamPanelView.h; path = Views/Dreams/DreamPanelView.h; sourceTree = "<group>"; };
 		B09F76F01A9967BD00583077 /* DreamPanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DreamPanelView.m; path = Views/Dreams/DreamPanelView.m; sourceTree = "<group>"; };
 		B09F76F21A9975E200583077 /* Dream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dream.h; path = Models/Dream.h; sourceTree = "<group>"; };
 		B09F76F31A9975E200583077 /* Dream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dream.m; path = Models/Dream.m; sourceTree = "<group>"; };
@@ -163,16 +157,13 @@
 		D461E4ED1B158E400070C370 /* AuthN.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AuthN.Storyboard; path = Storyboards/AuthN.Storyboard; sourceTree = "<group>"; };
 		D461E4EF1B1591CD0070C370 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D461E4F01B1591CD0070C370 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		D46D044A1B25306000D8B182 /* DreamsMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DreamsMainViewController.h; sourceTree = "<group>"; };
-		D46D044B1B25306000D8B182 /* DreamsMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DreamsMainViewController.m; sourceTree = "<group>"; };
 		D48BBD021AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllDreamsViewControllerTableViewController.h; sourceTree = "<group>"; };
 		D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllDreamsViewControllerTableViewController.m; sourceTree = "<group>"; };
 		D4CB78C01B3273A0003A10A7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D4CB78C11B3273A0003A10A7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		D4CB78C31B3A72DA003A10A7 /* DreamPanelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DreamPanelView.h; sourceTree = "<group>"; };
 		D4DC55791B2665D300819CEE /* LeftPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftPanelViewController.h; path = ../../../../../Users/bhallaa/Desktop/SlideOutNavigation/Navigation/Classes/LeftPanelViewController.h; sourceTree = "<group>"; };
 		D4DC557A1B2665D300819CEE /* LeftPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftPanelViewController.m; path = ../../../../../Users/bhallaa/Desktop/SlideOutNavigation/Navigation/Classes/LeftPanelViewController.m; sourceTree = "<group>"; };
-		D4DC557B1B2665D300819CEE /* LeftPanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LeftPanelViewController.xib; path = ../../../../../Users/bhallaa/Desktop/SlideOutNavigation/Navigation/Classes/LeftPanelViewController.xib; sourceTree = "<group>"; };
-		D4DC557E1B2665E000819CEE /* MainCellLeft.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainCellLeft.xib; path = ../../../../../Users/bhallaa/Desktop/SlideOutNavigation/Navigation/Classes/MainCellLeft.xib; sourceTree = "<group>"; };
 		D4DC57081B27C68700819CEE /* FAImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FAImageView.h; path = "../../../font-awesome/ios-fontawesome/FAImageView.h"; sourceTree = "<group>"; };
 		D4DC57091B27C6FA00819CEE /* FAImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAImageView.m; path = "../../../font-awesome/ios-fontawesome/FAImageView.m"; sourceTree = "<group>"; };
 		D4DC570B1B27C70400819CEE /* UIFont+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+FontAwesome.h"; path = "../../../font-awesome/ios-fontawesome/UIFont+FontAwesome.h"; sourceTree = "<group>"; };
@@ -444,8 +435,6 @@
 				D417DCDA1B054BDB0067C13A /* CreateDreamViewController.m */,
 				D48BBD021AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.h */,
 				D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */,
-				D46D044A1B25306000D8B182 /* DreamsMainViewController.h */,
-				D46D044B1B25306000D8B182 /* DreamsMainViewController.m */,
 			);
 			name = Dream;
 			sourceTree = "<group>";
@@ -473,12 +462,9 @@
 		B09F76EC1A99672300583077 /* Dreams */ = {
 			isa = PBXGroup;
 			children = (
-				D4DC557E1B2665E000819CEE /* MainCellLeft.xib */,
 				D4DC55791B2665D300819CEE /* LeftPanelViewController.h */,
 				D4DC557A1B2665D300819CEE /* LeftPanelViewController.m */,
-				D4DC557B1B2665D300819CEE /* LeftPanelViewController.xib */,
-				B09F76ED1A9967A500583077 /* DreamPanelView.xib */,
-				B09F76EF1A9967BD00583077 /* DreamPanelView.h */,
+				D4CB78C31B3A72DA003A10A7 /* DreamPanelView.h */,
 				B09F76F01A9967BD00583077 /* DreamPanelView.m */,
 				D417DCCE1B02E1E30067C13A /* DreamCellTableViewCell.h */,
 				D417DCCF1B02E1E30067C13A /* DreamCellTableViewCell.m */,
@@ -627,13 +613,10 @@
 			files = (
 				B055B1EB19F20DD300AE17A5 /* Main.storyboard in Resources */,
 				D4DC57181B27C71900819CEE /* FontAwesome.ttf in Resources */,
-				D4DC557F1B2665E000819CEE /* MainCellLeft.xib in Resources */,
-				D4DC557D1B2665D300819CEE /* LeftPanelViewController.xib in Resources */,
 				D461E4EE1B158E400070C370 /* AuthN.Storyboard in Resources */,
 				B055B1F019F20DD300AE17A5 /* LaunchScreen.xib in Resources */,
 				B055B1ED19F20DD300AE17A5 /* Images.xcassets in Resources */,
 				D4278AD71B1B7937002FA1F1 /* Dream.storyboard in Resources */,
-				B09F76EE1A9967A500583077 /* DreamPanelView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,7 +720,6 @@
 				B08F361D19F2D38600FC5A90 /* MasterViewController.m in Sources */,
 				D4DC57111B27C70400819CEE /* UIFont+FontAwesome.m in Sources */,
 				D4DC570A1B27C6FA00819CEE /* FAImageView.m in Sources */,
-				D46D044C1B25306000D8B182 /* DreamsMainViewController.m in Sources */,
 				B08F365019F4932500FC5A90 /* ApiError.m in Sources */,
 				D4DC557C1B2665D300819CEE /* LeftPanelViewController.m in Sources */,
 				D461E4EC1B1565EB0070C370 /* HelpDreamViewController.m in Sources */,

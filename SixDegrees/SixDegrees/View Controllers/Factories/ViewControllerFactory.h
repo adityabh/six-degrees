@@ -28,12 +28,6 @@
 - (LoginViewController *)buildSignInVcWithDelegate:(id<SignInViewControllerDelegate>)delegate
                                            injector:(id<BSInjector>)injector;
 
-- (DreamsMainViewController *)buildMainDreamVcWithInjector:(id <DreamViewControllerDelegate>)delegate
-                                                                   injector:(id<BSInjector>)injector;
-
-- (AllDreamsViewControllerTableViewController *) buildAllDreamVcWithInjector :(id<DreamViewControllerDelegate>)delegate
-                                                                     injector:(id<BSInjector>)injector;
-
 - (SWRevealViewController *) buildDreamVcWithInjector :(id<BSInjector>)injector;
 
 @end

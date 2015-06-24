@@ -274,12 +274,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Create dream" id="O5e-vV-sFb">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="XuA-m4-gVE">
-                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="ZOq-b5-Uii" kind="unwind" unwindAction="unwindToAllDreams:" id="jGp-64-bFm"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Njl-Xj-euu">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="ZOq-b5-Uii" kind="unwind" unwindAction="unwindToAllDreams:" id="cla-8H-i1s"/>
                             </connections>
@@ -296,24 +297,6 @@
                 <exit id="ZOq-b5-Uii" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5731" y="369"/>
-        </scene>
-        <!--Dreams Main View Controller-->
-        <scene sceneID="01M-XO-Dcj">
-            <objects>
-                <viewController storyboardIdentifier="DreamsMainViewController" id="RB0-1U-l7H" customClass="DreamsMainViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0FH-FK-CS2"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ug6-Hv-Lrj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="p3F-ls-F7z">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wEw-ER-QTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2769" y="1069"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hBc-Rv-qCV">

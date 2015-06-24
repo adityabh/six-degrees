@@ -11,7 +11,6 @@
 #import "HomeViewController.h"
 #import "LoginViewController.h"
 #import "SWRevealViewController.h"
-#import "DreamsMainViewController.h"
 #import "AllDreamsViewControllerTableViewController.h"
 
 #import "BlindsidedStoryboard.h"
@@ -32,22 +31,6 @@
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([LoginViewController class])];
     loginViewController.delegate = delegate;
     return loginViewController;
-}
-
-- (DreamsMainViewController *)buildMainDreamVcWithInjector:(id <DreamViewControllerDelegate>)delegate
-                                                                   injector:(id<BSInjector>)injector {
-    BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:DREAM_STORYBOARD bundle:nil injector:injector];
-    DreamsMainViewController *dreamMainViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([DreamsMainViewController class])];
-    dreamMainViewController.delegate = delegate;
-    return dreamMainViewController;
-}
-
-- (AllDreamsViewControllerTableViewController *) buildAllDreamVcWithInjector :(id<DreamViewControllerDelegate>)delegate
-                                                                     injector:(id<BSInjector>)injector {
-    BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:DREAM_STORYBOARD bundle:nil injector:injector];
-    AllDreamsViewControllerTableViewController *allDreamVc = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([AllDreamsViewControllerTableViewController class])];
-    allDreamVc.delegate = delegate;
-    return allDreamVc;
 }
 
 - (SWRevealViewController *) buildDreamVcWithInjector :(id<BSInjector>)injector {
