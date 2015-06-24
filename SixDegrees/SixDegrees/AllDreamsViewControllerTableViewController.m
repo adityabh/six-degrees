@@ -7,26 +7,25 @@
 //
 
 #import "AllDreamsViewControllerTableViewController.h"
+#import "HelpDreamViewController.h"
+#import "SWRevealViewController.h"
+#import "DreamCellTableViewCell.h"
+#import "ViewControllerFactory.h"
+#import "DreamNavigationRouter.h"
+#import "SignInViewController.h"
+#import "SDConstants.h"
 
 #import "NSString+FontAwesome.h"
 #import "UIImage+FontAwesome.h"
 
-#import "ViewControllerFactory.h"
 #import "DreamManager.h"
-#import "SignInViewController.h"
-#import "DreamNavigationRouter.h"
-#import "HelpDreamViewController.h"
-
 #import "UserDream.h"
 #import "Dream.h"
 #import "User.h"
-#import "DreamCellTableViewCell.h"
 
 #define SYSTEM_VERSION                              ([[UIDevice currentDevice] systemVersion])
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([SYSTEM_VERSION compare:v options:NSNumericSearch] != NSOrderedAscending)
 #define IS_IOS8_OR_ABOVE                            (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
-
-#define PROVIDER_FB @"facebook"
 
 
 @interface AllDreamsViewControllerTableViewController ()
@@ -59,12 +58,21 @@
     [super viewDidLoad];
     
     UIImage *leftIcon = [UIImage imageWithIcon:@"fa-bars" backgroundColor:[UIColor clearColor] iconColor:[UIColor whiteColor] andSize:CGSizeMake(25, 25)];
-    [_leftBarButton setImage:leftIcon forState:UIControlStateNormal];
-    [_leftBarButton addTarget:self action:@selector(btnMovePanelRight:) forControlEvents:UIControlEventTouchUpInside];
-    _leftBarButton.tag = 1;
+    [_leftBarButton setImage:leftIcon];
+    
+    //_leftBarButton.tag = 1;
     
     UIImage *rightIcon = [UIImage imageWithIcon:@"fa-pencil-square-o" backgroundColor:[UIColor clearColor] iconColor:[UIColor whiteColor] andSize:CGSizeMake(25, 25)];
-    [_rightBarButton setImage:rightIcon forState:UIControlStateNormal];
+    [_rightBarButton setImage:rightIcon];
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController ) {
+        [self.leftBarButton setTarget: self.revealViewController];
+        [self.leftBarButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
+    
+    self.title = @"All Dreams";
     
     [[self.dreamManager fetchDreamsPromise] then:^id(NSArray *dreams) {
         self.dreams = dreams;
@@ -239,6 +247,10 @@
     
 }
 
+- (IBAction)unwindToAllDreams:(UIStoryboardSegue *)segue {
+    
+}
+
 -(void)helpButtonClicked:(UIButton*)sender {
     UINavigationController *navController = (UINavigationController *) [self.storyboard instantiateViewControllerWithIdentifier:@"HelpDreamViewController"];
     
@@ -250,14 +262,23 @@
 }
 
 - (void)optionSelected:(NSString *)option {
-    [_delegate optionSelected:option];
+    //[_delegate optionSelected:option];
+    if ([option isEqualToString:@"Logout"]) {
+        [self.delegate didLogout];
+    };
+    
+    if ([option isEqualToString:@"How it works"]) {
+        [self.delegate showHowItWorks];
+    };
 }
 
 #pragma mark -
 #pragma mark Button Actions
 
+
 - (IBAction)btnMovePanelRight:(id)sender {
     UIButton *button = sender;
+    /*
     switch (button.tag) {
         case 0: {
             [self.delegate movePanelToOriginalPosition];
@@ -271,7 +292,7 @@
             
         default:
             break;
-    }
+    }*/
 }
 
 @end

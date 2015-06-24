@@ -12,6 +12,7 @@
 #import "ViewControllerFactory.h"
 #import "LoginViewController.h"
 #import "SignupViewController.h"
+#import "AppDelegate.h"
 
 
 @interface AuthNavigationRouter () <LoginViewControllerDelegate, SignupViewControllerDelegate>
@@ -60,13 +61,17 @@
 #pragma mark - LogViewControllerDelegate
 
 - (void)didLogin:(User *)user {
+    AppDelegate *appDel = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    appDel.user = user;
     [self.dreamRouter setWindow:self.window];
-    self.window.rootViewController = [self.dreamRouter defaultNavStack:user];
+    self.window.rootViewController = [self.dreamRouter defaultNavStack];
 }
 
 - (void)didSignup:(User *)user {
+    AppDelegate *appDel = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    appDel.user = user;
     [self.dreamRouter setWindow:self.window];
-    self.window.rootViewController = [self.dreamRouter defaultNavStack:user];
+    self.window.rootViewController = [self.dreamRouter defaultNavStack];
 }
 
 - (void)didCancelSignIn {

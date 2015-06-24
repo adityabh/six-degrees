@@ -22,7 +22,7 @@
 #define PANEL_WIDTH 60
 
 
-@interface DreamsMainViewController () <AllDreamsViewControllerTableViewControllerDelegate>
+@interface DreamsMainViewController () /*<AllDreamsViewControllerTableViewControllerDelegate>*/
 
     @property (strong, nonatomic) id<BSInjector> injector;
     @property (strong, nonatomic) ViewControllerFactory *vcFactory;
@@ -127,7 +127,7 @@
         [self.leftPanelViewController.view removeFromSuperview];
         self.leftPanelViewController = nil;
         
-        self.centerViewController.leftBarButton.tag = 1;
+        //self.centerViewController.leftBarButton.tag = 1;
         self.showingLeftPanel = NO;
     }
     
@@ -189,7 +189,7 @@
                      completion:^(BOOL finished) {
                          if (finished) {
                              
-                             self.centerViewController.leftBarButton.tag = 0;
+                             //self.centerViewController.leftBarButton.tag = 0;
                          }
                      }];
 }

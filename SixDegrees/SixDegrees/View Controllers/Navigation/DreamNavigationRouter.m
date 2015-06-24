@@ -6,25 +6,23 @@
 //  Copyright (c) 2014 Steven Wu. All rights reserved.
 //
 
+#import "DreamsMainViewController.h"
+#import "SWRevealViewController.h"
+#import "SDNavigationController.h"
 #import "DreamNavigationRouter.h"
-
+#import "ViewControllerFactory.h"
 #import "AuthNavigationRouter.h"
 #import "MainNavigationRouter.h"
-#import "SDNavigationController.h"
-#import "ViewControllerFactory.h"
-
-#import "DreamsMainViewController.h"
-
-#import "Lockbox.h"
 #import "SDModule.h"
+#import "Lockbox.h"
 
-@interface DreamNavigationRouter () <DreamViewControllerDelegate>
+@interface DreamNavigationRouter () <SWRevealViewControllerDelegate>
 
     @property (strong, nonatomic) id<BSInjector> injector;
     @property (strong, nonatomic) ViewControllerFactory *vcFactory;
     @property (strong, nonatomic) UIWindow *window;
 
-    @property (strong, nonatomic) SDNavigationController *dreamNavStack;
+    @property (strong, nonatomic) SWRevealViewController *dreamNavStack;
 
 @end
 
@@ -44,17 +42,20 @@
     return self;
 }
 
-- (SDNavigationController *)defaultNavStack:(User *)user {
+- (SWRevealViewController *)defaultNavStack {
     if (!self.dreamNavStack) {
         
+        /*
         DreamsMainViewController *dreamsMainViewController = [self.vcFactory buildMainDreamVcWithInjector:self injector:self.injector];
         
-        AllDreamsViewControllerTableViewController *allDreamsVc = [self.vcFactory buildAllDreamVcWithInjector:dreamsMainViewController injector:self.injector];
-        
+        AllDreamsViewControllerTableViewController *allDreamsVc = [self.vcFactory buildAllDreamVcWithInjector:self injector:self.injector];*/
+        /*
         dreamsMainViewController.centerViewController = allDreamsVc;
-        dreamsMainViewController.user = user;
+        dreamsMainViewController.user = user;*/
         
-        self.dreamNavStack = [[SDNavigationController alloc] initWithRootViewController:dreamsMainViewController];
+        SWRevealViewController *revealViewController = [self.vcFactory buildDreamVcWithInjector:self.injector];
+        revealViewController.delegate = self;
+        self.dreamNavStack = revealViewController;
     }
     return self.dreamNavStack;
 }

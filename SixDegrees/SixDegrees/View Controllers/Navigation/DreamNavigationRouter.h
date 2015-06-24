@@ -10,12 +10,13 @@
 #import "User.h"
 
 @class SDNavigationController;
+@class SWRevealViewController;
 
 @interface DreamNavigationRouter : NSObject
 
 @property (strong, nonatomic) id<BSModule> module;
 
 - (void)setWindow:(UIWindow *)window;
-- (SDNavigationController *)defaultNavStack:(User *)user;
+- (SWRevealViewController *)defaultNavStack;
 
 @end

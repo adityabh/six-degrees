@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SDConstants.h"
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "SDModule.h"
@@ -26,6 +27,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupMainRouter];
+    
+    // Change the background color of navigation bar
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x53B2DA)];
+    
+    // Change the font style of the navigation bar
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 0);
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor whiteColor],NSForegroundColorAttributeName,
+                                                           shadow, NSShadowAttributeName,
+                                                           [UIFont fontWithName:@"Arial" size:17.0], NSFontAttributeName, nil]];
+    
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
 }

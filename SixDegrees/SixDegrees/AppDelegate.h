@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "User.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) id<BSInjector> injector;
 @property (strong, nonatomic) id<BSModule> module;
+@property (nonatomic, strong) User *user;
 
 @end
 

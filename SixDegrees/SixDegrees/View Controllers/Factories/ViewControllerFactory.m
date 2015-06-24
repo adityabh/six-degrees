@@ -10,6 +10,7 @@
 
 #import "HomeViewController.h"
 #import "LoginViewController.h"
+#import "SWRevealViewController.h"
 #import "DreamsMainViewController.h"
 #import "AllDreamsViewControllerTableViewController.h"
 
@@ -41,7 +42,7 @@
     return dreamMainViewController;
 }
 
-- (AllDreamsViewControllerTableViewController *) buildAllDreamVcWithInjector :(id<AllDreamsViewControllerTableViewControllerDelegate>)delegate
+- (AllDreamsViewControllerTableViewController *) buildAllDreamVcWithInjector :(id<DreamViewControllerDelegate>)delegate
                                                                      injector:(id<BSInjector>)injector {
     BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:DREAM_STORYBOARD bundle:nil injector:injector];
     AllDreamsViewControllerTableViewController *allDreamVc = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([AllDreamsViewControllerTableViewController class])];
@@ -49,6 +50,10 @@
     return allDreamVc;
 }
 
-
+- (SWRevealViewController *) buildDreamVcWithInjector :(id<BSInjector>)injector {
+    BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:DREAM_STORYBOARD bundle:nil injector:injector];
+    SWRevealViewController *revealViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([SWRevealViewController class])];
+    return revealViewController;
+}
 
 @end

@@ -14,6 +14,7 @@
 #import "ViewControllerFactory.h"
 #import "HomeViewController.h"
 #import "SDApiManager.h"
+#import "AppDelegate.h"
 #import "User.h"
 
 #import "Lockbox.h"
@@ -72,8 +73,10 @@
     [self.apiManager getUser:authNToken
                        success:^(User *user) {
                            if (user != nil) {
+                               AppDelegate *appDel = (AppDelegate*) [UIApplication sharedApplication].delegate;
+                               appDel.user = user;
                                [self.dreamRouter setWindow:self.window];
-                               self.window.rootViewController = [self.dreamRouter defaultNavStack:user];
+                               self.window.rootViewController = [self.dreamRouter defaultNavStack];
                            } else {
                                [self.authRouter setWindow:self.window];
                                self.window.rootViewController = [self.authRouter defaultAuthNavStack];
