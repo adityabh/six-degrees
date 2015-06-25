@@ -7,6 +7,7 @@
 //
 
 #import "AllDreamsViewControllerTableViewController.h"
+#import "UserProfileViewController.h"
 #import "HelpDreamViewController.h"
 #import "SWRevealViewController.h"
 #import "DreamCellTableViewCell.h"
@@ -133,6 +134,8 @@
     [cell.descriptionLabel sizeToFit];
     
     cell.helpButton.tag = index;
+    cell.profileView.tag = index;
+    
     [cell.helpButton addTarget:self action:@selector(helpButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     cell = [self updateTypeIcon:[dream.content dreamTypeEnum] cell:cell];
@@ -244,7 +247,16 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    if ([segue.identifier isEqualToString:@"show_user_profile"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        UserProfileViewController *userProfileViewController = (UserProfileViewController *)navController.topViewController;
+        
+        
+        UIButton *senderButton = (UIButton *)sender;
+        userProfileViewController.allDreams = self.dreams;
+        UserDream *selectedDream = [self.dreams objectAtIndex:senderButton.tag];
+        userProfileViewController.user = selectedDream.user ;
+    }
 }
 
 - (IBAction)unwindToAllDreams:(UIStoryboardSegue *)segue {
@@ -270,29 +282,6 @@
     if ([option isEqualToString:@"How it works"]) {
         [self.delegate showHowItWorks];
     };
-}
-
-#pragma mark -
-#pragma mark Button Actions
-
-
-- (IBAction)btnMovePanelRight:(id)sender {
-    UIButton *button = sender;
-    /*
-    switch (button.tag) {
-        case 0: {
-            [self.delegate movePanelToOriginalPosition];
-            break;
-        }
-            
-        case 1: {
-            [self.delegate movePanelRight];
-            break;
-        }
-            
-        default:
-            break;
-    }*/
 }
 
 @end

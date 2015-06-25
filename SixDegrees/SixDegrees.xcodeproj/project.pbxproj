@@ -51,6 +51,7 @@
 		D461E4F11B1591CD0070C370 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D461E4F01B1591CD0070C370 /* LoginViewController.m */; };
 		D48BBD041AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */; };
 		D4CB78C21B3273A0003A10A7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CB78C11B3273A0003A10A7 /* SWRevealViewController.m */; };
+		D4CB78DB1B3B8C0B003A10A7 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CB78DA1B3B8C0B003A10A7 /* UserProfileViewController.m */; };
 		D4DC557C1B2665D300819CEE /* LeftPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC557A1B2665D300819CEE /* LeftPanelViewController.m */; };
 		D4DC570A1B27C6FA00819CEE /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC57091B27C6FA00819CEE /* FAImageView.m */; };
 		D4DC57111B27C70400819CEE /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC570C1B27C70400819CEE /* UIFont+FontAwesome.m */; };
@@ -162,6 +163,8 @@
 		D4CB78C01B3273A0003A10A7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D4CB78C11B3273A0003A10A7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		D4CB78C31B3A72DA003A10A7 /* DreamPanelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DreamPanelView.h; sourceTree = "<group>"; };
+		D4CB78D91B3B8C0B003A10A7 /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		D4CB78DA1B3B8C0B003A10A7 /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 		D4DC55791B2665D300819CEE /* LeftPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftPanelViewController.h; path = ../../../../../Users/bhallaa/Desktop/SlideOutNavigation/Navigation/Classes/LeftPanelViewController.h; sourceTree = "<group>"; };
 		D4DC557A1B2665D300819CEE /* LeftPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftPanelViewController.m; path = ../../../../../Users/bhallaa/Desktop/SlideOutNavigation/Navigation/Classes/LeftPanelViewController.m; sourceTree = "<group>"; };
 		D4DC57081B27C68700819CEE /* FAImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FAImageView.h; path = "../../../font-awesome/ios-fontawesome/FAImageView.h"; sourceTree = "<group>"; };
@@ -304,6 +307,7 @@
 		B08F361319F2D2BD00FC5A90 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D4CB78D21B3B8BDC003A10A7 /* Profile */,
 				B08FA04F1A053B2D005D0CE2 /* Dream */,
 				B08FA0501A053B32005D0CE2 /* Authentication */,
 				B08FA03E1A052FC1005D0CE2 /* Navigation */,
@@ -499,6 +503,16 @@
 				D4CB78C11B3273A0003A10A7 /* SWRevealViewController.m */,
 			);
 			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		D4CB78D21B3B8BDC003A10A7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D4CB78D91B3B8C0B003A10A7 /* UserProfileViewController.h */,
+				D4CB78DA1B3B8C0B003A10A7 /* UserProfileViewController.m */,
+			);
+			name = Profile;
+			path = "View Controllers/Profile";
 			sourceTree = "<group>";
 		};
 		D4DC56FD1B27C66B00819CEE /* FontAwesome */ = {
@@ -726,6 +740,7 @@
 				B08F365819F4A4C800FC5A90 /* FacebookAccount.m in Sources */,
 				B08F364519F33BCC00FC5A90 /* UserManager.m in Sources */,
 				B09F76FA1A99760C00583077 /* User.m in Sources */,
+				D4CB78DB1B3B8C0B003A10A7 /* UserProfileViewController.m in Sources */,
 				B08FA0391A052B55005D0CE2 /* SignUpViewController.swift in Sources */,
 				B09F76F71A9975FC00583077 /* UserDream.m in Sources */,
 				B08F363819F2E2E900FC5A90 /* SDSessionManager.m in Sources */,

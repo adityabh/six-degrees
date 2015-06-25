@@ -17,5 +17,6 @@
     @property (nonatomic, weak) IBOutlet UIImageView *profileImageView;
     @property (weak, nonatomic) IBOutlet UIImageView *typeIcon;
     @property (weak, nonatomic) IBOutlet UIButton *helpButton;
+    @property (weak, nonatomic) IBOutlet UIButton *profileView;
 
 @end
