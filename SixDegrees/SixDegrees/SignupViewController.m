@@ -7,6 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import "UIImage+FontAwesome.h"
 
 #import "SignupViewController.h"
 #import "SDApiManager.h"
@@ -36,7 +37,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // configure bar button items
+    UIImage *leftIcon = [UIImage imageWithIcon:@"fa-chevron-left" backgroundColor:[UIColor clearColor] iconColor:[UIColor whiteColor] andSize:CGSizeMake(25, 25)];
+    [_leftBarButton setImage:leftIcon];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -199,18 +199,18 @@
     }];
 }
 
-- (KSPromise *)createDreamForUser:(NSString *)userId
+- (KSPromise *)createDreamForUser:(NSString *)authenticationToken
                  dreamType:(NSString *)dreamType
           dreamDescription:(NSString *)dreamDescription {
     KSDeferred *createDreamDeferred = [KSDeferred defer];
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params setValue:userId forKey:@"user_id"];
     [params setValue:dreamType forKey:@"dream_type"];
     [params setValue:dreamDescription forKey:@"description"];
     
     NSMutableDictionary *parameteres = [NSMutableDictionary dictionary];
     [parameteres setValue:params forKey:@"dream"];
+    [parameteres setValue:authenticationToken forKey:@"authentication_token"];
     
     [self.sessionManager POST:[SDEndpoints createDream] parameters:parameteres success:^(NSURLSessionDataTask *task, id responseObject) {
         DreamResponse *dreamResponse = [MTLJSONAdapter modelOfClass:DreamResponse.class fromJSONDictionary:responseObject error:nil];

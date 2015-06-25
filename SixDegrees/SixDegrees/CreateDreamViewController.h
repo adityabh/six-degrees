@@ -10,4 +10,6 @@
 
 @interface CreateDreamViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *leftBarButton;
+
 @end

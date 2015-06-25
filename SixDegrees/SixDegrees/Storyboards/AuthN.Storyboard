@@ -350,7 +350,8 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="O1G-73-UTc">
-                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="3CQ-3l-Qsw">
+                        <barButtonItem key="leftBarButtonItem" id="3CQ-3l-Qsw">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="qHl-JJ-dEI" kind="unwind" unwindAction="unwindToLogin:" id="u5u-5x-kV7"/>
                             </connections>
@@ -361,6 +362,7 @@
                         <outlet property="errorMessage" destination="bbP-gC-OtQ" id="yiw-vB-v4U"/>
                         <outlet property="firstName" destination="A4i-aU-n0K" id="LAV-b3-yn8"/>
                         <outlet property="lastName" destination="1Ut-XB-XOi" id="jbi-PQ-swY"/>
+                        <outlet property="leftBarButton" destination="3CQ-3l-Qsw" id="fhT-yL-fih"/>
                         <outlet property="password" destination="hGf-2d-1nl" id="Ia0-hn-LSj"/>
                     </connections>
                 </viewController>

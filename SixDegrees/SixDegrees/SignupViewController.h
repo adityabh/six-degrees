@@ -16,5 +16,6 @@
 @interface SignupViewController : SDViewController
 
     @property (weak, nonatomic) id<SignupViewControllerDelegate> delegate;
+    @property (nonatomic, weak) IBOutlet UIBarButtonItem *leftBarButton;
 
 @end

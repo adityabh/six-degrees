@@ -61,8 +61,6 @@
     UIImage *leftIcon = [UIImage imageWithIcon:@"fa-bars" backgroundColor:[UIColor clearColor] iconColor:[UIColor whiteColor] andSize:CGSizeMake(25, 25)];
     [_leftBarButton setImage:leftIcon];
     
-    //_leftBarButton.tag = 1;
-    
     UIImage *rightIcon = [UIImage imageWithIcon:@"fa-pencil-square-o" backgroundColor:[UIColor clearColor] iconColor:[UIColor whiteColor] andSize:CGSizeMake(25, 25)];
     [_rightBarButton setImage:rightIcon];
     
