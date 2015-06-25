@@ -50,6 +50,7 @@
 		D461E4EE1B158E400070C370 /* AuthN.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D461E4ED1B158E400070C370 /* AuthN.Storyboard */; };
 		D461E4F11B1591CD0070C370 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D461E4F01B1591CD0070C370 /* LoginViewController.m */; };
 		D48BBD041AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */; };
+		D4C3DDCB1B3C866B00606238 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4C3DDCA1B3C866B00606238 /* Pacifico.ttf */; };
 		D4CB78C21B3273A0003A10A7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CB78C11B3273A0003A10A7 /* SWRevealViewController.m */; };
 		D4CB78DB1B3B8C0B003A10A7 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CB78DA1B3B8C0B003A10A7 /* UserProfileViewController.m */; };
 		D4DC557C1B2665D300819CEE /* LeftPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC557A1B2665D300819CEE /* LeftPanelViewController.m */; };
@@ -160,6 +161,7 @@
 		D461E4F01B1591CD0070C370 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D48BBD021AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllDreamsViewControllerTableViewController.h; sourceTree = "<group>"; };
 		D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllDreamsViewControllerTableViewController.m; sourceTree = "<group>"; };
+		D4C3DDCA1B3C866B00606238 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
 		D4CB78C01B3273A0003A10A7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D4CB78C11B3273A0003A10A7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		D4CB78C31B3A72DA003A10A7 /* DreamPanelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DreamPanelView.h; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 		B08F362319F2D5F000FC5A90 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				D4C3DDC91B3C866B00606238 /* Fonts */,
 				D4CB78B91B32539F003A10A7 /* SWRevealViewController */,
 				D4DC56FD1B27C66B00819CEE /* FontAwesome */,
 				B08F362419F2D6B600FC5A90 /* BlindsidedStoryboard */,
@@ -496,6 +499,15 @@
 			name = Templates;
 			sourceTree = "<group>";
 		};
+		D4C3DDC91B3C866B00606238 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D4C3DDCA1B3C866B00606238 /* Pacifico.ttf */,
+			);
+			name = Fonts;
+			path = External/Fonts;
+			sourceTree = "<group>";
+		};
 		D4CB78B91B32539F003A10A7 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,6 +641,7 @@
 				D4DC57181B27C71900819CEE /* FontAwesome.ttf in Resources */,
 				D461E4EE1B158E400070C370 /* AuthN.Storyboard in Resources */,
 				B055B1F019F20DD300AE17A5 /* LaunchScreen.xib in Resources */,
+				D4C3DDCB1B3C866B00606238 /* Pacifico.ttf in Resources */,
 				B055B1ED19F20DD300AE17A5 /* Images.xcassets in Resources */,
 				D4278AD71B1B7937002FA1F1 /* Dream.storyboard in Resources */,
 			);

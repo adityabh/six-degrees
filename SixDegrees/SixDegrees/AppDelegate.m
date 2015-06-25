@@ -38,7 +38,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor whiteColor],NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
-                                                           [UIFont fontWithName:@"Arial" size:17.0], NSFontAttributeName, nil]];
+                                                           [UIFont fontWithName:@"Pacifico" size:24.0], NSFontAttributeName, nil]];
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];

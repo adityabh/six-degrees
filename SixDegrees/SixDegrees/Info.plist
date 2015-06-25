@@ -61,6 +61,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Pacifico.ttf</string>
 		<string>FontAwesome.ttf</string>
 	</array>
 </dict>
