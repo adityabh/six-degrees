@@ -26,7 +26,7 @@
 - (void)showHowItWorks;
 @end
 
-@interface AllDreamsViewControllerTableViewController : UITableViewController  <LeftPanelViewControllerDelegate>
+@interface AllDreamsViewControllerTableViewController : UITableViewController
 
 @property (nonatomic, assign) id<DreamViewControllerDelegate> delegate;
 

@@ -29,7 +29,6 @@
 #import "SWRevealViewController.h"
 #import "LeftPanelViewController.h"
 
-
 #pragma mark - StatusBar Helper Function
 
 // computes the required offset adjustment due to the status bar for the passed in view,
@@ -780,6 +779,10 @@ const int FrontViewPositionNone = 0xff;
     
     if ([option isEqualToString:@"How it works"]) {
         [self.delegate showHowItWorks];
+    };
+    
+    if ([option isEqualToString:@"Settings"]) {
+        [self.delegate showSettings];
     };
 }
 

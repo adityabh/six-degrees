@@ -44,13 +44,14 @@
 		D417DCD01B02E1E40067C13A /* DreamCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D417DCCF1B02E1E30067C13A /* DreamCellTableViewCell.m */; };
 		D417DCD31B02F3F10067C13A /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D417DCD21B02F3F10067C13A /* RoundedButton.m */; };
 		D417DCDB1B054BDB0067C13A /* CreateDreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D417DCDA1B054BDB0067C13A /* CreateDreamViewController.m */; };
-		D4278AD71B1B7937002FA1F1 /* Dream.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4278AD61B1B7937002FA1F1 /* Dream.storyboard */; };
 		D4278ADA1B1BFEF7002FA1F1 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4278AD91B1BFEF7002FA1F1 /* SignupViewController.m */; };
 		D461E4EC1B1565EB0070C370 /* HelpDreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D461E4EB1B1565EB0070C370 /* HelpDreamViewController.m */; };
 		D461E4EE1B158E400070C370 /* AuthN.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D461E4ED1B158E400070C370 /* AuthN.Storyboard */; };
 		D461E4F11B1591CD0070C370 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D461E4F01B1591CD0070C370 /* LoginViewController.m */; };
 		D48BBD041AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */; };
 		D4C3DDCB1B3C866B00606238 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4C3DDCA1B3C866B00606238 /* Pacifico.ttf */; };
+		D4C3DDCE1B3CB7A500606238 /* EditUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C3DDCD1B3CB7A500606238 /* EditUserViewController.m */; };
+		D4C3DDD41B3CD6E300606238 /* Dream.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C3DDD31B3CD6E300606238 /* Dream.storyboard */; };
 		D4CB78C21B3273A0003A10A7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CB78C11B3273A0003A10A7 /* SWRevealViewController.m */; };
 		D4CB78DB1B3B8C0B003A10A7 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CB78DA1B3B8C0B003A10A7 /* UserProfileViewController.m */; };
 		D4DC557C1B2665D300819CEE /* LeftPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC557A1B2665D300819CEE /* LeftPanelViewController.m */; };
@@ -151,7 +152,6 @@
 		D417DCD21B02F3F10067C13A /* RoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedButton.m; sourceTree = "<group>"; };
 		D417DCD91B054BDB0067C13A /* CreateDreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateDreamViewController.h; sourceTree = "<group>"; };
 		D417DCDA1B054BDB0067C13A /* CreateDreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateDreamViewController.m; sourceTree = "<group>"; };
-		D4278AD61B1B7937002FA1F1 /* Dream.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dream.storyboard; path = Storyboards/Dream.storyboard; sourceTree = "<group>"; };
 		D4278AD81B1BFEF7002FA1F1 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		D4278AD91B1BFEF7002FA1F1 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		D461E4EA1B1565EB0070C370 /* HelpDreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpDreamViewController.h; sourceTree = "<group>"; };
@@ -162,6 +162,9 @@
 		D48BBD021AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllDreamsViewControllerTableViewController.h; sourceTree = "<group>"; };
 		D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllDreamsViewControllerTableViewController.m; sourceTree = "<group>"; };
 		D4C3DDCA1B3C866B00606238 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
+		D4C3DDCC1B3CB7A500606238 /* EditUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUserViewController.h; sourceTree = "<group>"; };
+		D4C3DDCD1B3CB7A500606238 /* EditUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUserViewController.m; sourceTree = "<group>"; };
+		D4C3DDD31B3CD6E300606238 /* Dream.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dream.storyboard; path = Storyboards/Dream.storyboard; sourceTree = "<group>"; };
 		D4CB78C01B3273A0003A10A7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D4CB78C11B3273A0003A10A7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		D4CB78C31B3A72DA003A10A7 /* DreamPanelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DreamPanelView.h; sourceTree = "<group>"; };
@@ -427,7 +430,7 @@
 		B08FA04E1A053A4A005D0CE2 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				D4278AD61B1B7937002FA1F1 /* Dream.storyboard */,
+				D4C3DDD31B3CD6E300606238 /* Dream.storyboard */,
 				D461E4ED1B158E400070C370 /* AuthN.Storyboard */,
 			);
 			name = Storyboards;
@@ -522,6 +525,8 @@
 			children = (
 				D4CB78D91B3B8C0B003A10A7 /* UserProfileViewController.h */,
 				D4CB78DA1B3B8C0B003A10A7 /* UserProfileViewController.m */,
+				D4C3DDCC1B3CB7A500606238 /* EditUserViewController.h */,
+				D4C3DDCD1B3CB7A500606238 /* EditUserViewController.m */,
 			);
 			name = Profile;
 			path = "View Controllers/Profile";
@@ -637,13 +642,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C3DDD41B3CD6E300606238 /* Dream.storyboard in Resources */,
 				B055B1EB19F20DD300AE17A5 /* Main.storyboard in Resources */,
 				D4DC57181B27C71900819CEE /* FontAwesome.ttf in Resources */,
 				D461E4EE1B158E400070C370 /* AuthN.Storyboard in Resources */,
 				B055B1F019F20DD300AE17A5 /* LaunchScreen.xib in Resources */,
 				D4C3DDCB1B3C866B00606238 /* Pacifico.ttf in Resources */,
 				B055B1ED19F20DD300AE17A5 /* Images.xcassets in Resources */,
-				D4278AD71B1B7937002FA1F1 /* Dream.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +768,7 @@
 				D4278ADA1B1BFEF7002FA1F1 /* SignupViewController.m in Sources */,
 				B09F77001AB64D3900583077 /* DreamResponse.m in Sources */,
 				D417DCDB1B054BDB0067C13A /* CreateDreamViewController.m in Sources */,
+				D4C3DDCE1B3CB7A500606238 /* EditUserViewController.m in Sources */,
 				B09F76F41A9975E200583077 /* Dream.m in Sources */,
 				B08F362019F2D3B200FC5A90 /* HomeViewController.m in Sources */,
 				D4CB78C21B3273A0003A10A7 /* SWRevealViewController.m in Sources */,

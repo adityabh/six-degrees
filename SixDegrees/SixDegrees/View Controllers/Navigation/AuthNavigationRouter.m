@@ -9,13 +9,14 @@
 #import "AuthNavigationRouter.h"
 #import "DreamNavigationRouter.h"
 #import "SDNavigationController.h"
+#import "EditUserViewController.h"
 #import "ViewControllerFactory.h"
 #import "LoginViewController.h"
 #import "SignupViewController.h"
 #import "AppDelegate.h"
 
 
-@interface AuthNavigationRouter () <LoginViewControllerDelegate, SignupViewControllerDelegate>
+@interface AuthNavigationRouter () <LoginViewControllerDelegate, SignupViewControllerDelegate, EditUserViewControllerDelegate>
 
     @property (strong, nonatomic) id<BSInjector> injector;
     @property (strong, nonatomic) ViewControllerFactory *vcFactory;
@@ -50,10 +51,16 @@
 
 - (SDNavigationController *)defaultAuthNavStack {
     if (!self.authNavStack) {
-        LoginViewController *loginViewController = [self.vcFactory buildSignInVcWithDelegate:self
-                                                                   injector:self.injector];
-        
-        self.authNavStack = [[SDNavigationController alloc] initWithRootViewController:loginViewController];
+        AppDelegate *appDel = (AppDelegate*) [UIApplication sharedApplication].delegate;
+        if (appDel.user == nil) {
+            LoginViewController *loginViewController = [self.vcFactory buildSignInVcWithDelegate:self
+                                                                                        injector:self.injector];
+            self.authNavStack = [[SDNavigationController alloc] initWithRootViewController:loginViewController];
+        } else {
+            EditUserViewController *editUserViewController = [self.vcFactory buildEditUserVc:self
+                                                                                    injector:self.injector];
+            self.authNavStack = [[SDNavigationController alloc] initWithRootViewController:editUserViewController];
+        }
     }
     return self.authNavStack;
 }
@@ -70,6 +77,17 @@
 - (void)didSignup:(User *)user {
     AppDelegate *appDel = (AppDelegate*) [UIApplication sharedApplication].delegate;
     appDel.user = user;
+    [self.dreamRouter setWindow:self.window];
+    self.window.rootViewController = [self.dreamRouter defaultNavStack];
+}
+
+- (void)didUpdateUser:(User *)user {
+    // TODO: add app delegate logic after API
+    [self.dreamRouter setWindow:self.window];
+    self.window.rootViewController = [self.dreamRouter defaultNavStack];
+}
+
+- (void)didCancelUpdate {
     [self.dreamRouter setWindow:self.window];
     self.window.rootViewController = [self.dreamRouter defaultNavStack];
 }

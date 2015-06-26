@@ -235,8 +235,8 @@
                             <button opaque="NO" tag="200" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zR1-BV-d8f" customClass="RadioButton">
                                 <rect key="frame" x="16" y="178" width="122" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="122" id="29c-0s-Ul8"/>
-                                    <constraint firstAttribute="height" constant="24" id="Gyr-Bn-6Ew"/>
+                                    <constraint firstAttribute="width" constant="122" id="1HW-La-xRc"/>
+                                    <constraint firstAttribute="height" constant="24" id="hoc-XI-Qrd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                 <state key="normal" title="   Personal" image="unchecked">
@@ -248,8 +248,8 @@
                             <button opaque="NO" tag="201" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMX-Gf-qFn" customClass="RadioButton">
                                 <rect key="frame" x="16" y="210" width="186" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="2ea-l7-GON"/>
-                                    <constraint firstAttribute="width" constant="186" id="Fej-gT-8b0"/>
+                                    <constraint firstAttribute="width" constant="186" id="hme-rl-dZm"/>
+                                    <constraint firstAttribute="height" constant="24" id="wqo-pL-kI9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                 <state key="normal" title="   Professional" image="unchecked">
@@ -261,8 +261,8 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the dream category:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODK-0Q-X3i">
                                 <rect key="frame" x="16" y="149" width="261" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="261" id="18H-Hl-vy8"/>
-                                    <constraint firstAttribute="height" constant="21" id="ovy-9K-NEN"/>
+                                    <constraint firstAttribute="height" constant="21" id="FSm-dT-yEw"/>
+                                    <constraint firstAttribute="width" constant="261" id="j1o-eK-GqC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -271,25 +271,25 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is your dream?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hCi-09-ucW">
                                 <rect key="frame" x="16" y="111" width="568" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="cIl-Jz-bp0"/>
+                                    <constraint firstAttribute="height" constant="30" id="NCc-9v-y05"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the missing fields below!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4P-ck-iGr">
-                                <rect key="frame" x="16" y="77" width="568" height="21"/>
+                                <rect key="frame" x="16" y="77" width="568" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Fwv-lW-lR4"/>
+                                    <constraint firstAttribute="height" constant="20" id="bdm-gx-zxU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzG-ie-2ID" customClass="RoundedButton">
                                 <rect key="frame" x="16" y="250" width="568" height="35"/>
                                 <color key="backgroundColor" red="0.32549019610000002" green="0.69803921570000005" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="ygn-qJ-jPA"/>
+                                    <constraint firstAttribute="height" constant="35" id="mtj-jG-X3c"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                 <state key="normal" title="Create Dream">
@@ -308,22 +308,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OzG-ie-2ID" firstAttribute="leading" secondItem="JMX-Gf-qFn" secondAttribute="leading" id="5XW-LZ-5kD"/>
-                            <constraint firstItem="hCi-09-ucW" firstAttribute="leading" secondItem="ODK-0Q-X3i" secondAttribute="leading" id="7w1-jV-eSd"/>
-                            <constraint firstItem="j4P-ck-iGr" firstAttribute="leading" secondItem="hCi-09-ucW" secondAttribute="leading" id="HCx-zA-cyk"/>
-                            <constraint firstItem="hCi-09-ucW" firstAttribute="trailing" secondItem="j4P-ck-iGr" secondAttribute="trailing" id="JnT-st-chS"/>
-                            <constraint firstItem="JMX-Gf-qFn" firstAttribute="leading" secondItem="rtd-kh-TGn" secondAttribute="leadingMargin" id="KsZ-xr-OsI"/>
+                            <constraint firstItem="OzG-ie-2ID" firstAttribute="leading" secondItem="JMX-Gf-qFn" secondAttribute="leading" id="Af0-90-AiG"/>
+                            <constraint firstItem="OzG-ie-2ID" firstAttribute="trailing" secondItem="hCi-09-ucW" secondAttribute="trailing" id="C9G-Bw-Rrp"/>
+                            <constraint firstItem="hCi-09-ucW" firstAttribute="leading" secondItem="ODK-0Q-X3i" secondAttribute="leading" id="NSP-90-Wz0"/>
+                            <constraint firstItem="ODK-0Q-X3i" firstAttribute="top" secondItem="hCi-09-ucW" secondAttribute="bottom" constant="8" symbolic="YES" id="Ppb-UF-Nhn"/>
                             <constraint firstItem="bGQ-Cq-e6I" firstAttribute="top" secondItem="OzG-ie-2ID" secondAttribute="bottom" constant="315" id="Q45-le-Qtv"/>
-                            <constraint firstItem="JMX-Gf-qFn" firstAttribute="top" secondItem="zR1-BV-d8f" secondAttribute="bottom" constant="8" symbolic="YES" id="ZWW-z3-Xan"/>
-                            <constraint firstItem="OzG-ie-2ID" firstAttribute="trailing" secondItem="rtd-kh-TGn" secondAttribute="trailingMargin" id="ZlJ-xn-yFv"/>
-                            <constraint firstItem="j4P-ck-iGr" firstAttribute="top" secondItem="x7N-vf-MVR" secondAttribute="bottom" constant="13" id="eLb-XX-egC"/>
-                            <constraint firstItem="ODK-0Q-X3i" firstAttribute="top" secondItem="hCi-09-ucW" secondAttribute="bottom" constant="8" symbolic="YES" id="jeC-Nx-RyG"/>
-                            <constraint firstItem="zR1-BV-d8f" firstAttribute="leading" secondItem="ODK-0Q-X3i" secondAttribute="leading" id="mgz-SV-UAK"/>
-                            <constraint firstItem="hCi-09-ucW" firstAttribute="top" secondItem="j4P-ck-iGr" secondAttribute="bottom" constant="13" id="rdB-cf-Ibx"/>
-                            <constraint firstItem="JMX-Gf-qFn" firstAttribute="leading" secondItem="zR1-BV-d8f" secondAttribute="leading" id="sJw-89-mav"/>
-                            <constraint firstItem="hCi-09-ucW" firstAttribute="trailing" secondItem="OzG-ie-2ID" secondAttribute="trailing" id="tbF-Fg-KR3"/>
-                            <constraint firstItem="zR1-BV-d8f" firstAttribute="top" secondItem="ODK-0Q-X3i" secondAttribute="bottom" constant="8" symbolic="YES" id="uKy-gG-7HQ"/>
-                            <constraint firstItem="OzG-ie-2ID" firstAttribute="top" secondItem="JMX-Gf-qFn" secondAttribute="bottom" constant="16" id="zee-NB-zSP"/>
+                            <constraint firstItem="j4P-ck-iGr" firstAttribute="leading" secondItem="hCi-09-ucW" secondAttribute="leading" id="bLi-Qz-mgi"/>
+                            <constraint firstItem="zR1-BV-d8f" firstAttribute="leading" secondItem="ODK-0Q-X3i" secondAttribute="leading" id="eBj-W8-i4Y"/>
+                            <constraint firstItem="OzG-ie-2ID" firstAttribute="top" secondItem="JMX-Gf-qFn" secondAttribute="bottom" constant="16" id="fng-hI-PRz"/>
+                            <constraint firstItem="j4P-ck-iGr" firstAttribute="top" secondItem="x7N-vf-MVR" secondAttribute="bottom" constant="13" id="hgm-BS-FGG"/>
+                            <constraint firstItem="JMX-Gf-qFn" firstAttribute="leading" secondItem="rtd-kh-TGn" secondAttribute="leadingMargin" id="osK-XQ-sUW"/>
+                            <constraint firstItem="zR1-BV-d8f" firstAttribute="top" secondItem="ODK-0Q-X3i" secondAttribute="bottom" constant="8" symbolic="YES" id="rXB-4E-iGn"/>
+                            <constraint firstItem="zR1-BV-d8f" firstAttribute="leading" secondItem="JMX-Gf-qFn" secondAttribute="leading" id="s9l-wF-wlR"/>
+                            <constraint firstItem="OzG-ie-2ID" firstAttribute="trailing" secondItem="rtd-kh-TGn" secondAttribute="trailingMargin" id="ssD-re-zTQ"/>
+                            <constraint firstItem="hCi-09-ucW" firstAttribute="trailing" secondItem="j4P-ck-iGr" secondAttribute="trailing" id="uW5-6l-m7d"/>
+                            <constraint firstItem="hCi-09-ucW" firstAttribute="top" secondItem="j4P-ck-iGr" secondAttribute="bottom" constant="14" id="vRt-0O-APM"/>
+                            <constraint firstItem="JMX-Gf-qFn" firstAttribute="top" secondItem="zR1-BV-d8f" secondAttribute="bottom" constant="8" symbolic="YES" id="xYB-KB-RiT"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -392,7 +392,7 @@
                                             <constraint firstAttribute="height" constant="21" id="dsc-U9-wTD"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -612,7 +612,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Six Degrees" id="3eh-NN-tDo">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="K7M-kr-glu">
+                        <barButtonItem key="leftBarButtonItem" id="K7M-kr-glu">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="eop-66-78o" kind="unwind" unwindAction="unwindToAllDreams:" id="GsW-bN-Isu"/>
@@ -620,6 +620,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="leftBarButton" destination="K7M-kr-glu" id="izz-C0-Di9"/>
                         <outlet property="myTableView" destination="jZ1-Oe-ulR" id="K6G-YP-cWt"/>
                         <outlet property="nameLabel" destination="kJX-wK-8dT" id="lXf-tu-KyH"/>
                         <outlet property="profileImage" destination="Md8-fZ-kPd" id="cP1-EN-Zqu"/>

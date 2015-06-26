@@ -58,6 +58,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //show activity spinner
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc]
+                                             initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    
+    spinner.center=self.view.center;
+    [spinner startAnimating];
+    [self.view addSubview:spinner];
+    
     UIImage *leftIcon = [UIImage imageWithIcon:@"fa-bars" backgroundColor:[UIColor clearColor] iconColor:[UIColor whiteColor] andSize:CGSizeMake(25, 25)];
     [_leftBarButton setImage:leftIcon];
     
@@ -75,6 +83,11 @@
     
     [[self.dreamManager fetchDreamsPromise] then:^id(NSArray *dreams) {
         self.dreams = dreams;
+        
+        // stop activity spinner
+        [spinner stopAnimating];
+        [spinner removeFromSuperview];
+        
         [self.tableView reloadData];
         return dreams;
     } error:^id(NSError *error) {
@@ -269,17 +282,6 @@
     destViewController.dream = self.dreams[sender.tag];
     
     [self.navigationController pushViewController:destViewController animated:YES];
-}
-
-- (void)optionSelected:(NSString *)option {
-    //[_delegate optionSelected:option];
-    if ([option isEqualToString:@"Logout"]) {
-        [self.delegate didLogout];
-    };
-    
-    if ([option isEqualToString:@"How it works"]) {
-        [self.delegate showHowItWorks];
-    };
 }
 
 @end

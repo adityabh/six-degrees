@@ -10,6 +10,7 @@
 
 #import "HomeViewController.h"
 #import "LoginViewController.h"
+#import "EditUserViewController.h"
 #import "SWRevealViewController.h"
 #import "AllDreamsViewControllerTableViewController.h"
 
@@ -25,12 +26,20 @@
     return homeViewController;
 }
 
-- (LoginViewController *)buildSignInVcWithDelegate:(id<SignInViewControllerDelegate>)delegate
+- (LoginViewController *)buildSignInVcWithDelegate:(id<LoginViewControllerDelegate>)delegate
                                            injector:(id<BSInjector>)injector {
     BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:AUTHN_STORYBOARD bundle:nil injector:injector];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([LoginViewController class])];
     loginViewController.delegate = delegate;
     return loginViewController;
+}
+
+- (EditUserViewController *)buildEditUserVc:(id<EditUserViewControllerDelegate>)delegate
+                                   injector:(id<BSInjector>)injector {
+    BlindsidedStoryboard *storyboard = [BlindsidedStoryboard storyboardWithName:AUTHN_STORYBOARD bundle:nil injector:injector];
+    EditUserViewController *editUserViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([EditUserViewController class])];
+    editUserViewController.delegate = delegate;
+    return editUserViewController;
 }
 
 - (SWRevealViewController *) buildDreamVcWithInjector :(id<BSInjector>)injector {

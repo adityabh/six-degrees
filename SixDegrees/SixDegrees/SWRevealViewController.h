@@ -333,6 +333,7 @@ typedef enum
 
 - (void)didLogout;
 - (void)showHowItWorks;
+- (void)showSettings;
 
 @optional
 

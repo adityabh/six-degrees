@@ -70,6 +70,12 @@
     self.window.rootViewController = [mainRouter defaultNavStack];
 }
 
+- (void)showSettings {
+    AuthNavigationRouter *authRouter = (AuthNavigationRouter *)[self.injector getInstance:[AuthNavigationRouter class]];
+    [authRouter setWindow:self.window];
+    self.window.rootViewController = [authRouter defaultAuthNavStack];
+}
+
 #pragma mark - Dependency Injection
 
 - (id<BSModule>)module {

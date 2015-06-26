@@ -8,6 +8,7 @@
 
 #import "UserProfileViewController.h"
 #import "DreamCellTableViewCell.h"
+#import "UIImage+FontAwesome.h"
 
 #import "UserDream.h"
 #import "Dream.h"
@@ -62,6 +63,10 @@
     // add actions to button clicks
     [self.showDreams addTarget:self action:@selector(showUserDreams:) forControlEvents:UIControlEventTouchUpInside];
     [self.showHelpGiven addTarget:self action:@selector(showHelpedDreams:) forControlEvents:UIControlEventTouchUpInside];
+    
+    // configure bar button items
+    UIImage *leftIcon = [UIImage imageWithIcon:@"fa-chevron-left" backgroundColor:[UIColor clearColor] iconColor:[UIColor whiteColor] andSize:CGSizeMake(25, 25)];
+    [_leftBarButton setImage:leftIcon];
     
     [self.myTableView reloadData];
 }
