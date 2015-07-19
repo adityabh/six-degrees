@@ -49,12 +49,12 @@
 		D461E4EE1B158E400070C370 /* AuthN.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D461E4ED1B158E400070C370 /* AuthN.Storyboard */; };
 		D461E4F11B1591CD0070C370 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D461E4F01B1591CD0070C370 /* LoginViewController.m */; };
 		D48BBD041AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */; };
+		D49D36F91B43966A0066DEEE /* LeftPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D49D36F81B43966A0066DEEE /* LeftPanelViewController.m */; };
 		D4C3DDCB1B3C866B00606238 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4C3DDCA1B3C866B00606238 /* Pacifico.ttf */; };
 		D4C3DDCE1B3CB7A500606238 /* EditUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C3DDCD1B3CB7A500606238 /* EditUserViewController.m */; };
 		D4C3DDD41B3CD6E300606238 /* Dream.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4C3DDD31B3CD6E300606238 /* Dream.storyboard */; };
 		D4CB78C21B3273A0003A10A7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CB78C11B3273A0003A10A7 /* SWRevealViewController.m */; };
 		D4CB78DB1B3B8C0B003A10A7 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CB78DA1B3B8C0B003A10A7 /* UserProfileViewController.m */; };
-		D4DC557C1B2665D300819CEE /* LeftPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC557A1B2665D300819CEE /* LeftPanelViewController.m */; };
 		D4DC570A1B27C6FA00819CEE /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC57091B27C6FA00819CEE /* FAImageView.m */; };
 		D4DC57111B27C70400819CEE /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC570C1B27C70400819CEE /* UIFont+FontAwesome.m */; };
 		D4DC57121B27C70400819CEE /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DC570E1B27C70400819CEE /* NSString+FontAwesome.m */; };
@@ -63,6 +63,7 @@
 		D4DC571A1B27C86500819CEE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DC57191B27C86500819CEE /* UIKit.framework */; };
 		D4DC571C1B27C86E00819CEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DC571B1B27C86E00819CEE /* Foundation.framework */; };
 		D4DC571E1B27C87500819CEE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DC571D1B27C87500819CEE /* CoreGraphics.framework */; };
+		D4E8E1EF1B43986E0079E327 /* LaoUI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4E8E1EE1B43986E0079E327 /* LaoUI.ttf */; };
 		F1F336645A361581DDD409F6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE94702CF9A4BA6E336EFDB1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +162,8 @@
 		D461E4F01B1591CD0070C370 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D48BBD021AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllDreamsViewControllerTableViewController.h; sourceTree = "<group>"; };
 		D48BBD031AFD7AEA0089A3CF /* AllDreamsViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllDreamsViewControllerTableViewController.m; sourceTree = "<group>"; };
+		D49D36F71B43966A0066DEEE /* LeftPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftPanelViewController.h; path = Views/Dreams/LeftPanelViewController.h; sourceTree = "<group>"; };
+		D49D36F81B43966A0066DEEE /* LeftPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftPanelViewController.m; path = Views/Dreams/LeftPanelViewController.m; sourceTree = "<group>"; };
 		D4C3DDCA1B3C866B00606238 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
 		D4C3DDCC1B3CB7A500606238 /* EditUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUserViewController.h; sourceTree = "<group>"; };
 		D4C3DDCD1B3CB7A500606238 /* EditUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUserViewController.m; sourceTree = "<group>"; };
@@ -170,8 +173,6 @@
 		D4CB78C31B3A72DA003A10A7 /* DreamPanelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DreamPanelView.h; sourceTree = "<group>"; };
 		D4CB78D91B3B8C0B003A10A7 /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
 		D4CB78DA1B3B8C0B003A10A7 /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
-		D4DC55791B2665D300819CEE /* LeftPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftPanelViewController.h; path = ../../../../../Users/bhallaa/Desktop/SlideOutNavigation/Navigation/Classes/LeftPanelViewController.h; sourceTree = "<group>"; };
-		D4DC557A1B2665D300819CEE /* LeftPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftPanelViewController.m; path = ../../../../../Users/bhallaa/Desktop/SlideOutNavigation/Navigation/Classes/LeftPanelViewController.m; sourceTree = "<group>"; };
 		D4DC57081B27C68700819CEE /* FAImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FAImageView.h; path = "../../../font-awesome/ios-fontawesome/FAImageView.h"; sourceTree = "<group>"; };
 		D4DC57091B27C6FA00819CEE /* FAImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAImageView.m; path = "../../../font-awesome/ios-fontawesome/FAImageView.m"; sourceTree = "<group>"; };
 		D4DC570B1B27C70400819CEE /* UIFont+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+FontAwesome.h"; path = "../../../font-awesome/ios-fontawesome/UIFont+FontAwesome.h"; sourceTree = "<group>"; };
@@ -184,6 +185,7 @@
 		D4DC57191B27C86500819CEE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D4DC571B1B27C86E00819CEE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D4DC571D1B27C87500819CEE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D4E8E1EE1B43986E0079E327 /* LaoUI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LaoUI.ttf; sourceTree = "<group>"; };
 		DE94702CF9A4BA6E336EFDB1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B7EE94FCD158A1EE106D42 /* Pods-SixDegreesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SixDegreesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SixDegreesTests/Pods-SixDegreesTests.release.xcconfig"; sourceTree = "<group>"; };
 		EBE446E0CB8FEC8B9644D7EA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -472,8 +474,8 @@
 		B09F76EC1A99672300583077 /* Dreams */ = {
 			isa = PBXGroup;
 			children = (
-				D4DC55791B2665D300819CEE /* LeftPanelViewController.h */,
-				D4DC557A1B2665D300819CEE /* LeftPanelViewController.m */,
+				D49D36F71B43966A0066DEEE /* LeftPanelViewController.h */,
+				D49D36F81B43966A0066DEEE /* LeftPanelViewController.m */,
 				D4CB78C31B3A72DA003A10A7 /* DreamPanelView.h */,
 				B09F76F01A9967BD00583077 /* DreamPanelView.m */,
 				D417DCCE1B02E1E30067C13A /* DreamCellTableViewCell.h */,
@@ -506,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				D4C3DDCA1B3C866B00606238 /* Pacifico.ttf */,
+				D4E8E1EE1B43986E0079E327 /* LaoUI.ttf */,
 			);
 			name = Fonts;
 			path = External/Fonts;
@@ -649,6 +652,7 @@
 				B055B1F019F20DD300AE17A5 /* LaunchScreen.xib in Resources */,
 				D4C3DDCB1B3C866B00606238 /* Pacifico.ttf in Resources */,
 				B055B1ED19F20DD300AE17A5 /* Images.xcassets in Resources */,
+				D4E8E1EF1B43986E0079E327 /* LaoUI.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,6 +742,7 @@
 				D417DCD31B02F3F10067C13A /* RoundedButton.m in Sources */,
 				D4DC57131B27C70400819CEE /* UIImage+FontAwesome.m in Sources */,
 				B08F361C19F2D38600FC5A90 /* DetailViewController.m in Sources */,
+				D49D36F91B43966A0066DEEE /* LeftPanelViewController.m in Sources */,
 				B08F361719F2D35C00FC5A90 /* SDViewController.m in Sources */,
 				B08FA04A1A053117005D0CE2 /* AuthNavigationRouter.m in Sources */,
 				D417DCD01B02E1E40067C13A /* DreamCellTableViewCell.m in Sources */,
@@ -753,7 +758,6 @@
 				D4DC57111B27C70400819CEE /* UIFont+FontAwesome.m in Sources */,
 				D4DC570A1B27C6FA00819CEE /* FAImageView.m in Sources */,
 				B08F365019F4932500FC5A90 /* ApiError.m in Sources */,
-				D4DC557C1B2665D300819CEE /* LeftPanelViewController.m in Sources */,
 				D461E4EC1B1565EB0070C370 /* HelpDreamViewController.m in Sources */,
 				B08F365819F4A4C800FC5A90 /* FacebookAccount.m in Sources */,
 				B08F364519F33BCC00FC5A90 /* UserManager.m in Sources */,

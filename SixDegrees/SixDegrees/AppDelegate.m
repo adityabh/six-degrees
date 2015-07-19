@@ -29,7 +29,7 @@
     [self setupMainRouter];
     
     // Change the background color of navigation bar
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x53B2DA)];
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x903193)];
     
     // Change the font style of the navigation bar
     NSShadow *shadow = [[NSShadow alloc] init];
@@ -38,7 +38,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor whiteColor],NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
-                                                           [UIFont fontWithName:@"Pacifico" size:24.0], NSFontAttributeName, nil]];
+                                                           [UIFont fontWithName:@"LaoUI" size:24.0], NSFontAttributeName, nil]];
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];

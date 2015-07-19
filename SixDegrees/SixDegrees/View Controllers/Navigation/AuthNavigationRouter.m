@@ -50,17 +50,15 @@
 }
 
 - (SDNavigationController *)defaultAuthNavStack {
-    if (!self.authNavStack) {
-        AppDelegate *appDel = (AppDelegate*) [UIApplication sharedApplication].delegate;
-        if (appDel.user == nil) {
-            LoginViewController *loginViewController = [self.vcFactory buildSignInVcWithDelegate:self
+    AppDelegate *appDel = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    if (appDel.user == nil) {
+        LoginViewController *loginViewController = [self.vcFactory buildSignInVcWithDelegate:self
                                                                                         injector:self.injector];
-            self.authNavStack = [[SDNavigationController alloc] initWithRootViewController:loginViewController];
-        } else {
-            EditUserViewController *editUserViewController = [self.vcFactory buildEditUserVc:self
+        self.authNavStack = [[SDNavigationController alloc] initWithRootViewController:loginViewController];
+    } else {
+        EditUserViewController *editUserViewController = [self.vcFactory buildEditUserVc:self
                                                                                     injector:self.injector];
-            self.authNavStack = [[SDNavigationController alloc] initWithRootViewController:editUserViewController];
-        }
+        self.authNavStack = [[SDNavigationController alloc] initWithRootViewController:editUserViewController];
     }
     return self.authNavStack;
 }

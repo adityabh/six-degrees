@@ -12,6 +12,7 @@
 #import "ViewControllerFactory.h"
 #import "AuthNavigationRouter.h"
 #import "MainNavigationRouter.h"
+#import "AppDelegate.h"
 #import "SDModule.h"
 #import "Lockbox.h"
 
@@ -59,6 +60,8 @@
 
 - (void)didLogout {
     [Lockbox setString:@"" forKey:AUTHN_TOKEN_KEY];
+    AppDelegate *appDel = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    appDel.user = nil;
     AuthNavigationRouter *authRouter = (AuthNavigationRouter *)[self.injector getInstance:[AuthNavigationRouter class]];
     [authRouter setWindow:self.window];
     self.window.rootViewController = [authRouter defaultAuthNavStack];

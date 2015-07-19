@@ -7,15 +7,20 @@
 //
 
 #import "LeftPanelViewController.h"
+#import "UIImage+FontAwesome.h"
+#import "AppDelegate.h"
 
-#import "Animal.h"
 
 @interface LeftPanelViewController ()
 
 @property (nonatomic, weak) IBOutlet UITableView *myTableView;
 @property (nonatomic, weak) IBOutlet UITableViewCell *cellMain;
 
-@property (nonatomic, strong) NSMutableArray *arrayOfAnimals;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (nonatomic, weak) IBOutlet UILabel *profileName;
+
+@property (nonatomic, strong) NSArray *arrayOfSettings;
+@property (nonatomic, strong) NSDictionary *settingsToIconMapping;
 
 @end
 
@@ -24,64 +29,67 @@
 #pragma mark -
 #pragma mark View Did Load/Unload
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupOptionsArray];
     
-    [self setupAnimalsArray];
+    AppDelegate *appDel = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    if (appDel.user.smallAvatar != nil) {
+        NSURL *url = [NSURL URLWithString:appDel.user.smallAvatar];
+        NSData  *data = [NSData dataWithContentsOfURL:url];
+        self.profileImage.image = [UIImage imageWithData:data];
+    } else if ([PROVIDER_FB isEqualToString:appDel.user.provider]) {
+        // TODO : remove hardcoded url here
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large",appDel.user.uid]];
+        NSData  *data = [NSData dataWithContentsOfURL:url];
+        self.profileImage.image = [UIImage imageWithData:data];
+    } else {
+        self.profileImage.image = [UIImage imageNamed:@"no_profile"];
+    }
+    
+    self.profileName.text = [NSString stringWithFormat:@"%@ %@", appDel.user.firstName, appDel.user.lastName];
+    
+    // This will remove extra separators from tableview
+    self.myTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
 }
 
 #pragma mark -
 #pragma mark View Will/Did Appear
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 }
 
 #pragma mark -
 #pragma mark View Will/Did Disappear
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
+- (void)viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
 }
 
 #pragma mark -
 #pragma mark Array Setup
 
-- (void)setupAnimalsArray
-{
-    NSArray *animals = @[
-    [Animal itemWithTitle:@"Sleeping Cat" withImage:[UIImage imageNamed:@"ID-100113060.jpg"] withCreator:@"papaija2008"],
-    [Animal itemWithTitle:@"Pussy Cat" withImage:[UIImage imageNamed:@"ID-10022760.jpg"] withCreator:@"Carlos Porto"],
-    [Animal itemWithTitle:@"Korat Domestic Cat" withImage:[UIImage imageNamed:@"ID-10091065.jpg"] withCreator:@"sippakorn"],
-    [Animal itemWithTitle:@"Tabby Cat" withImage:[UIImage imageNamed:@"ID-10047796.jpg"] withCreator:@"dan"],
-    [Animal itemWithTitle:@"Yawning Cat" withImage:[UIImage imageNamed:@"ID-10092572.jpg"] withCreator:@"dan"],
-    [Animal itemWithTitle:@"Tabby Cat" withImage:[UIImage imageNamed:@"ID-10041194.jpg"] withCreator:@"dan"],
-    [Animal itemWithTitle:@"Cat On The Rocks" withImage:[UIImage imageNamed:@"ID-10017782.jpg"] withCreator:@"Willem Siers"],
-    [Animal itemWithTitle:@"Brown Cat Standing" withImage:[UIImage imageNamed:@"ID-10091745.jpg"] withCreator:@"aopsan"],
-    [Animal itemWithTitle:@"Burmese Cat" withImage:[UIImage imageNamed:@"ID-10056941.jpg"] withCreator:@"Rosemary Ratcliff"],
-    [Animal itemWithTitle:@"Cat" withImage:[UIImage imageNamed:@"ID-10019208.jpg"] withCreator:@"dan"],
-    [Animal itemWithTitle:@"Cat" withImage:[UIImage imageNamed:@"ID-10011404.jpg"] withCreator:@"graur codrin"]
-    ];
+- (void)setupOptionsArray {
+    self.arrayOfSettings = @[@"Logout", @"How it works", @"Settings"];
     
-    self.arrayOfAnimals = [NSMutableArray arrayWithArray:animals];
+    self.settingsToIconMapping = @{
+      @"Logout" : @"fa-sign-out",
+      @"How it works" : @"fa-info-circle",
+      @"Settings" : @"fa-cog"
+      };
     
     [self.myTableView reloadData];
 }
@@ -89,23 +97,19 @@
 #pragma mark -
 #pragma mark UITableView Datasource/Delegate
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [_arrayOfAnimals count];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [_arrayOfSettings count];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 54;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellMainNibID = @"cellMain";
     
     _cellMain = [tableView dequeueReusableCellWithIdentifier:cellMainNibID];
@@ -113,18 +117,17 @@
         [[NSBundle mainBundle] loadNibNamed:@"MainCellLeft" owner:self options:nil];
     }
     
-    UIImageView *mainImage = (UIImageView *)[_cellMain viewWithTag:1];
+    UIImageView *optionImage = (UIImageView *)[_cellMain viewWithTag:1];
     
-    UILabel *imageTitle = (UILabel *)[_cellMain viewWithTag:2];
-    UILabel *creator = (UILabel *)[_cellMain viewWithTag:3];
+    UILabel *optionTitle = (UILabel *)[_cellMain viewWithTag:2];
     
-    if ([_arrayOfAnimals count] > 0)
-    {
-        Animal *currentRecord = [self.arrayOfAnimals objectAtIndex:indexPath.row];
+    if ([_arrayOfSettings count] > 0) {
+        NSString *currentRecord = [self.arrayOfSettings objectAtIndex:indexPath.row];
+        optionTitle.text = currentRecord;
         
-        mainImage.image = currentRecord.image;
-        imageTitle.text = [NSString stringWithFormat:@"%@", currentRecord.title];
-        creator.text = [NSString stringWithFormat:@"%@", currentRecord.creator];
+        NSString *iconName = [self.settingsToIconMapping objectForKey:currentRecord];
+        
+        optionImage.image = [UIImage imageWithIcon:iconName backgroundColor:[UIColor clearColor] iconColor:[UIColor whiteColor] andSize:CGSizeMake(25, 25)];
     }
     
     return _cellMain;
@@ -169,22 +172,15 @@
 }
 */
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Animal *currentRecord = [self.arrayOfAnimals objectAtIndex:indexPath.row];
-    
-    // Return Data to delegate: either way is fine, although passing back the object may be more efficient
-    // [_delegate imageSelected:currentRecord.image withTitle:currentRecord.title withCreator:currentRecord.creator];
-    // [_delegate animalSelected:currentRecord];
-    
-    [_delegate animalSelected:currentRecord];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *currentRecord = [self.arrayOfSettings objectAtIndex:indexPath.row];
+    [self.delegate optionSelected:currentRecord];
 }
 
 #pragma mark -
 #pragma mark Default System Code
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
@@ -192,8 +188,7 @@
     return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 

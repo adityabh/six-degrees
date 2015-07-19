@@ -8,16 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class Animal;
 
 @protocol LeftPanelViewControllerDelegate <NSObject>
-
-@optional
-- (void)imageSelected:(UIImage *)image withTitle:(NSString *)imageTitle withCreator:(NSString *)imageCreator;
-
-@required
-- (void)animalSelected:(Animal *)animal;
-
+- (void)optionSelected:(NSString *)option;
 @end
 
 @interface LeftPanelViewController : UIViewController
