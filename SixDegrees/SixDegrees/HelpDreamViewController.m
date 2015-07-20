@@ -8,6 +8,7 @@
 
 #import "HelpDreamViewController.h"
 #import "HelpCellTableViewCell.h"
+#import "SDApiManager.h"
 
 #import "UserDream.h"
 #import "Message.h"
@@ -22,6 +23,8 @@
 
 @interface HelpDreamViewController ()
 
+    @property (strong, nonatomic) SDApiManager *apiManager;
+
     @property (nonatomic, weak) IBOutlet UITableView *myTableView;
     @property (nonatomic, strong) HelpCellTableViewCell *prototypeCell;
 
@@ -30,6 +33,14 @@
 @end
 
 @implementation HelpDreamViewController
+
+#pragma mark - Blindside
+
++ (BSPropertySet *)bsProperties {
+    BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"apiManager", nil];
+    [propertySet bindProperty:@"apiManager" toKey:[SDApiManager class]];
+    return propertySet;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -61,6 +72,8 @@
     } else {
         self.typeIcon.image = [UIImage imageNamed:@"briefcase"];
     }
+    
+    [self.helpButton addTarget:self action:@selector(helpButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.myTableView reloadData];
 }
@@ -185,5 +198,28 @@
     
 }
 
+-(void)helpButtonClicked:(UIButton*)sender {
+    [self.apiManager helpDream:self.helpMessage.text
+                       dreamId:self.dream.content.dream.dreamId
+                    recipientId:self.dream.user.userId
+                        success:^(NSString *status) {
+                            long statusValue = [status longLongValue];
+                            if (statusValue == 200l) {
+                                [self showAlertViewWithTitle:@"Success!" message:@"Message successfully sent!"];
+                            } else {
+                                [self showAlertViewWithTitle:@"Oops!" message:@"Something went wrong, please try again"];
+                            }
+                        } failure:^(NSString *error) {
+                            [self showAlertViewWithTitle:@"Oops!" message:@"Something   went wrong, please try again"];
+                        }];
+}
+
+- (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message {
+    [[[UIAlertView alloc] initWithTitle:title
+                                message:message
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+}
 
 @end

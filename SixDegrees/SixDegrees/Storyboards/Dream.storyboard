@@ -240,13 +240,14 @@
                                     <constraint firstAttribute="bottom" secondItem="iVd-1F-x2K" secondAttribute="bottom" constant="16" id="zu1-lK-RXb"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="584" translatesAutoresizingMaskIntoConstraints="NO" id="8yr-DF-0Re">
-                                <rect key="frame" x="19" y="140" width="562" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages below are private" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT2-2M-jhi">
+                                <rect key="frame" x="16" y="200" width="215" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="vtT-bb-kn0"/>
+                                    <constraint firstAttribute="height" constant="21" id="Hpo-Ad-tuf"/>
+                                    <constraint firstAttribute="width" constant="215" id="a5M-7V-VCf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="boG-9C-LCq">
@@ -331,14 +332,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages below are private" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT2-2M-jhi">
-                                <rect key="frame" x="16" y="200" width="215" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="584" translatesAutoresizingMaskIntoConstraints="NO" id="8yr-DF-0Re">
+                                <rect key="frame" x="19" y="146" width="562" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Hpo-Ad-tuf"/>
-                                    <constraint firstAttribute="width" constant="215" id="a5M-7V-VCf"/>
+                                    <constraint firstAttribute="height" constant="40" id="vtT-bb-kn0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -351,7 +351,7 @@
                             <constraint firstItem="L8R-nv-8zg" firstAttribute="centerX" secondItem="8yr-DF-0Re" secondAttribute="centerX" id="JKt-9d-PbQ"/>
                             <constraint firstItem="boG-9C-LCq" firstAttribute="top" secondItem="aT2-2M-jhi" secondAttribute="bottom" constant="3" id="PiQ-4w-Epa"/>
                             <constraint firstItem="8yr-DF-0Re" firstAttribute="leading" secondItem="al7-IU-Q0b" secondAttribute="leadingMargin" constant="3" id="V3Q-54-oRq"/>
-                            <constraint firstItem="aT2-2M-jhi" firstAttribute="top" secondItem="8yr-DF-0Re" secondAttribute="bottom" constant="20" id="a4a-vw-3Wz"/>
+                            <constraint firstItem="aT2-2M-jhi" firstAttribute="top" secondItem="8yr-DF-0Re" secondAttribute="bottom" constant="14" id="a4a-vw-3Wz"/>
                             <constraint firstAttribute="trailing" secondItem="VuY-c3-IPE" secondAttribute="trailing" id="bSM-6r-wP2"/>
                             <constraint firstItem="VuY-c3-IPE" firstAttribute="top" secondItem="ss9-Rz-Hoq" secondAttribute="bottom" id="cHm-ED-C7D"/>
                             <constraint firstItem="5JM-CQ-R64" firstAttribute="top" secondItem="vYn-xk-Cfi" secondAttribute="bottom" constant="8" symbolic="YES" id="cZG-R8-pDu"/>
@@ -359,10 +359,10 @@
                             <constraint firstItem="L8R-nv-8zg" firstAttribute="trailing" secondItem="vYn-xk-Cfi" secondAttribute="trailing" id="fB2-AG-HOY"/>
                             <constraint firstItem="vYn-xk-Cfi" firstAttribute="leading" secondItem="L8R-nv-8zg" secondAttribute="leading" id="gA7-eG-EkF"/>
                             <constraint firstItem="boG-9C-LCq" firstAttribute="trailing" secondItem="VuY-c3-IPE" secondAttribute="trailing" constant="-16" id="h2p-AQ-DqJ"/>
-                            <constraint firstItem="8yr-DF-0Re" firstAttribute="top" secondItem="VuY-c3-IPE" secondAttribute="bottom" constant="8" symbolic="YES" id="jP1-cN-CLe"/>
+                            <constraint firstItem="8yr-DF-0Re" firstAttribute="top" secondItem="VuY-c3-IPE" secondAttribute="bottom" constant="14" id="jP1-cN-CLe"/>
                             <constraint firstItem="L8R-nv-8zg" firstAttribute="top" secondItem="boG-9C-LCq" secondAttribute="bottom" constant="8" symbolic="YES" id="kEE-ei-tTy"/>
                             <constraint firstItem="8yr-DF-0Re" firstAttribute="centerX" secondItem="VuY-c3-IPE" secondAttribute="centerX" id="mXn-SN-OWv"/>
-                            <constraint firstItem="8yr-DF-0Re" firstAttribute="top" secondItem="al7-IU-Q0b" secondAttribute="top" constant="140" id="uCy-T8-3CK"/>
+                            <constraint firstItem="8yr-DF-0Re" firstAttribute="top" secondItem="al7-IU-Q0b" secondAttribute="top" constant="146" id="uCy-T8-3CK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Help Dream" id="Bta-Zc-wXb">
@@ -378,6 +378,7 @@
                         <outlet property="helpButton" destination="vYn-xk-Cfi" id="qf6-kr-278"/>
                         <outlet property="helpMessage" destination="L8R-nv-8zg" id="ty0-lv-de3"/>
                         <outlet property="leftBarButton" destination="Mex-uB-gw6" id="m3X-5J-Ubb"/>
+                        <outlet property="myTableView" destination="boG-9C-LCq" id="2a8-66-pk6"/>
                         <outlet property="nameLabel" destination="Fpc-Hp-AzZ" id="Zhd-tq-132"/>
                         <outlet property="profileImageView" destination="8UT-Hv-MAZ" id="xf6-ed-gL7"/>
                         <outlet property="typeIcon" destination="iVd-1F-x2K" id="Exf-bO-uDs"/>
