@@ -181,9 +181,13 @@
 
 #pragma mark - Dreams
 
-- (void)fetchDreamsWithSuccess:(VoidBlock)success
+- (void)fetchDreamsWithSuccess:(NSString *)authenticationToken
+                       success:(VoidBlock)success
                        failure:(ErrorBlock)failure {
-    [self.sessionManager GET:[SDEndpoints fetchDreams] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:authenticationToken forKey:@"authentication_token"];
+    
+    [self.sessionManager GET:[SDEndpoints fetchDreams] parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         NSMutableArray *dreams = [NSMutableArray array];
         for (id item in responseObject) {
             UserDream *userDream = [MTLJSONAdapter modelOfClass:UserDream.class fromJSONDictionary:item error:nil];
@@ -255,6 +259,31 @@
         [deleteDreamDeferred rejectWithError:error];
     }];
     return deleteDreamDeferred.promise;
+}
+
+- (KSPromise *)helpDream:(NSString *)message
+                 dreamId:(NSNumber *)dreamId
+             recipientId:(NSNumber *)recipientId
+                 success:(VoidBlock)success
+                 failure:(VoidBlock)failure {
+    KSDeferred *helpDreamDeferred = [KSDeferred defer];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:message forKey:@"content"];
+    [params setValue:dreamId forKey:@"dream_id"];
+    [params setValue:recipientId forKey:@"recipient_id"];
+    
+    [self.sessionManager POST:[SDEndpoints helpDream] parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSString *status = responseObject[@"status"];
+        success(status);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failure) {
+            failure(error.description);
+        }
+    }];
+    
+    return helpDreamDeferred.promise;
+    
 }
 
 @end

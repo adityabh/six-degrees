@@ -147,13 +147,13 @@
     }
     
     cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", dream.user.firstName, dream.user.lastName];
-    cell.descriptionLabel.text = dream.content.dreamDescription;
+    cell.descriptionLabel.text = dream.content.dream.dreamDescription;
     [cell.descriptionLabel sizeToFit];
     
     cell.helpButton.tag = index;
     //[cell.helpButton addTarget:self action:@selector(helpButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
-    cell = [self updateTypeIcon:[dream.content dreamTypeEnum] cell:cell];
+    cell = [self updateTypeIcon:[dream.content.dream dreamTypeEnum] cell:cell];
     
     [cell.contentView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
     [cell.contentView.layer setBorderWidth:1.0f];

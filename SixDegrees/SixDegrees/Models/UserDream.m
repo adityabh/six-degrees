@@ -7,9 +7,10 @@
 //
 
 #import "UserDream.h"
-#import "Dream.h"
-#import "User.h"
+
 #import "NSValueTransformer+MTLPredefinedTransformerAdditions.h"
+#import "DreamContent.h"
+#import "User.h"
 
 @implementation UserDream
 
@@ -23,11 +24,10 @@
 }
 
 + (NSValueTransformer *)contentJSONTransformer {
-    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:Dream.class];
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:DreamContent.class];
 }
 
 + (NSValueTransformer *)userJSONTransformer {
-    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:User.class];
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:User.class];
 }
-
 @end

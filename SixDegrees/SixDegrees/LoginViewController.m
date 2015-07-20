@@ -134,10 +134,9 @@
                                     [Lockbox setString:SD_PROVIDER_FACEBOOK forKey:SD_PROVIDER_KEY];
                                     
                                     if (result) {
-                                        [self showAlertViewWithTitle:@"Success!" message:@"Authenticated against Six-Degrees API"];
                                         [self.delegate didLogin:user];
                                     } else {
-                                        [self showAlertViewWithTitle:@"Failure!" message:@"Oops! Something went wrong, please try again"];
+                                        [self showAlertViewWithTitle:@"Oops!" message:@"Something went wrong, please try again"];
                                     }
                                 } failure:^(NSString *error) {
                                     if ([error isEqualToString:DUPLICATE_EMAIL_ERROR]) {

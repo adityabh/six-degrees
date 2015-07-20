@@ -11,7 +11,17 @@
 
 @interface HelpDreamViewController : UIViewController
 
-    @property (nonatomic, weak) IBOutlet UILabel *descLabel;
+    @property (nonatomic, weak) IBOutlet UIBarButtonItem *leftBarButton;
+
+    @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+    @property (nonatomic, weak) IBOutlet UIImageView *profileImageView;
+
+    @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+    @property (weak, nonatomic) IBOutlet UIImageView *typeIcon;
+
+    @property (weak, nonatomic) IBOutlet UITextField *helpMessage;
+    @property (weak, nonatomic) IBOutlet UIButton *helpButton;
+
     @property (nonatomic, strong) UserDream *dream;
 
 @end

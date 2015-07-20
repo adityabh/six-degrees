@@ -16,7 +16,13 @@
     @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
     @property (nonatomic, weak) IBOutlet UIImageView *profileImageView;
     @property (weak, nonatomic) IBOutlet UIImageView *typeIcon;
-    @property (weak, nonatomic) IBOutlet UIButton *helpButton;
     @property (weak, nonatomic) IBOutlet UIButton *profileView;
+
+    @property (weak, nonatomic) IBOutlet UILabel *helpLabel;
+    @property (weak, nonatomic) IBOutlet NSLayoutConstraint *helpLabelHeight;
+    @property (weak, nonatomic) IBOutlet UITextField *helpMessage;
+    @property (weak, nonatomic) IBOutlet NSLayoutConstraint *helpMessageHeight;
+    @property (weak, nonatomic) IBOutlet UIButton *helpButton;
+    @property (weak, nonatomic) IBOutlet NSLayoutConstraint *HelpButtonHeight;
 
 @end

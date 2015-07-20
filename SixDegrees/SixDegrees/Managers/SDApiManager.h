@@ -44,7 +44,8 @@
 
 #pragma mark - Dreams
 
-- (void)fetchDreamsWithSuccess:(VoidBlock)success
+- (void)fetchDreamsWithSuccess:(NSString *)authenticationToken
+                       success:(VoidBlock)success
                        failure:(ErrorBlock)failure;
 
 - (KSPromise *)createDreamForUser:(NSString *)userId
@@ -56,5 +57,13 @@
           dreamType:(NSString *)dreamType
    dreamDescription:(NSString *)dreamDescription;
 - (KSPromise *)deleteDream:(NSString *)dreamId;
+
+#pragma mark - Messages
+
+- (KSPromise *)helpDream:(NSString *)message
+                 dreamId:(NSNumber *)dreamId
+             recipientId:(NSNumber *)recipientId
+                 success:(VoidBlock)success
+                 failure:(VoidBlock)failure;
 
 @end

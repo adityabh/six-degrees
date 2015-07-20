@@ -7,13 +7,13 @@
 //
 
 #import "SDModel.h"
+#import "DreamContent.h"
 
-@class Dream;
 @class User;
 
 @interface UserDream : SDModel
 
-@property (strong, nonatomic, readonly) Dream *content;
+@property (strong, nonatomic, readonly) DreamContent *content;
 @property (strong, nonatomic, readonly) User *user;
 
 @end

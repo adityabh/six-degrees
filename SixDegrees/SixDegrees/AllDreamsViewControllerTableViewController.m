@@ -18,6 +18,7 @@
 
 #import "NSString+FontAwesome.h"
 #import "UIImage+FontAwesome.h"
+#import "SDApiManager.h"
 
 #import "DreamManager.h"
 #import "UserDream.h"
@@ -30,6 +31,8 @@
 
 
 @interface AllDreamsViewControllerTableViewController ()
+
+    @property (strong, nonatomic) SDApiManager *apiManager;
 
     @property (strong, nonatomic) NSArray *dreams;
     @property (nonatomic, strong) DreamCellTableViewCell *prototypeCell;
@@ -46,10 +49,11 @@
 #pragma mark - Blindside
 
 + (BSPropertySet *)bsProperties {
-    BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"vcFactory", @"dreamManager", @"dreamRouter", nil];
+    BSPropertySet *propertySet = [BSPropertySet propertySetWithClass:self propertyNames:@"vcFactory", @"dreamManager", @"dreamRouter", @"apiManager", nil];
     [propertySet bindProperty:@"vcFactory" toKey:[ViewControllerFactory class]];
     [propertySet bindProperty:@"dreamManager" toKey:[DreamManager class]];
     [propertySet bindProperty:@"dreamRouter" toKey:[DreamNavigationRouter class]];
+    [propertySet bindProperty:@"apiManager" toKey:[SDApiManager class]];
     return propertySet;
 }
 
@@ -141,15 +145,25 @@
     }
     
     cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@", dream.user.firstName, dream.user.lastName];
-    cell.descriptionLabel.text = dream.content.dreamDescription;
+    cell.descriptionLabel.text = dream.content.dream.dreamDescription;
     [cell.descriptionLabel sizeToFit];
     
+    if (dream.content.messages != nil && [dream.content.messages count] > 0) {
+        cell.helpLabelHeight.constant = 0.f;
+        cell.helpMessageHeight.constant = 0.f;
+        NSString *buttonMessage = [NSString stringWithFormat:@"%ld Help Messages", [dream.content.messages count]];
+        [cell.helpButton setTitle:buttonMessage forState:UIControlStateNormal];
+    } else {
+        [cell.helpButton setTitle:@"Help" forState:UIControlStateNormal];
+        cell.helpLabel.text = [NSString stringWithFormat:@"Messages below are private between you and %@", dream.user.firstName];
+        cell.helpMessage.placeholder = [NSString stringWithFormat:@"How can you help %@?", dream.user.firstName];
+    }
     cell.helpButton.tag = index;
     cell.profileView.tag = index;
     
     [cell.helpButton addTarget:self action:@selector(helpButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
-    cell = [self updateTypeIcon:[dream.content dreamTypeEnum] cell:cell];
+    cell = [self updateTypeIcon:[dream.content.dream dreamTypeEnum] cell:cell];
     
     [cell.contentView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
     [cell.contentView.layer setBorderWidth:1.0f];
@@ -175,20 +189,18 @@
 
 - (DreamCellTableViewCell *)updateTypeIcon:(DreamType)dreamType cell:(DreamCellTableViewCell *) cell {
     if (dreamType == DreamTypePersonal) {
-        cell.typeIcon.image = [UIImage imageNamed:@"briefcase"];
-    } else {
         cell.typeIcon.image = [UIImage imageNamed:@"heart"];
+    } else {
+        cell.typeIcon.image = [UIImage imageNamed:@"briefcase"];
     }
     return cell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 5.0;
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *v = [UIView new];
     [v setBackgroundColor:[UIColor clearColor]];
     return v;
@@ -196,13 +208,11 @@
 
 #pragma mark - UITableViewDelegate
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     //iOS 8 Auto sizing cell feature needs UITableViewAutomaticDimension
     if (IS_IOS8_OR_ABOVE) {
         return UITableViewAutomaticDimension;
@@ -275,13 +285,41 @@
 }
 
 -(void)helpButtonClicked:(UIButton*)sender {
-    UINavigationController *navController = (UINavigationController *) [self.storyboard instantiateViewControllerWithIdentifier:@"HelpDreamViewController"];
+    UserDream *dream = self.dreams[sender.tag];
     
-    HelpDreamViewController *destViewController = (HelpDreamViewController *)navController.topViewController;
+    DreamCellTableViewCell *cell = (DreamCellTableViewCell *)[[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:sender.tag]];
     
-    destViewController.dream = self.dreams[sender.tag];
-    
-    [self.navigationController pushViewController:destViewController animated:YES];
+    if (dream.content.messages != nil && [dream.content.messages count] > 0) {
+        UINavigationController *navController = (UINavigationController *) [self.storyboard instantiateViewControllerWithIdentifier:@"HelpDreamViewController"];
+        
+        HelpDreamViewController *destViewController = (HelpDreamViewController *)navController.topViewController;
+        
+        destViewController.dream = self.dreams[sender.tag];
+        
+        [self.navigationController pushViewController:destViewController animated:YES];
+    } else {
+        [self.apiManager helpDream:cell.helpMessage.text
+                           dreamId:dream.content.dream.dreamId
+                       recipientId:dream.user.userId
+                           success:^(NSString *status) {
+                               long statusValue = [status longLongValue];
+                               if (statusValue == 200l) {
+                                   [self showAlertViewWithTitle:@"Success!" message:@"Message successfully sent!"];
+                               } else {
+                                   [self showAlertViewWithTitle:@"Oops!" message:@"Something went wrong, please try again"];
+                               }
+                           } failure:^(NSString *error) {
+                               [self showAlertViewWithTitle:@"Oops!" message:@"Something   went wrong, please try again"];
+                           }];
+    }
+}
+
+- (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message {
+    [[[UIAlertView alloc] initWithTitle:title
+                                message:message
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
 }
 
 @end

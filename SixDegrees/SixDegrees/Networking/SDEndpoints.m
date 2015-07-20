@@ -54,4 +54,10 @@
     return [NSString stringWithFormat:@"dreams/:%@", dreamId];
 }
 
+#pragma mark - Messages
+
++ (NSString *)helpDream {
+    return @"messages";
+}
+
 @end

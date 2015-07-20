@@ -9,6 +9,7 @@
 #import "DreamManager.h"
 #import "SDApiManager.h"
 #import "UserDream.h"
+#import "Lockbox.h"
 
 @interface DreamManager ()
 
@@ -37,12 +38,15 @@
 
 - (KSPromise *)fetchDreamsPromise {
     KSDeferred *fetchDreamsPromiseDeferred = [KSDeferred defer];
-    [self.apiManager fetchDreamsWithSuccess:^(NSArray *dreams) {
-        self.dreams = dreams;
-        [fetchDreamsPromiseDeferred resolveWithValue:dreams];
-    } failure:^(NSError *error) {
-        [fetchDreamsPromiseDeferred rejectWithError:error];
-    }];
+    NSString *authenticationToken = [Lockbox stringForKey:AUTHN_TOKEN_KEY];
+    
+    [self.apiManager fetchDreamsWithSuccess:authenticationToken
+                                    success:^(NSArray *dreams) {
+                                        self.dreams = dreams;
+                                        [fetchDreamsPromiseDeferred resolveWithValue:dreams];
+                                    } failure:^(NSError *error) {
+                                        [fetchDreamsPromiseDeferred rejectWithError:error];
+                                    }];
     return fetchDreamsPromiseDeferred.promise;
 }
 

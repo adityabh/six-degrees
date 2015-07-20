@@ -69,11 +69,9 @@
                        success:^(User *user) {
                            // store user authentication token securely in keychain
                            [Lockbox setString:user.authenticationToken forKey:AUTHN_TOKEN_KEY];
-                           
-                           [self showAlertViewWithTitle:@"Success!" message:@"Authenticated against Six-Degrees API"];
                            [self.delegate didSignup:user];
                        } failure:^(NSError *error) {
-                           [self showAlertViewWithTitle:@"Failure!" message:error.description];
+                           [self showAlertViewWithTitle:@"Oops!" message:@"Something went wrong, please try again"];
                        }];
 }
 

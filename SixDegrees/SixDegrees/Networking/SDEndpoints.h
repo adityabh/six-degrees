@@ -26,4 +26,7 @@
 + (NSString *)updateDreamWithId:(NSString *)dreamId;
 + (NSString *)deleteDreamWithId:(NSString *)dreamId;
 
+#pragma mark - Messages
++ (NSString *)helpDream;
+
 @end
